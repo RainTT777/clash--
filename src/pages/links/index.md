@@ -13,8 +13,8 @@ type: "links"
 :::
 
 ```yaml
-name: 韩小韩博客
-link: https://www.vvhan.com/
+name: 火箭猫博客
+link: https://clash-shadowrocket.blog
 avatar: https://q1.qlogo.cn/g?b=qq&nk=1655466387&s=640
-desc: 运气是计划之外的东西.
+desc: 专业机场推荐与 Clash / Shadowrocket 配置指南
 ```
