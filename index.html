@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>火箭猫的机场推荐博客 - 三栏网格卡片排版 (vhAstro-Theme)</title>
+  <title>火箭猫的机场推荐博客 - Clash / Shadowrocket 配置指南</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -55,10 +55,10 @@
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(0, 0, 0, 0.25);
+      background: rgba(0, 0, 0, 0.3);
     }
 
-    /* 导航菜单条 (固定定位跟随页面滚动) */
+    /* 固定导航菜单条 */
     .nav-menu {
       position: fixed;
       top: 0;
@@ -69,7 +69,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 0 3rem;
-      background: rgba(20, 20, 30, 0.7);
+      background: rgba(20, 20, 30, 0.72);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
       z-index: 100;
@@ -132,7 +132,7 @@
       height: 120px;
       border-radius: 50%;
       border: 3.5px solid #ffffff;
-      box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.4);
       object-fit: cover;
       margin-bottom: 1.2rem;
       transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
@@ -147,7 +147,7 @@
       font-weight: 700;
       letter-spacing: 2px;
       margin-bottom: 0.6rem;
-      text-shadow: 0 3px 12px rgba(0,0,0,0.5);
+      text-shadow: 0 3px 12px rgba(0,0,0,0.6);
     }
 
     .hero-subtitle {
@@ -155,7 +155,7 @@
       font-weight: 400;
       letter-spacing: 1px;
       color: rgba(255, 255, 255, 0.95);
-      text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
       min-height: 1.8rem;
     }
 
@@ -171,25 +171,33 @@
       position: relative;
     }
 
-    /* 侧边栏用户名片 */
-    .vh-aside-item.user {
-      position: relative;
-      background: var(--vh-white-color);
-      border-radius: var(--vh-main-radius);
-      padding: 2rem 1.5rem;
-      box-shadow: var(--vh-box-shadow);
-      text-align: center;
-      height: fit-content;
-      position: sticky;
-      top: 90px;
-      overflow: hidden;
-      border: 1px solid #e2e8f0;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* 侧边栏列 (完整的 vhAstro-Theme 侧边栏排版) */
+    .sidebar-column {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
     }
 
-    .vh-aside-item.user:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.1);
+    .vh-aside-item {
+      background: var(--vh-white-color);
+      border-radius: var(--vh-main-radius);
+      padding: 1.25rem;
+      box-shadow: var(--vh-box-shadow);
+      border: 1px solid #e2e8f0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .vh-aside-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+    }
+
+    /* 个人名片块 */
+    .vh-aside-item.user {
+      padding: 2rem 1.5rem;
+      text-align: center;
     }
 
     .vh-aside-canvas {
@@ -257,7 +265,7 @@
       color: #475569;
       text-decoration: none;
       transition: all 0.25s ease;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
       background: #fafafa;
     }
 
@@ -272,7 +280,7 @@
       display: flex;
       justify-content: space-around;
       border-top: 1px solid #f1f5f9;
-      padding-top: 1.2rem;
+      padding-top: 1.1rem;
     }
 
     .stat-item {
@@ -293,6 +301,140 @@
       margin-top: 2px;
     }
 
+    /* 侧边栏标题 */
+    .vh-aside-item h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #94a3b8;
+      margin-bottom: 0.88rem;
+    }
+
+    /* 分类列表 */
+    .vh-aside-cat {
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+
+    .vh-aside-cat a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #475569;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 500;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .vh-aside-cat a:hover {
+      background: #f1f5f9;
+      color: var(--vh-main-color);
+    }
+
+    .vh-aside-cat a i {
+      font-style: normal;
+      background: #01C4B6;
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 2px 9px;
+      border-radius: 12px;
+    }
+
+    /* 热门标签列表 */
+    .vh-aside-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+
+    .vh-aside-tags a {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: #475569;
+      text-decoration: none;
+      font-size: 0.82rem;
+      padding: 5px 10px;
+      border-radius: 8px;
+      transition: all 0.2s ease;
+    }
+
+    .vh-aside-tags a:hover {
+      background: var(--vh-main-color);
+      color: #fff;
+      border-color: var(--vh-main-color);
+    }
+
+    .vh-aside-tags a em {
+      font-style: normal;
+      font-size: 0.72rem;
+      color: #94a3b8;
+    }
+
+    .vh-aside-tags a:hover em {
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* 推荐文章块 */
+    .vh-aside-articles {
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .vh-aside-articles a {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      text-decoration: none;
+      padding: 6px 4px;
+      border-bottom: 1px dashed #f1f5f9;
+      transition: color 0.2s ease;
+    }
+
+    .vh-aside-articles a:last-child {
+      border-bottom: none;
+    }
+
+    .vh-aside-articles a span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #334155;
+    }
+
+    .vh-aside-articles a:hover span {
+      color: var(--vh-main-color);
+    }
+
+    .vh-aside-articles a span i {
+      font-style: normal;
+      width: 20px;
+      height: 20px;
+      background: var(--vh-main-color);
+      color: #fff;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+
+    .vh-aside-articles a time {
+      font-size: 0.78rem;
+      color: #94a3b8;
+      padding-left: 28px;
+    }
+
     /* 右侧主内容区 */
     .content-area {
       display: flex;
@@ -300,7 +442,7 @@
       gap: 1.5rem;
     }
 
-    /* 视图 1: 首页文章列表 - 三栏网格卡片排版 (完全还原图3样式) */
+    /* 视图 1: 首页文章列表 - 三栏网格卡片排版 */
     .view-home {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -360,24 +502,24 @@
     .cat-badge {
       font-size: 0.85rem;
       font-weight: 700;
+      background: linear-gradient(118deg, #01C4B6, #3b82f6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .cat-badge.cat-Tutorial {
       background: linear-gradient(118deg, #ec4899, #f43f5e);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .cat-badge.cat-Code {
+    .cat-badge.cat-Config {
       background: linear-gradient(118deg, #f59e0b, #d97706);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
 
-    .cat-badge.cat-Share {
-      background: linear-gradient(118deg, #ec4899, #d946ef);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .cat-badge.cat-Memo {
+    .cat-badge.cat-Opt {
       background: linear-gradient(118deg, #8b5cf6, #6366f1);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -667,7 +809,7 @@
 </head>
 <body>
 
-  <!-- Hero Header Banner -->
+  <!-- Hero Header Banner (使用全新巨形猫咪火箭极光神级背景图) -->
   <header class="vh-header-container" id="headerBanner">
     <canvas id="headerCanvas" class="vh-aside-canvas"></canvas>
 
@@ -691,53 +833,125 @@
     <div class="hero-profile">
       <img class="hero-avatar" src="https://q1.qlogo.cn/g?b=qq&nk=1655466387&s=640" alt="火箭猫头像">
       <h1 class="hero-name">火箭猫</h1>
-      <div class="hero-subtitle" id="typewriterText">Clash-Shadow|</div>
+      <div class="hero-subtitle" id="typewriterText">Clash-Shadowrocket 节点推荐|</div>
     </div>
   </header>
 
   <!-- 主体区域 -->
   <main class="main-container">
 
-    <!-- 侧边栏卡片 -->
-    <aside class="vh-aside-item user" id="userCard">
-      <canvas id="userCanvas" class="vh-aside-canvas"></canvas>
+    <!-- 侧边栏 (严格按照机场博客内容填充 & 图1卡片布局) -->
+    <div class="sidebar-column">
+      
+      <!-- 1. 个人名片 -->
+      <section class="vh-aside-item user" id="userCard">
+        <canvas id="userCanvas" class="vh-aside-canvas"></canvas>
+        <div class="user-content">
+          <img class="sidebar-avatar" src="https://q1.qlogo.cn/g?b=qq&nk=1655466387&s=640" alt="火箭猫">
+          <h2 class="sidebar-name">火箭猫</h2>
+          <p class="sidebar-motto">专业机场推荐与 Clash / Shadowrocket 配置指南</p>
+          
+          <a class="social-btn" href="https://github.com/RainTT777/clash--" target="_blank" title="GitHub 仓库">
+            <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          </a>
 
-      <div class="user-content">
-        <img class="sidebar-avatar" src="https://q1.qlogo.cn/g?b=qq&nk=1655466387&s=640" alt="火箭猫">
-        <h2 class="sidebar-name">火箭猫</h2>
-        <p class="sidebar-motto">专业机场推荐与 Clash / Shadowrocket 配置指南</p>
-        
-        <a class="social-btn" href="https://github.com/RainTT777/clash--" target="_blank" title="GitHub 仓库">
-          <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
-        </a>
-
-        <div class="stats-bar">
-          <div class="stat-item">
-            <span class="stat-value">5</span>
-            <span class="stat-label">文章</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-value">4</span>
-            <span class="stat-label">分类</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-value">8</span>
-            <span class="stat-label">标签</span>
+          <div class="stats-bar">
+            <div class="stat-item">
+              <span class="stat-value">6</span>
+              <span class="stat-label">文章数</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">4</span>
+              <span class="stat-label">分类数</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">10</span>
+              <span class="stat-label">标签数</span>
+            </div>
           </div>
         </div>
-      </div>
-    </aside>
+      </section>
+
+      <!-- 2. 分类块 (匹配机场/节点主题) -->
+      <section class="vh-aside-item cat">
+        <h3>分类</h3>
+        <div class="vh-aside-cat">
+          <a href="#">
+            <span>机场推荐</span>
+            <i>2</i>
+          </a>
+          <a href="#">
+            <span>客户端教程</span>
+            <i>2</i>
+          </a>
+          <a href="#">
+            <span>节点配置</span>
+            <i>1</i>
+          </a>
+          <a href="#">
+            <span>网络优化</span>
+            <i>1</i>
+          </a>
+        </div>
+      </section>
+
+      <!-- 3. 热门标签块 (匹配 Clash / Shadowrocket 关键字) -->
+      <section class="vh-aside-item tags">
+        <h3>热门标签</h3>
+        <div class="vh-aside-tags">
+          <a href="#">Clash <em>4</em></a>
+          <a href="#">Shadowrocket <em>4</em></a>
+          <a href="#">机场推荐 <em>3</em></a>
+          <a href="#">节点配置 <em>3</em></a>
+          <a href="#">Sing-Box <em>2</em></a>
+          <a href="#">IEPL专线 <em>2</em></a>
+          <a href="#">V2Ray <em>2</em></a>
+          <a href="#">小火箭 <em>2</em></a>
+          <a href="#">网络加速 <em>1</em></a>
+          <a href="#">iOS配置 <em>1</em></a>
+        </div>
+      </section>
+
+      <!-- 4. 推荐文章块 (匹配机场配置指南) -->
+      <section class="vh-aside-item articles">
+        <h3>推荐文章</h3>
+        <div class="vh-aside-articles">
+          <a href="javascript:switchView('home')">
+            <span>
+              <i>1</i>
+              <cite class="vh-ellipsis">2026 高速稳定机场推荐与 Clash / Shadowrocket 节点配置教程</cite>
+            </span>
+            <time>2026-09-23 晚上</time>
+          </a>
+          <a href="javascript:switchView('home')">
+            <span>
+              <i>2</i>
+              <cite class="vh-ellipsis">Shadowrocket (小火箭) 节点订阅导入与规则分流配置指南</cite>
+            </span>
+            <time>2026-09-15 下午</time>
+          </a>
+          <a href="javascript:switchView('home')">
+            <span>
+              <i>3</i>
+              <cite class="vh-ellipsis">Clash Verge / Clash for Windows 节点选优与分流规则指南</cite>
+            </span>
+            <time>2026-09-10 晚上</time>
+          </a>
+        </div>
+      </section>
+
+    </div>
 
     <!-- 右侧内容区 -->
     <div class="content-area">
 
-      <!-- 视图 1: 首页文章列表 - 3 列网格卡片排版 (完全还原图3样式) -->
+      <!-- 视图 1: 首页文章列表 - 3 列网格卡片排版 -->
       <section class="view-home" id="viewHome">
 
         <!-- 卡片 1 -->
         <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/clash-shadowrocket-demo'">
           <div class="grid-card-banner">
-            <img src="./public/assets/images/home-banner.webp" alt="文章封面">
+            <img src="./public/assets/images/home-banner.webp" alt="机场推荐">
           </div>
           <div class="grid-card-body">
             <div class="grid-card-meta">
@@ -754,77 +968,96 @@
         </article>
 
         <!-- 卡片 2 -->
-        <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/waline-comment-system'">
+        <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/shadowrocket-guide'">
           <div class="grid-card-banner">
-            <img src="./public/assets/images/chat_bg.webp" alt="Waline 评论">
+            <img src="./public/assets/images/home-banner.webp" alt="Shadowrocket 教程">
           </div>
           <div class="grid-card-body">
             <div class="grid-card-meta">
-              <span class="cat-badge cat-Share">Share</span>
-              <span class="grid-card-date">二月 12, 2026</span>
+              <span class="cat-badge cat-Tutorial">客户端教程</span>
+              <span class="grid-card-date">九月 15, 2026</span>
             </div>
-            <h2 class="grid-card-title">Waline 评论系统搭建 - Vercel 部署与轻量化集成</h2>
-            <p class="grid-card-excerpt">Waline 是一款轻量级、安全且功能丰富的 HTML 静态博客评论系统。支持 Markdown 语法与多种数据库存储。</p>
+            <h2 class="grid-card-title">Shadowrocket (小火箭) 节点订阅导入与规则分流配置指南</h2>
+            <p class="grid-card-excerpt">小火箭 (Shadowrocket) 是 iOS 平台上最为强大的网络代理客户端之一。本文提供完整的订阅导入、分流规则配置及节点选优教程。</p>
             <div class="grid-card-tags">
-              <span>Waline</span>
-              <span>评论系统</span>
+              <span>Shadowrocket</span>
+              <span>iOS配置</span>
             </div>
           </div>
         </article>
 
         <!-- 卡片 3 -->
-        <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/server-guide'">
+        <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/clash-verge-guide'">
           <div class="grid-card-banner">
-            <img src="./public/assets/images/home-banner.webp" alt="服务器指南">
+            <img src="./public/assets/images/home-banner.webp" alt="Clash Verge 配置">
           </div>
           <div class="grid-card-body">
             <div class="grid-card-meta">
-              <span class="cat-badge cat-Memo">备忘</span>
-              <span class="grid-card-date">二月 5, 2026</span>
+              <span class="cat-badge cat-Config">节点配置</span>
+              <span class="grid-card-date">九月 10, 2026</span>
             </div>
-            <h2 class="grid-card-title">乌兰察布服务器部署与高速节点优化指南</h2>
-            <p class="grid-card-excerpt">记录国内及海外高速服务器部署命令与节点传输优化经验。提供 OpenRC / Systemd 服务初始化脚本。</p>
+            <h2 class="grid-card-title">Clash Verge / Clash for Windows 节点选优与分流规则指南</h2>
+            <p class="grid-card-excerpt">Clash 系列客户端以强大的规则分流与多协议支持著称。本文详细讲解节点导入、Tun 模式开启与代理规则配置。</p>
             <div class="grid-card-tags">
-              <span>服务器</span>
-              <span>Linux</span>
+              <span>Clash</span>
+              <span>网络优化</span>
             </div>
           </div>
         </article>
 
         <!-- 卡片 4 -->
-        <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/github-management-tool'">
+        <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/singbox-guide'">
           <div class="grid-card-banner">
-            <img src="./public/assets/images/phone-card.webp" alt="GitHub 管理">
+            <img src="./public/assets/images/home-banner.webp" alt="Sing-Box 教程">
           </div>
           <div class="grid-card-body">
             <div class="grid-card-meta">
-              <span class="cat-badge cat-Code">Code</span>
-              <span class="grid-card-date">三月 20, 2025</span>
+              <span class="cat-badge cat-Tutorial">客户端教程</span>
+              <span class="grid-card-date">八月 28, 2026</span>
             </div>
-            <h2 class="grid-card-title">GitHub 仓库文件管理与自动发布工具使用文档</h2>
-            <p class="grid-card-excerpt">基于 React 与 Node.js 构建的 GitHub 仓库文件管理工具，提供可视化配置管理与操作功能。</p>
+            <h2 class="grid-card-title">Sing-Box 跨平台通用客户端一键订阅与高级分流设置</h2>
+            <p class="grid-card-excerpt">Sing-Box 作为下一代网络通用代理工具，内存占用极低且支持最新的 Hysteria2 与 VLESS 协议。</p>
             <div class="grid-card-tags">
-              <span>GitHub</span>
-              <span>Astro</span>
+              <span>Sing-Box</span>
+              <span>IEPL专线</span>
             </div>
           </div>
         </article>
 
         <!-- 卡片 5 -->
-        <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/astro-theme-vhastro'">
+        <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/iepl-line-review'">
           <div class="grid-card-banner">
-            <img src="./public/assets/images/home-banner.webp" alt="vhAstro 主题">
+            <img src="./public/assets/images/home-banner.webp" alt="IEPL 专线评测">
           </div>
           <div class="grid-card-body">
             <div class="grid-card-meta">
-              <span class="cat-badge cat-Code">Code</span>
-              <span class="grid-card-date">三月 2, 2025</span>
+              <span class="cat-badge">机场推荐</span>
+              <span class="grid-card-date">八月 15, 2026</span>
             </div>
-            <h2 class="grid-card-title">Astro 主题 - 优雅的 vhAstro-Theme【配置使用指南】</h2>
-            <p class="grid-card-excerpt">🍊 基于 Astro 5 开发的 vhAstro-Theme 主题模板，是一款优雅的响应式博客主题。</p>
+            <h2 class="grid-card-title">2026 全球优质 BGP / IEPL 专线机场对比评测与选购指南</h2>
+            <p class="grid-card-excerpt">针对 4K 视频超清流畅播放、低延迟联机游戏与日常稳定上网，IEPL 专线机场是高品质用户的首选。</p>
             <div class="grid-card-tags">
-              <span>Astro</span>
-              <span>vhAstro</span>
+              <span>IEPL专线</span>
+              <span>机场推荐</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 卡片 6 -->
+        <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/dns-troubleshooting'">
+          <div class="grid-card-banner">
+            <img src="./public/assets/images/home-banner.webp" alt="排查解决">
+          </div>
+          <div class="grid-card-body">
+            <div class="grid-card-meta">
+              <span class="cat-badge cat-Opt">网络优化</span>
+              <span class="grid-card-date">八月 01, 2026</span>
+            </div>
+            <h2 class="grid-card-title">常见机场节点连接超时与 DNS 污染问题排查解决指南</h2>
+            <p class="grid-card-excerpt">遇到节点连接超时、网页打不开或订阅失败？本文梳理最全的排查步骤与解决方案。</p>
+            <div class="grid-card-tags">
+              <span>网络优化</span>
+              <span>小火箭</span>
             </div>
           </div>
         </article>
@@ -935,7 +1168,7 @@
       window.scrollTo({ top: 380, behavior: 'smooth' });
     }
 
-    const texts = ["Clash-Shadowrocket 节点推荐", "火箭猫的科技分享"];
+    const texts = ["Clash-Shadowrocket 节点推荐", "火箭猫的机场分享"];
     let count = 0, index = 0, currentText = "", letter = "", isDeleting = false;
     function type() {
       if (count === texts.length) count = 0;
