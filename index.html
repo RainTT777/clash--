@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>火箭猫的机场推荐博客 - 丰富特效与关于页面预览 (vhAstro-Theme)</title>
+  <title>火箭猫的机场推荐博客 - 三栏网格卡片排版 (vhAstro-Theme)</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -37,7 +37,7 @@
       overflow-x: hidden;
     }
 
-    /* 顶部预览提示栏 */
+    /* 顶部预览控制栏 */
     .preview-bar {
       background: linear-gradient(90deg, #0f172a, #1e293b);
       color: #f8fafc;
@@ -228,7 +228,7 @@
       position: relative;
     }
 
-    /* 侧边栏用户名片 (包含 Canvas 泡泡与彩旗特效) */
+    /* 侧边栏用户名片 */
     .vh-aside-item.user {
       position: relative;
       background: var(--vh-white-color);
@@ -357,85 +357,135 @@
       gap: 1.5rem;
     }
 
-    /* 视图: 首页文章列表 */
+    /* 视图 1: 首页文章列表 - 三栏网格卡片排版 (完全还原图3样式) */
     .view-home {
-      display: flex;
-      flex-direction: column;
-      gap: 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
     }
 
-    .article-card {
+    .grid-article-card {
       background: var(--vh-white-color);
       border-radius: var(--vh-main-radius);
       overflow: hidden;
-      box-shadow: var(--vh-box-shadow);
-      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+      border: 1px solid #eee;
       transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
       cursor: pointer;
     }
 
-    .article-card:hover {
+    .grid-article-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
     }
 
-    .article-cover {
+    .grid-card-banner {
       width: 100%;
-      height: 250px;
+      height: 11.5rem;
+      overflow: hidden;
+      position: relative;
+      background: #f1f5f9;
+    }
+
+    .grid-card-banner img {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
-      transition: transform 0.5s ease;
+      transition: transform 0.4s ease;
     }
 
-    .article-card:hover .article-cover {
-      transform: scale(1.02);
+    .grid-article-card:hover .grid-card-banner img {
+      transform: scale(1.08);
     }
 
-    .article-content {
-      padding: 1.6rem;
+    .grid-card-body {
+      padding: 1.1rem 1.2rem;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
     }
 
-    .article-meta {
+    .grid-card-meta {
       display: flex;
       align-items: center;
-      gap: 1rem;
+      justify-content: space-between;
+      margin-bottom: 0.6rem;
+    }
+
+    .cat-badge {
       font-size: 0.85rem;
-      margin-bottom: 0.8rem;
+      font-weight: 700;
+      background: linear-gradient(118deg, #ec4899, #f43f5e);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .category-badge {
-      color: #8b5cf6;
-      background: rgba(139, 92, 246, 0.1);
-      padding: 3px 10px;
-      border-radius: 12px;
-      font-weight: 600;
+    .cat-badge.cat-Code {
+      background: linear-gradient(118deg, #f59e0b, #d97706);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
 
-    .article-date {
+    .cat-badge.cat-Share {
+      background: linear-gradient(118deg, #ec4899, #d946ef);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .cat-badge.cat-Memo {
+      background: linear-gradient(118deg, #8b5cf6, #6366f1);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .grid-card-date {
+      font-size: 0.8rem;
       color: #94a3b8;
     }
 
-    .article-title {
-      font-size: 1.4rem;
+    .grid-card-title {
+      font-size: 1.05rem;
       font-weight: 700;
       color: #1e293b;
-      margin-bottom: 0.8rem;
-      line-height: 1.4;
+      margin-bottom: 0.6rem;
+      line-height: 1.45;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
       transition: color 0.2s;
     }
 
-    .article-card:hover .article-title {
+    .grid-article-card:hover .grid-card-title {
       color: var(--vh-main-color);
     }
 
-    .article-excerpt {
-      font-size: 0.95rem;
+    .grid-card-excerpt {
+      font-size: 0.83rem;
       color: #64748b;
-      line-height: 1.6;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 0.8rem;
     }
 
-    /* 视图: 关于我 (完全参照 blog.sysii.cn/about) */
+    .grid-card-tags {
+      margin-top: auto;
+      display: flex;
+      gap: 8px;
+      font-size: 0.72rem;
+      color: #94a3b8;
+    }
+
+    .grid-card-tags span::before {
+      content: '#';
+    }
+
+    /* 视图 2: 关于我 */
     .view-about {
       display: none;
       flex-direction: column;
@@ -468,7 +518,6 @@
       font-size: 1rem;
     }
 
-    /* Note 提示框 (参考 sysii.cn 的 note-success) */
     .vh-note.note-success {
       background-color: rgba(16, 185, 129, 0.08);
       border-left: 4px solid #10b981;
@@ -480,7 +529,6 @@
       line-height: 1.6;
     }
 
-    /* ENFJ-A 个人性格卡片 (100% 还原 sysii.cn 特效) */
     .enfj-dom {
       margin: 1.5rem 0;
       position: relative;
@@ -537,7 +585,6 @@
       color: var(--vh-main-color);
     }
 
-    /* 语言与工具 Shields.io 徽章网格 (参考 sysii.cn) */
     .language-tool-section h3 {
       font-size: 1.25rem;
       font-weight: 700;
@@ -568,7 +615,6 @@
       border-radius: 4px;
     }
 
-    /* 静态资源表格 */
     .site-table {
       width: 100%;
       border-collapse: collapse;
@@ -598,7 +644,6 @@
       text-decoration: underline;
     }
 
-    /* 右下角 SVG 进度条 BackTop 按钮 */
     .vh-back-top {
       position: fixed;
       bottom: 2rem;
@@ -644,7 +689,6 @@
       color: #334155;
     }
 
-    /* 页脚 */
     footer {
       text-align: center;
       padding: 2.5rem 1rem;
@@ -655,9 +699,18 @@
       border-top: 1px solid #f1f5f9;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 1150px) {
+      .view-home {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
       .main-container {
         grid-template-columns: 1fr;
+      }
+      .view-home {
+        grid-template-columns: repeat(1, 1fr);
       }
       .nav-menu {
         padding: 0 1rem;
@@ -675,17 +728,17 @@
   <div class="preview-bar">
     <div class="status">
       <div class="dot"></div>
-      <strong>火箭猫博客 - 动态预览与特效展示 (vhAstro-Theme)</strong>
+      <strong>火箭猫博客 - 三栏网格卡片排版预览 (图3样式)</strong>
     </div>
     <div class="actions">
-      <button onclick="switchView('home')">🏠 首页视图</button>
-      <button onclick="switchView('about')">👤 关于我 (参考 blog.sysii.cn)</button>
-      <a href="http://localhost:4321/" target="_blank">🚀 启动 Dev 服务 (http://localhost:4321)</a>
+      <button onclick="switchView('home')">🏠 首页网格</button>
+      <button onclick="switchView('about')">👤 关于我</button>
+      <a href="http://localhost:4321/" target="_blank">🚀 启动 Dev 服务</a>
       <a href="https://github.com/RainTT777/clash--" target="_blank">🔗 Git 仓库</a>
     </div>
   </div>
 
-  <!-- Hero Header Banner (带 Canvas 泡泡动画) -->
+  <!-- Hero Header Banner -->
   <header class="vh-header-container" id="headerBanner">
     <canvas id="headerCanvas" class="vh-aside-canvas"></canvas>
 
@@ -716,7 +769,7 @@
   <!-- 主体区域 -->
   <main class="main-container">
 
-    <!-- 侧边栏卡片 (支持鼠标移入触发 彩旗 Confetti 落雪与泡泡) -->
+    <!-- 侧边栏卡片 -->
     <aside class="vh-aside-item user" id="userCard">
       <canvas id="userCanvas" class="vh-aside-canvas"></canvas>
 
@@ -731,15 +784,15 @@
 
         <div class="stats-bar">
           <div class="stat-item">
-            <span class="stat-value">1</span>
+            <span class="stat-value">5</span>
             <span class="stat-label">文章</span>
           </div>
           <div class="stat-item">
-            <span class="stat-value">1</span>
+            <span class="stat-value">4</span>
             <span class="stat-label">分类</span>
           </div>
           <div class="stat-item">
-            <span class="stat-value">4</span>
+            <span class="stat-value">8</span>
             <span class="stat-label">标签</span>
           </div>
         </div>
@@ -749,37 +802,119 @@
     <!-- 右侧内容区 -->
     <div class="content-area">
 
-      <!-- 视图 1: 首页 Feed -->
+      <!-- 视图 1: 首页文章列表 - 3 列网格卡片排版 (完全还原图3样式) -->
       <section class="view-home" id="viewHome">
-        <article class="article-card" onclick="location.href='http://localhost:4321/article/clash-shadowrocket-demo'">
-          <img class="article-cover" src="./public/assets/images/home-banner.webp" alt="文章封面">
-          <div class="article-content">
-            <div class="article-meta">
-              <span class="category-badge">机场推荐</span>
-              <span class="article-date">九月 23, 2026</span>
+
+        <!-- 卡片 1 -->
+        <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/clash-shadowrocket-demo'">
+          <div class="grid-card-banner">
+            <img src="./public/assets/images/home-banner.webp" alt="文章封面">
+          </div>
+          <div class="grid-card-body">
+            <div class="grid-card-meta">
+              <span class="cat-badge">机场推荐</span>
+              <span class="grid-card-date">九月 23, 2026</span>
             </div>
-            <h2 class="article-title">2026 高速稳定机场推荐与 Clash / Shadowrocket 节点配置教程</h2>
-            <p class="article-excerpt">欢迎来到火箭猫的机场推荐博客！本文为您精选优质机场节点，并提供 Clash 与 Shadowrocket 客户端的详细配置指南。</p>
+            <h2 class="grid-card-title">2026 高速稳定机场推荐与 Clash / Shadowrocket 节点配置教程</h2>
+            <p class="grid-card-excerpt">欢迎来到火箭猫的机场推荐博客！本文为您精选优质机场节点，并提供 Clash 与 Shadowrocket 客户端的详细配置指南。</p>
+            <div class="grid-card-tags">
+              <span>Clash</span>
+              <span>Shadowrocket</span>
+            </div>
           </div>
         </article>
+
+        <!-- 卡片 2 -->
+        <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/waline-comment-system'">
+          <div class="grid-card-banner">
+            <img src="./public/assets/images/chat_bg.webp" alt="Waline 评论">
+          </div>
+          <div class="grid-card-body">
+            <div class="grid-card-meta">
+              <span class="cat-badge cat-Share">Share</span>
+              <span class="grid-card-date">二月 12, 2026</span>
+            </div>
+            <h2 class="grid-card-title">Waline 评论系统搭建 - Vercel 部署与轻量化集成</h2>
+            <p class="grid-card-excerpt">Waline 是一款轻量级、安全且功能丰富的 HTML 静态博客评论系统。支持 Markdown 语法与多种数据库存储。</p>
+            <div class="grid-card-tags">
+              <span>Waline</span>
+              <span>评论系统</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 卡片 3 -->
+        <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/server-guide'">
+          <div class="grid-card-banner">
+            <img src="./public/assets/images/home-banner.webp" alt="服务器指南">
+          </div>
+          <div class="grid-card-body">
+            <div class="grid-card-meta">
+              <span class="cat-badge cat-Memo">备忘</span>
+              <span class="grid-card-date">二月 5, 2026</span>
+            </div>
+            <h2 class="grid-card-title">乌兰察布服务器部署与高速节点优化指南</h2>
+            <p class="grid-card-excerpt">记录国内及海外高速服务器部署命令与节点传输优化经验。提供 OpenRC / Systemd 服务初始化脚本。</p>
+            <div class="grid-card-tags">
+              <span>服务器</span>
+              <span>Linux</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 卡片 4 -->
+        <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/github-management-tool'">
+          <div class="grid-card-banner">
+            <img src="./public/assets/images/phone-card.webp" alt="GitHub 管理">
+          </div>
+          <div class="grid-card-body">
+            <div class="grid-card-meta">
+              <span class="cat-badge cat-Code">Code</span>
+              <span class="grid-card-date">三月 20, 2025</span>
+            </div>
+            <h2 class="grid-card-title">GitHub 仓库文件管理与自动发布工具使用文档</h2>
+            <p class="grid-card-excerpt">基于 React 与 Node.js 构建的 GitHub 仓库文件管理工具，提供可视化配置管理与操作功能。</p>
+            <div class="grid-card-tags">
+              <span>GitHub</span>
+              <span>Astro</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 卡片 5 -->
+        <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/astro-theme-vhastro'">
+          <div class="grid-card-banner">
+            <img src="./public/assets/images/home-banner.webp" alt="vhAstro 主题">
+          </div>
+          <div class="grid-card-body">
+            <div class="grid-card-meta">
+              <span class="cat-badge cat-Code">Code</span>
+              <span class="grid-card-date">三月 2, 2025</span>
+            </div>
+            <h2 class="grid-card-title">Astro 主题 - 优雅的 vhAstro-Theme【配置使用指南】</h2>
+            <p class="grid-card-excerpt">🍊 基于 Astro 5 开发的 vhAstro-Theme 主题模板，是一款优雅的响应式博客主题。</p>
+            <div class="grid-card-tags">
+              <span>Astro</span>
+              <span>vhAstro</span>
+            </div>
+          </div>
+        </article>
+
       </section>
 
-      <!-- 视图 2: 关于我 (完全参照 https://blog.sysii.cn/about) -->
+      <!-- 视图 2: 关于我 -->
       <section class="view-about" id="viewAbout">
         <div class="about-card">
-          
           <div class="about-header">
             <h1>关于我</h1>
             <p>Hi there, 我是火箭猫 👋</p>
           </div>
 
-          <!-- Note Success 提示框 -->
           <div class="vh-note note-success">
             <strong>🎉 欢迎光临火箭猫的个人博客！</strong><br>
             我期待在这里与你分享我的见解、经验以及 Clash / Shadowrocket 等网络加速技术的最新动态。
           </div>
 
-          <!-- ENFJ-A 个人性格卡片 (完全参照 blog.sysii.cn/about) -->
           <div class="enfj-dom">
             <div class="text">
               <em>主人公</em>
@@ -788,7 +923,6 @@
             </div>
           </div>
 
-          <!-- Languages and Tools 技术徽章网格 (参考 blog.sysii.cn/about) -->
           <div class="language-tool-section">
             <h3>🛠️ Languages and Tools</h3>
             <div class="language-tool">
@@ -804,7 +938,6 @@
             </div>
           </div>
 
-          <!-- 导航表格 -->
           <table class="site-table">
             <thead>
               <tr>
@@ -835,7 +968,6 @@
 
   </main>
 
-  <!-- SVG 圆形进度条 BackTop 按钮 -->
   <div class="vh-back-top" id="backTopBtn" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
     <svg class="progress-ring" viewBox="0 0 48 48">
       <circle id="progressCircle" cx="24" cy="24" r="20" fill="none" stroke="url(#blueGradient)" stroke-width="3" stroke-linecap="round" transform="rotate(-90 24 24)" stroke-dasharray="125.6" stroke-dashoffset="125.6"/>
@@ -854,7 +986,6 @@
   </footer>
 
   <script>
-    // 视图切换函数
     function switchView(viewName) {
       const viewHome = document.getElementById('viewHome');
       const viewAbout = document.getElementById('viewAbout');
@@ -867,7 +998,7 @@
         navHome.classList.remove('active');
         navAbout.classList.add('active');
       } else {
-        viewHome.style.display = 'flex';
+        viewHome.style.display = 'grid';
         viewAbout.style.display = 'none';
         navHome.classList.add('active');
         navAbout.classList.remove('active');
@@ -875,7 +1006,6 @@
       window.scrollTo({ top: 380, behavior: 'smooth' });
     }
 
-    // 1. 打字机效果 (TypeWrite)
     const texts = ["Clash-Shadowrocket 节点推荐", "火箭猫的科技分享"];
     let count = 0, index = 0, currentText = "", letter = "", isDeleting = false;
     function type() {
@@ -896,7 +1026,6 @@
     }
     document.addEventListener("DOMContentLoaded", type);
 
-    // 2. 泡泡 Canvas 动画 (vhPaopao 特效)
     function initPaopao(canvasId, parentId) {
       const canvas = document.getElementById(canvasId);
       const parent = document.getElementById(parentId);
@@ -937,7 +1066,6 @@
     }
     initPaopao('headerCanvas', 'headerBanner');
 
-    // 3. 悬停彩旗/Confetti 跌落动画 (vhCaiqi 特效)
     const userCard = document.getElementById('userCard');
     const userCanvas = document.getElementById('userCanvas');
     const uCtx = userCanvas.getContext('2d');
@@ -978,7 +1106,6 @@
       if (confettiActive || confettis.length > 0) requestAnimationFrame(animateConfetti);
     }
 
-    // 4. BackTop 动态 SVG 滚动进度条
     const backTopBtn = document.getElementById('backTopBtn');
     const progressCircle = document.getElementById('progressCircle');
     const circumference = 2 * Math.PI * 20;
