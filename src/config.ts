@@ -42,11 +42,11 @@ export default {
     // 字体颜色
     "--vh-font-color": "#34495e",
     // 侧边栏宽度
-    "--vh-aside-width": "318px",
+    "--vh-aside-width": "310px",
     // 全局圆角
     "--vh-main-radius": "0.88rem",
     // 主体内容宽度
-    "--vh-main-max-width": "1458px",
+    "--vh-main-max-width": "1720px",
   },
   // 导航栏 (新窗口打开 newWindow: true)
   Navs: [

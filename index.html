@@ -14,9 +14,9 @@
       --vh-bg-color: #f7f9fb;
       --vh-white-color: #ffffff;
       --vh-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-      --vh-aside-width: 318px;
+      --vh-aside-width: 310px;
       --vh-main-radius: 0.88rem;
-      --vh-main-max-width: 1400px;
+      --vh-main-max-width: 1720px;
     }
 
     * {
@@ -162,12 +162,12 @@
     /* 主体容器 */
     .main-container {
       max-width: var(--vh-main-max-width);
-      width: 100%;
-      margin: 2rem auto;
-      padding: 0 1.5rem;
+      width: 96%;
+      margin: 1.8rem auto;
+      padding: 0 0.5rem;
       display: grid;
       grid-template-columns: var(--vh-aside-width) 1fr;
-      gap: 1.8rem;
+      gap: 1.5rem;
       position: relative;
     }
 
@@ -480,6 +480,35 @@
       overflow: hidden;
       position: relative;
       background: #f1f5f9;
+    }
+
+    .sticky-card {
+      position: relative;
+      border: 1.5px solid rgba(1, 196, 182, 0.45) !important;
+      box-shadow: 0 8px 24px rgba(1, 196, 182, 0.12) !important;
+    }
+
+    .sticky-card:hover {
+      border-color: var(--vh-main-color) !important;
+      box-shadow: 0 14px 32px rgba(1, 196, 182, 0.22) !important;
+    }
+
+    .sticky-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: linear-gradient(135deg, #01C4B6, #00b4d8);
+      color: #ffffff;
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(1, 196, 182, 0.4);
+      z-index: 5;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
 
     .grid-card-banner img {
@@ -956,7 +985,27 @@
       <!-- 视图 1: 首页文章列表 - 3 列网格卡片排版 -->
       <section class="view-home" id="viewHome">
 
-        <!-- 卡片 1 -->
+        <!-- 卡片 1 (置顶机场测评) -->
+        <article class="grid-article-card sticky-card" onclick="location.href='http://localhost:4321/article/iepl-line-review'">
+          <div class="grid-card-banner">
+            <span class="sticky-badge">📌 置顶评测</span>
+            <img src="./public/assets/images/home-banner.webp" alt="IEPL 专线评测">
+          </div>
+          <div class="grid-card-body">
+            <div class="grid-card-meta">
+              <span class="cat-badge">机场推荐</span>
+              <span class="grid-card-date">九月 28, 2026</span>
+            </div>
+            <h2 class="grid-card-title">2026 全球优质 BGP / IEPL 专线机场对比评测与选购指南</h2>
+            <p class="grid-card-excerpt">针对 4K 视频超清流畅播放、低延迟联机游戏与日常稳定上网，IEPL 专线机场是高品质用户的首选对比评测。</p>
+            <div class="grid-card-tags">
+              <span>IEPL专线</span>
+              <span>机场推荐</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- 卡片 2 -->
         <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/clash-shadowrocket-demo'">
           <div class="grid-card-banner">
             <img src="./public/assets/images/home-banner.webp" alt="机场推荐">
@@ -975,7 +1024,7 @@
           </div>
         </article>
 
-        <!-- 卡片 2 -->
+        <!-- 卡片 3 -->
         <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/shadowrocket-guide'">
           <div class="grid-card-banner">
             <img src="./public/assets/images/home-banner.webp" alt="Shadowrocket 教程">
@@ -994,7 +1043,7 @@
           </div>
         </article>
 
-        <!-- 卡片 3 -->
+        <!-- 卡片 4 -->
         <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/clash-verge-guide'">
           <div class="grid-card-banner">
             <img src="./public/assets/images/home-banner.webp" alt="Clash Verge 配置">
@@ -1013,7 +1062,7 @@
           </div>
         </article>
 
-        <!-- 卡片 4 -->
+        <!-- 卡片 5 -->
         <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/singbox-guide'">
           <div class="grid-card-banner">
             <img src="./public/assets/images/home-banner.webp" alt="Sing-Box 教程">
@@ -1028,25 +1077,6 @@
             <div class="grid-card-tags">
               <span>Sing-Box</span>
               <span>IEPL专线</span>
-            </div>
-          </div>
-        </article>
-
-        <!-- 卡片 5 -->
-        <article class="grid-article-card" onclick="location.href='http://localhost:4321/article/iepl-line-review'">
-          <div class="grid-card-banner">
-            <img src="./public/assets/images/home-banner.webp" alt="IEPL 专线评测">
-          </div>
-          <div class="grid-card-body">
-            <div class="grid-card-meta">
-              <span class="cat-badge">机场推荐</span>
-              <span class="grid-card-date">八月 15, 2026</span>
-            </div>
-            <h2 class="grid-card-title">2026 全球优质 BGP / IEPL 专线机场对比评测与选购指南</h2>
-            <p class="grid-card-excerpt">针对 4K 视频超清流畅播放、低延迟联机游戏与日常稳定上网，IEPL 专线机场是高品质用户的首选。</p>
-            <div class="grid-card-tags">
-              <span>IEPL专线</span>
-              <span>机场推荐</span>
             </div>
           </div>
         </article>

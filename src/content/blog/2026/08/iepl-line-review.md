@@ -3,7 +3,7 @@ title: "2026 全球优质 BGP / IEPL 专线机场对比评测与选购指南"
 categories: "机场推荐"
 tags: ['机场推荐', 'IEPL专线', '网络加速', 'Shadowrocket']
 id: "iepl-line-review"
-date: 2026-08-15 09:15:00
+date: 2026-09-28 12:00:00
 cover: "/assets/images/home-banner.webp"
 ---
 
