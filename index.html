@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>火箭猫的机场推荐博客 - 预览首页 (Index)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --main-color: #01C4B6;
+      --font-color: #34495e;
+      --bg-color: #f7f9fb;
+      --card-bg: #ffffff;
+      --radius: 0.88rem;
+      --max-width: 1400px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--font-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    /* 顶部提示控制栏 */
+    .preview-bar {
+      background: linear-gradient(90deg, #1e293b, #0f172a);
+      color: #f8fafc;
+      padding: 8px 16px;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+      z-index: 1000;
+      position: sticky;
+      top: 0;
+    }
+
+    .preview-bar .status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .preview-bar .dot {
+      width: 10px;
+      height: 10px;
+      background: #10b981;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #10b981;
+    }
+
+    .preview-bar .actions {
+      display: flex;
+      gap: 10px;
+    }
+
+    .preview-bar a {
+      color: #38bdf8;
+      text-decoration: none;
+      background: rgba(255,255,255,0.1);
+      padding: 4px 12px;
+      border-radius: 6px;
+      transition: all 0.2s;
+    }
+
+    .preview-bar a:hover {
+      background: rgba(255,255,255,0.2);
+      color: #fff;
+    }
+
+    /* 博客 Header 导航 */
+    .nav-header {
+      position: relative;
+      width: 100%;
+      height: 38.88rem;
+      background: url('./public/assets/images/home-banner.webp') no-repeat center 60% / cover;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .nav-header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.15);
+    }
+
+    /* 导航菜单条 */
+    .nav-menu {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 3rem;
+      background: rgba(140, 130, 150, 0.35);
+      backdrop-filter: blur(12px);
+      z-index: 10;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+      font-size: 0.95rem;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--main-color);
+    }
+
+    /* Banner 个人信息中心 */
+    .hero-profile {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .hero-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #ffffff;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      object-fit: cover;
+      margin-bottom: 1.2rem;
+      transition: transform 0.3s ease;
+    }
+
+    .hero-avatar:hover {
+      transform: rotate(360deg);
+    }
+
+    .hero-name {
+      font-size: 2.2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      margin-bottom: 0.6rem;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.4);
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      font-weight: 400;
+      letter-spacing: 1px;
+      color: rgba(255, 255, 255, 0.9);
+      text-shadow: 0 1px 5px rgba(0,0,0,0.3);
+      border-right: 2px solid rgba(255,255,255,0.8);
+      padding-right: 4px;
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #fff; }
+    }
+
+    /* 主体布局 */
+    .main-container {
+      max-width: var(--max-width);
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+      display: grid;
+      grid-template-columns: 318px 1fr;
+      gap: 1.8rem;
+    }
+
+    /* 侧边栏 */
+    .sidebar-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      height: fit-content;
+      position: sticky;
+      top: 80px;
+    }
+
+    .sidebar-avatar {
+      width: 90px;
+      height: 90px;
+      border-radius: 20px;
+      object-fit: cover;
+      margin-bottom: 1rem;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    .sidebar-name {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #2c3e50;
+      margin-bottom: 0.3rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .sidebar-name::after {
+      content: '';
+      display: block;
+      width: 30px;
+      height: 3px;
+      background: var(--main-color);
+      border-radius: 2px;
+      margin: 6px auto 0;
+    }
+
+    .sidebar-motto {
+      font-size: 0.88rem;
+      color: #7f8c8d;
+      margin: 0.8rem 0 1.2rem;
+      line-height: 1.5;
+    }
+
+    .social-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+      border: 1px solid #e2e8f0;
+      color: #475569;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      margin-bottom: 1.5rem;
+    }
+
+    .social-btn:hover {
+      background: var(--main-color);
+      color: #fff;
+      border-color: var(--main-color);
+    }
+
+    .stats-bar {
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px solid #f1f5f9;
+      padding-top: 1.2rem;
+    }
+
+    .stat-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .stat-value {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1e293b;
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      margin-top: 2px;
+    }
+
+    /* 文章列表 */
+    .article-feed {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .article-card {
+      background: var(--card-bg);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+    }
+
+    .article-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .article-cover {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+    }
+
+    .article-content {
+      padding: 1.5rem;
+    }
+
+    .article-meta {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .category-badge {
+      color: #8b5cf6;
+      font-weight: 600;
+    }
+
+    .article-date {
+      color: #94a3b8;
+    }
+
+    .article-title {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.8rem;
+      line-height: 1.4;
+      transition: color 0.2s;
+    }
+
+    .article-card:hover .article-title {
+      color: var(--main-color);
+    }
+
+    .article-excerpt {
+      font-size: 0.95rem;
+      color: #64748b;
+      line-height: 1.6;
+    }
+
+    /* 页脚 */
+    footer {
+      text-align: center;
+      padding: 2.5rem 1rem;
+      margin-top: 3rem;
+      color: #94a3b8;
+      font-size: 0.88rem;
+      background: #ffffff;
+      border-top: 1px solid #f1f5f9;
+    }
+
+    @media (max-width: 900px) {
+      .main-container {
+        grid-template-columns: 1fr;
+      }
+      .nav-menu {
+        padding: 0 1rem;
+      }
+      .nav-links {
+        gap: 0.8rem;
+        font-size: 0.85rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 顶部预览提示栏 -->
+  <div class="preview-bar">
+    <div class="status">
+      <div class="dot"></div>
+      <strong>火箭猫博客 - 静态预览页面 (Index)</strong>
+    </div>
+    <div class="actions">
+      <a href="http://localhost:4321/" target="_blank">🚀 启动 Dev 服务预览 (http://localhost:4321)</a>
+      <a href="https://github.com/RainTT777/clash--" target="_blank">🔗 Git 仓库地址</a>
+    </div>
+  </div>
+
+  <!-- Hero Header -->
+  <header class="nav-header">
+    <nav class="nav-menu">
+      <a href="#" class="nav-logo">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        Home
+      </a>
+      <ul class="nav-links">
+        <li><a href="#">朋友 👬</a></li>
+        <li><a href="#">圈子 📡</a></li>
+        <li><a href="#">动态 ⚙️</a></li>
+        <li><a href="#">昔日 📖</a></li>
+        <li><a href="#">留言 💬</a></li>
+        <li><a href="#">关于 👤</a></li>
+        <li><a href="#">🔍 搜索</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-profile">
+      <img class="hero-avatar" src="https://q1.qlogo.cn/g?b=qq&nk=1655466387&s=640" alt="火箭猫头像">
+      <h1 class="hero-name">火箭猫</h1>
+      <div class="hero-subtitle" id="typewriterText">Clash-Shadow|</div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="main-container">
+
+    <!-- 侧边栏个人名片 -->
+    <aside class="sidebar-card">
+      <img class="sidebar-avatar" src="https://q1.qlogo.cn/g?b=qq&nk=1655466387&s=640" alt="火箭猫">
+      <h2 class="sidebar-name">火箭猫</h2>
+      <p class="sidebar-motto">专业机场推荐与 Clash / Shadowrocket 配置指南</p>
+      
+      <a class="social-btn" href="https://github.com/RainTT777/clash--" target="_blank" title="GitHub">
+        <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+      </a>
+
+      <div class="stats-bar">
+        <div class="stat-item">
+          <span class="stat-value">1</span>
+          <span class="stat-label">文章</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">1</span>
+          <span class="stat-label">分类</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-value">4</span>
+          <span class="stat-label">标签</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- 文章 Feed -->
+    <section class="article-feed">
+      <article class="article-card" onclick="location.href='http://localhost:4321/article/clash-shadowrocket-demo'">
+        <img class="article-cover" src="./public/assets/images/home-banner.webp" alt="文章封面">
+        <div class="article-content">
+          <div class="article-meta">
+            <span class="category-badge">机场推荐</span>
+            <span class="article-date">九月 23, 2026</span>
+          </div>
+          <h2 class="article-title">2026 高速稳定机场推荐与 Clash / Shadowrocket 节点配置教程</h2>
+          <p class="article-excerpt">欢迎来到火箭猫的机场推荐博客！本文为您精选优质机场节点，并提供 Clash 与 Shadowrocket 客户端的详细配置指南。</p>
+        </div>
+      </article>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 火箭猫的机场推荐博客 (Clash-Shadowrocket) | 保留所有权利</p>
+  </footer>
+
+  <script>
+    // 打字机交互效果
+    const texts = ["Clash-Shadowrocket 节点推荐", "火箭猫的科技分享"];
+    let count = 0;
+    let index = 0;
+    let currentText = "";
+    let letter = "";
+    let isDeleting = false;
+
+    function type() {
+      if (count === texts.length) {
+        count = 0;
+      }
+      currentText = texts[count];
+
+      if (isDeleting) {
+        letter = currentText.slice(0, --index);
+      } else {
+        letter = currentText.slice(0, ++index);
+      }
+
+      document.getElementById("typewriterText").textContent = letter + "|";
+
+      let typeSpeed = 150;
+      if (isDeleting) {
+        typeSpeed /= 2;
+      }
+
+      if (!isDeleting && letter.length === currentText.length) {
+        typeSpeed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && letter.length === 0) {
+        isDeleting = false;
+        count++;
+        typeSpeed = 500;
+      }
+
+      setTimeout(type, typeSpeed);
+    }
+
+    document.addEventListener("DOMContentLoaded", type);
+  </script>
+
+</body>
+</html>
