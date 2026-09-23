@@ -6,7 +6,7 @@ export default {
     {
       "name": "火箭猫博客",
       "link": "https://clash-shadowrocket.blog",
-      "avatar": "https://q1.qlogo.cn/g?b=qq&nk=1655466387&s=640",
+      "avatar": "/assets/images/avatar.jpg",
       "descr": "专业机场推荐与 Clash / Shadowrocket 配置指南"
     }
   ]

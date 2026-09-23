@@ -212,6 +212,11 @@
     .user-content {
       position: relative;
       z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 100%;
     }
 
     .sidebar-avatar {
@@ -219,9 +224,10 @@
       height: 90px;
       border-radius: 20px;
       object-fit: cover;
-      margin-bottom: 1rem;
+      margin: 0 auto 0.8rem auto;
       box-shadow: 0 4px 16px rgba(0,0,0,0.12);
       transition: transform 0.3s;
+      display: block;
     }
 
     .sidebar-avatar:hover {
@@ -232,9 +238,11 @@
       font-size: 1.35rem;
       font-weight: 700;
       color: #2c3e50;
-      margin-bottom: 0.3rem;
+      margin: 0 auto 0.3rem auto;
       position: relative;
-      display: inline-block;
+      display: block;
+      text-align: center;
+      width: 100%;
     }
 
     .sidebar-name::after {
@@ -831,7 +839,7 @@
     </nav>
 
     <div class="hero-profile">
-      <img class="hero-avatar" src="https://q1.qlogo.cn/g?b=qq&nk=1655466387&s=640" alt="火箭猫头像">
+      <img class="hero-avatar" src="./public/assets/images/avatar.jpg" alt="火箭猫头像">
       <h1 class="hero-name">火箭猫</h1>
       <div class="hero-subtitle" id="typewriterText">Clash-Shadowrocket 节点推荐|</div>
     </div>
@@ -847,7 +855,7 @@
       <section class="vh-aside-item user" id="userCard">
         <canvas id="userCanvas" class="vh-aside-canvas"></canvas>
         <div class="user-content">
-          <img class="sidebar-avatar" src="https://q1.qlogo.cn/g?b=qq&nk=1655466387&s=640" alt="火箭猫">
+          <img class="sidebar-avatar" src="./public/assets/images/avatar.jpg" alt="火箭猫">
           <h2 class="sidebar-name">火箭猫</h2>
           <p class="sidebar-motto">专业机场推荐与 Clash / Shadowrocket 配置指南</p>
           

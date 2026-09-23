@@ -10,7 +10,7 @@ export default {
   // 网站作者
   Author: '火箭猫',
   // 作者头像
-  Avatar: 'https://q1.qlogo.cn/g?b=qq&nk=1655466387&s=640',
+  Avatar: '/assets/images/avatar.jpg',
   // 网站座右铭
   Motto: '专业机场推荐与 Clash / Shadowrocket 配置指南',
   // Cover 网站缩略图
