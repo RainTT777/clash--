@@ -76,11 +76,11 @@ import "./Aside.less";
 		)
 	}
 
-	<!-- 分类块 -->
+	<!-- 机场推荐块 (合并分类与热门标签) -->
 	{
-		AsideShow.CategoriesShow && (
+		(AsideShow.CategoriesShow || AsideShow.TagsShow) && (
 			<section class="vh-aside-item cat">
-				<h3>分类</h3>
+				<h3>机场推荐</h3>
 				<div class="vh-aside-cat">
 					{categories
 						.sort((a: any, b: any) => b.count - a.count)
@@ -91,16 +91,7 @@ import "./Aside.less";
 							</a>
 						))}
 				</div>
-			</section>
-		)
-	}
-
-	<!-- 标签块 -->
-	{
-		AsideShow.TagsShow && (
-			<section class="vh-aside-item tags">
-				<h3>热门标签</h3>
-				<div class="vh-aside-tags">
+				<div class="vh-aside-tags" style="margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px dashed #e2e8f0;">
 					{tags.map(i => (
 						<a href={`/tag/${i[0]}`}>
 							<span>{i[0]}</span>

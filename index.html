@@ -14,9 +14,9 @@
       --vh-bg-color: #f7f9fb;
       --vh-white-color: #ffffff;
       --vh-box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-      --vh-aside-width: 310px;
+      --vh-aside-width: 318px;
       --vh-main-radius: 0.88rem;
-      --vh-main-max-width: 1720px;
+      --vh-main-max-width: 1400px;
     }
 
     * {
@@ -162,12 +162,12 @@
     /* 主体容器 */
     .main-container {
       max-width: var(--vh-main-max-width);
-      width: 96%;
-      margin: 1.8rem auto;
-      padding: 0 0.5rem;
+      width: 100%;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
       display: grid;
       grid-template-columns: var(--vh-aside-width) 1fr;
-      gap: 1.5rem;
+      gap: 1.8rem;
       position: relative;
     }
 
@@ -909,9 +909,9 @@
         </div>
       </section>
 
-      <!-- 2. 分类块 (匹配机场/节点主题) -->
+      <!-- 2. 机场推荐 (合并分类与热门标签) -->
       <section class="vh-aside-item cat">
-        <h3>分类</h3>
+        <h3>机场推荐</h3>
         <div class="vh-aside-cat">
           <a href="#">
             <span>机场推荐</span>
@@ -930,20 +930,13 @@
             <i>1</i>
           </a>
         </div>
-      </section>
-
-      <!-- 3. 热门标签块 (匹配 Clash / Shadowrocket 关键字) -->
-      <section class="vh-aside-item tags">
-        <h3>热门标签</h3>
-        <div class="vh-aside-tags">
+        <div class="vh-aside-tags" style="margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px dashed #e2e8f0;">
           <a href="#">Clash <em>4</em></a>
           <a href="#">Shadowrocket <em>4</em></a>
-          <a href="#">机场推荐 <em>3</em></a>
-          <a href="#">节点配置 <em>3</em></a>
-          <a href="#">Sing-Box <em>2</em></a>
           <a href="#">IEPL专线 <em>2</em></a>
-          <a href="#">V2Ray <em>2</em></a>
+          <a href="#">Sing-Box <em>2</em></a>
           <a href="#">小火箭 <em>2</em></a>
+          <a href="#">V2Ray <em>2</em></a>
           <a href="#">网络加速 <em>1</em></a>
           <a href="#">iOS配置 <em>1</em></a>
         </div>
