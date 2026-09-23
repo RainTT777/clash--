@@ -95,7 +95,7 @@
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 0.8rem;
+      gap: 0.6rem;
       list-style: none;
     }
 
@@ -105,24 +105,25 @@
       font-size: 0.92rem;
       font-weight: 600;
       padding: 6px 14px;
-      border-radius: 8px;
+      border-radius: 20px;
       transition: all 0.25s ease;
       display: inline-flex;
       align-items: center;
+      cursor: pointer;
     }
 
     .nav-links a:hover {
       color: #01C4B6;
-      background: rgba(255, 255, 255, 0.12);
+      background: rgba(1, 196, 182, 0.12);
     }
 
     .nav-links a.active, .nav-links a.nav-pill {
-      background: #2563eb;
+      background: linear-gradient(135deg, #01C4B6, #00b4d8);
       color: #ffffff !important;
       border-radius: 20px;
       padding: 6px 16px;
       font-weight: 700;
-      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+      box-shadow: 0 4px 14px rgba(1, 196, 182, 0.4);
     }
 
     /* Banner 个人信息中心 */
@@ -856,14 +857,14 @@
         Home
       </a>
       <ul class="nav-links">
-        <li><a href="/" class="active nav-pill">机场推荐</a></li>
-        <li><a href="/categories/机场推荐">机场测评</a></li>
-        <li><a href="/categories/客户端教程">客户端教程</a></li>
-        <li><a href="/categories/节点配置">配置教程</a></li>
-        <li><a href="/categories/网络优化">机场百科</a></li>
-        <li><a href="/talking">动态</a></li>
-        <li><a href="/links">友链</a></li>
-        <li><a href="/about">关于我们</a></li>
+        <li><a href="javascript:void(0)" onclick="switchView('home')" id="navHome" class="active nav-pill">机场推荐</a></li>
+        <li><a href="javascript:void(0)" onclick="switchView('ceping')" id="navCeping">机场测评</a></li>
+        <li><a href="javascript:void(0)" onclick="switchView('jiaocheng')" id="navJiaocheng">客户端教程</a></li>
+        <li><a href="javascript:void(0)" onclick="switchView('peizhi')" id="navPeizhi">配置教程</a></li>
+        <li><a href="javascript:void(0)" onclick="switchView('baike')" id="navBaike">机场百科</a></li>
+        <li><a href="/talking" target="_blank" id="navTalking">动态</a></li>
+        <li><a href="/links" target="_blank" id="navLinks">友链</a></li>
+        <li><a href="javascript:void(0)" onclick="switchView('about')" id="navAbout">关于我们</a></li>
       </ul>
     </nav>
 
@@ -913,32 +914,32 @@
       <section class="vh-aside-item cat">
         <h3>机场推荐</h3>
         <div class="vh-aside-cat">
-          <a href="/categories/机场推荐">
+          <a href="javascript:void(0)" onclick="switchView('ceping')">
             <span>机场推荐</span>
             <i>2</i>
           </a>
-          <a href="/categories/客户端教程">
+          <a href="javascript:void(0)" onclick="switchView('jiaocheng')">
             <span>客户端教程</span>
             <i>2</i>
           </a>
-          <a href="/categories/节点配置">
+          <a href="javascript:void(0)" onclick="switchView('peizhi')">
             <span>节点配置</span>
             <i>1</i>
           </a>
-          <a href="/categories/网络优化">
+          <a href="javascript:void(0)" onclick="switchView('baike')">
             <span>网络优化</span>
             <i>1</i>
           </a>
         </div>
         <div class="vh-aside-tags" style="margin-top: 0.8rem; padding-top: 0.8rem; border-top: 1px dashed #e2e8f0;">
-          <a href="/tag/Clash">Clash <em>4</em></a>
-          <a href="/tag/Shadowrocket">Shadowrocket <em>4</em></a>
-          <a href="/tag/IEPL专线">IEPL专线 <em>2</em></a>
-          <a href="/tag/Sing-Box">Sing-Box <em>2</em></a>
-          <a href="/tag/小火箭">小火箭 <em>2</em></a>
-          <a href="/tag/V2Ray">V2Ray <em>2</em></a>
-          <a href="/tag/网络加速">网络加速 <em>1</em></a>
-          <a href="/tag/iOS配置">iOS配置 <em>1</em></a>
+          <a href="javascript:void(0)" onclick="switchView('peizhi')">Clash <em>4</em></a>
+          <a href="javascript:void(0)" onclick="switchView('jiaocheng')">Shadowrocket <em>4</em></a>
+          <a href="javascript:void(0)" onclick="switchView('ceping')">IEPL专线 <em>2</em></a>
+          <a href="javascript:void(0)" onclick="switchView('jiaocheng')">Sing-Box <em>2</em></a>
+          <a href="javascript:void(0)" onclick="switchView('jiaocheng')">小火箭 <em>2</em></a>
+          <a href="javascript:void(0)" onclick="switchView('peizhi')">V2Ray <em>2</em></a>
+          <a href="javascript:void(0)" onclick="switchView('baike')">网络加速 <em>1</em></a>
+          <a href="javascript:void(0)" onclick="switchView('jiaocheng')">iOS配置 <em>1</em></a>
         </div>
       </section>
 
@@ -946,21 +947,21 @@
       <section class="vh-aside-item articles">
         <h3>推荐文章</h3>
         <div class="vh-aside-articles">
-          <a href="/article/iepl-line-review">
+          <a href="javascript:void(0)" onclick="openArticleDetail('2026 全球优质 BGP / IEPL 专线机场对比评测与选购指南', '机场推荐', '2026-09-28')">
             <span>
               <i>1</i>
               <cite class="vh-ellipsis">2026 全球优质 BGP / IEPL 专线机场对比评测与选购指南</cite>
             </span>
             <time>2026-09-28</time>
           </a>
-          <a href="/article/clash-shadowrocket-demo">
+          <a href="javascript:void(0)" onclick="openArticleDetail('2026 高速稳定机场推荐与 Clash / Shadowrocket 节点配置教程', '机场推荐', '2026-09-23')">
             <span>
               <i>2</i>
               <cite class="vh-ellipsis">2026 高速稳定机场推荐与 Clash / Shadowrocket 节点配置教程</cite>
             </span>
             <time>2026-09-23</time>
           </a>
-          <a href="/article/shadowrocket-guide">
+          <a href="javascript:void(0)" onclick="openArticleDetail('Shadowrocket (小火箭) 节点订阅导入与规则分流配置指南', '客户端教程', '2026-09-15')">
             <span>
               <i>3</i>
               <cite class="vh-ellipsis">Shadowrocket (小火箭) 节点订阅导入与规则分流配置指南</cite>
@@ -979,116 +980,116 @@
       <section class="view-home" id="viewHome">
 
         <!-- 卡片 1 (置顶机场测评) -->
-        <article class="grid-article-card sticky-card" onclick="location.href='/article/iepl-line-review'">
+        <article class="grid-article-card sticky-card" data-category="机场推荐" onclick="openArticleDetail('2026 全球优质 BGP / IEPL 专线机场对比评测与选购指南', '机场推荐', '2026-09-28')">
           <div class="grid-card-banner">
             <span class="sticky-badge">📌 置顶评测</span>
             <img src="./public/assets/images/home-banner.webp" alt="IEPL 专线评测">
           </div>
           <div class="grid-card-body">
             <div class="grid-card-meta">
-              <a href="/categories/机场推荐" class="cat-badge">机场推荐</a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('ceping');" class="cat-badge">机场推荐</a>
               <span class="grid-card-date">九月 28, 2026</span>
             </div>
-            <h2 class="grid-card-title"><a href="/article/iepl-line-review">2026 全球优质 BGP / IEPL 专线机场对比评测与选购指南</a></h2>
+            <h2 class="grid-card-title"><a href="javascript:void(0)">2026 全球优质 BGP / IEPL 专线机场对比评测与选购指南</a></h2>
             <p class="grid-card-excerpt">针对 4K 视频超清流畅播放、低延迟联机游戏与日常稳定上网，IEPL 专线机场是高品质用户的首选对比评测。</p>
             <div class="grid-card-tags">
-              <a href="/tag/IEPL专线"><span>IEPL专线</span></a>
-              <a href="/tag/机场推荐"><span>机场推荐</span></a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('ceping');"><span>IEPL专线</span></a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('ceping');"><span>机场推荐</span></a>
             </div>
           </div>
         </article>
 
         <!-- 卡片 2 -->
-        <article class="grid-article-card" onclick="location.href='/article/clash-shadowrocket-demo'">
+        <article class="grid-article-card" data-category="机场推荐" onclick="openArticleDetail('2026 高速稳定机场推荐与 Clash / Shadowrocket 节点配置教程', '机场推荐', '2026-09-23')">
           <div class="grid-card-banner">
             <img src="./public/assets/images/home-banner.webp" alt="机场推荐">
           </div>
           <div class="grid-card-body">
             <div class="grid-card-meta">
-              <a href="/categories/机场推荐" class="cat-badge">机场推荐</a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('ceping');" class="cat-badge">机场推荐</a>
               <span class="grid-card-date">九月 23, 2026</span>
             </div>
-            <h2 class="grid-card-title"><a href="/article/clash-shadowrocket-demo">2026 高速稳定机场推荐与 Clash / Shadowrocket 节点配置教程</a></h2>
+            <h2 class="grid-card-title"><a href="javascript:void(0)">2026 高速稳定机场推荐与 Clash / Shadowrocket 节点配置教程</a></h2>
             <p class="grid-card-excerpt">欢迎来到火箭猫的机场推荐博客！本文为您精选优质机场节点，并提供 Clash 与 Shadowrocket 客户端的详细配置指南。</p>
             <div class="grid-card-tags">
-              <a href="/tag/Clash"><span>Clash</span></a>
-              <a href="/tag/Shadowrocket"><span>Shadowrocket</span></a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('peizhi');"><span>Clash</span></a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('jiaocheng');"><span>Shadowrocket</span></a>
             </div>
           </div>
         </article>
 
         <!-- 卡片 3 -->
-        <article class="grid-article-card" onclick="location.href='/article/shadowrocket-guide'">
+        <article class="grid-article-card" data-category="客户端教程" onclick="openArticleDetail('Shadowrocket (小火箭) 节点订阅导入与规则分流配置指南', '客户端教程', '2026-09-15')">
           <div class="grid-card-banner">
             <img src="./public/assets/images/home-banner.webp" alt="Shadowrocket 教程">
           </div>
           <div class="grid-card-body">
             <div class="grid-card-meta">
-              <a href="/categories/客户端教程" class="cat-badge cat-Tutorial">客户端教程</a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('jiaocheng');" class="cat-badge cat-Tutorial">客户端教程</a>
               <span class="grid-card-date">九月 15, 2026</span>
             </div>
-            <h2 class="grid-card-title"><a href="/article/shadowrocket-guide">Shadowrocket (小火箭) 节点订阅导入与规则分流配置指南</a></h2>
+            <h2 class="grid-card-title"><a href="javascript:void(0)">Shadowrocket (小火箭) 节点订阅导入与规则分流配置指南</a></h2>
             <p class="grid-card-excerpt">小火箭 (Shadowrocket) 是 iOS 平台上最为强大的网络代理客户端之一。本文提供完整的订阅导入、分流规则配置及节点选优教程。</p>
             <div class="grid-card-tags">
-              <a href="/tag/Shadowrocket"><span>Shadowrocket</span></a>
-              <a href="/tag/iOS配置"><span>iOS配置</span></a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('jiaocheng');"><span>Shadowrocket</span></a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('jiaocheng');"><span>iOS配置</span></a>
             </div>
           </div>
         </article>
 
         <!-- 卡片 4 -->
-        <article class="grid-article-card" onclick="location.href='/article/clash-verge-guide'">
+        <article class="grid-article-card" data-category="节点配置" onclick="openArticleDetail('Clash Verge / Clash for Windows 节点选优与分流规则指南', '节点配置', '2026-09-10')">
           <div class="grid-card-banner">
             <img src="./public/assets/images/home-banner.webp" alt="Clash Verge 配置">
           </div>
           <div class="grid-card-body">
             <div class="grid-card-meta">
-              <a href="/categories/节点配置" class="cat-badge cat-Config">节点配置</a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('peizhi');" class="cat-badge cat-Config">节点配置</a>
               <span class="grid-card-date">九月 10, 2026</span>
             </div>
-            <h2 class="grid-card-title"><a href="/article/clash-verge-guide">Clash Verge / Clash for Windows 节点选优与分流规则指南</a></h2>
+            <h2 class="grid-card-title"><a href="javascript:void(0)">Clash Verge / Clash for Windows 节点选优与分流规则指南</a></h2>
             <p class="grid-card-excerpt">Clash 系列客户端以强大的规则分流与多协议支持著称。本文详细讲解节点导入、Tun 模式开启与代理规则配置。</p>
             <div class="grid-card-tags">
-              <a href="/tag/Clash"><span>Clash</span></a>
-              <a href="/tag/网络优化"><span>网络优化</span></a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('peizhi');"><span>Clash</span></a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('baike');"><span>网络优化</span></a>
             </div>
           </div>
         </article>
 
         <!-- 卡片 5 -->
-        <article class="grid-article-card" onclick="location.href='/article/singbox-guide'">
+        <article class="grid-article-card" data-category="客户端教程" onclick="openArticleDetail('Sing-Box 跨平台通用客户端一键订阅与高级分流设置', '客户端教程', '2026-08-28')">
           <div class="grid-card-banner">
             <img src="./public/assets/images/home-banner.webp" alt="Sing-Box 教程">
           </div>
           <div class="grid-card-body">
             <div class="grid-card-meta">
-              <a href="/categories/客户端教程" class="cat-badge cat-Tutorial">客户端教程</a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('jiaocheng');" class="cat-badge cat-Tutorial">客户端教程</a>
               <span class="grid-card-date">八月 28, 2026</span>
             </div>
-            <h2 class="grid-card-title"><a href="/article/singbox-guide">Sing-Box 跨平台通用客户端一键订阅与高级分流设置</a></h2>
+            <h2 class="grid-card-title"><a href="javascript:void(0)">Sing-Box 跨平台通用客户端一键订阅与高级分流设置</a></h2>
             <p class="grid-card-excerpt">Sing-Box 作为下一代网络通用代理工具，内存占用极低且支持最新的 Hysteria2 与 VLESS 协议。</p>
             <div class="grid-card-tags">
-              <a href="/tag/Sing-Box"><span>Sing-Box</span></a>
-              <a href="/tag/IEPL专线"><span>IEPL专线</span></a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('jiaocheng');"><span>Sing-Box</span></a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('ceping');"><span>IEPL专线</span></a>
             </div>
           </div>
         </article>
 
         <!-- 卡片 6 -->
-        <article class="grid-article-card" onclick="location.href='/article/dns-troubleshooting'">
+        <article class="grid-article-card" data-category="网络优化" onclick="openArticleDetail('常见机场节点连接超时与 DNS 污染问题排查解决指南', '网络优化', '2026-08-01')">
           <div class="grid-card-banner">
             <img src="./public/assets/images/home-banner.webp" alt="排查解决">
           </div>
           <div class="grid-card-body">
             <div class="grid-card-meta">
-              <a href="/categories/网络优化" class="cat-badge cat-Opt">网络优化</a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('baike');" class="cat-badge cat-Opt">网络优化</a>
               <span class="grid-card-date">八月 01, 2026</span>
             </div>
-            <h2 class="grid-card-title"><a href="/article/dns-troubleshooting">常见机场节点连接超时与 DNS 污染问题排查解决指南</a></h2>
+            <h2 class="grid-card-title"><a href="javascript:void(0)">常见机场节点连接超时与 DNS 污染问题排查解决指南</a></h2>
             <p class="grid-card-excerpt">遇到节点连接超时、网页打不开或订阅失败？本文梳理最全的排查步骤与解决方案。</p>
             <div class="grid-card-tags">
-              <a href="/tag/网络优化"><span>网络优化</span></a>
-              <a href="/tag/小火箭"><span>小火箭</span></a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('baike');"><span>网络优化</span></a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('jiaocheng');"><span>小火箭</span></a>
             </div>
           </div>
         </article>
@@ -1157,6 +1158,38 @@
         </div>
       </section>
 
+      <!-- 视图 3: 文章详情页 (方便在 preview 界面直接查看与填充内容) -->
+      <section class="view-article" id="viewArticle" style="display: none;">
+        <div class="about-card">
+          <div class="article-header" style="margin-bottom: 1.5rem;">
+            <span class="cat-badge" id="artDetailCat" style="margin-bottom: 0.5rem; display: inline-block;">机场推荐</span>
+            <h1 class="article-title" id="artDetailTitle" style="font-size: 1.6rem; font-weight: 700; color: #1e293b; margin: 0.5rem 0 0.8rem 0;">2026 全球优质 BGP / IEPL 专线机场对比评测与选购指南</h1>
+            <div class="article-meta-info" style="font-size: 0.85rem; color: #64748b; display: flex; gap: 1.2rem;">
+              <span>📅 日期：<time id="artDetailDate">2026-09-28</time></span>
+              <span>👤 作者：火箭猫</span>
+              <span>🏷️ 主题：BGP / IEPL 专线</span>
+            </div>
+          </div>
+
+          <div class="article-content" id="artDetailContent" style="line-height: 1.8; color: #334155;">
+            <div class="vh-note note-success" style="background: #e6fffa; border-left: 4px solid #01C4B6; padding: 1rem; border-radius: 8px; margin-bottom: 1.5rem;">
+              <strong>🎉 【新文章页面预留区】内容充实与编辑说明：</strong><br>
+              您可以方便地在此处直接增加与修改最新的机场评测、选购建议及 Clash / Shadowrocket (小火箭) 节点配置指南！
+            </div>
+
+            <h3 style="font-size: 1.2rem; color: #1e293b; margin: 1.2rem 0 0.6rem 0;">🚀 1. 核心专线质量与晚高峰速率测速</h3>
+            <p>本站精选的机场服务商均配备入口 BGP 多线中转与出口专线隧道。针对 4K 视频超清流畅播放、低延迟联机游戏与日常稳定上网，IEPL 专线机场是高品质用户的首选，绝不拥堵。</p>
+
+            <h3 style="font-size: 1.2rem; color: #1e293b; margin: 1.2rem 0 0.6rem 0;">📱 2. 客户端一键配置引导</h3>
+            <p>1. 复制机场提供的订阅链接。<br>2. 打开 Shadowrocket / Clash Verge 客户端，进入订阅设置添加链接。<br>3. 一键更新节点并选择最佳延迟节点即可完成开启！</p>
+          </div>
+
+          <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #f1f5f9;">
+            <button onclick="switchView('home')" style="background: var(--vh-main-color); color: #fff; border: none; padding: 8px 18px; border-radius: 8px; font-weight: 600; cursor: pointer;">← 返回首页文章列表</button>
+          </div>
+        </div>
+      </section>
+
     </div>
 
   </main>
@@ -1182,21 +1215,60 @@
     function switchView(viewName) {
       const viewHome = document.getElementById('viewHome');
       const viewAbout = document.getElementById('viewAbout');
-      const navHome = document.getElementById('navHome');
-      const navAbout = document.getElementById('navAbout');
+      const viewArticle = document.getElementById('viewArticle');
+      
+      const navIds = ['navHome', 'navCeping', 'navJiaocheng', 'navPeizhi', 'navBaike', 'navAbout'];
+      navIds.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) el.classList.remove('active', 'nav-pill');
+      });
+
+      if (viewHome) viewHome.style.display = 'none';
+      if (viewAbout) viewAbout.style.display = 'none';
+      if (viewArticle) viewArticle.style.display = 'none';
+
+      const cards = document.querySelectorAll('.grid-article-card');
 
       if (viewName === 'about') {
-        viewHome.style.display = 'none';
-        viewAbout.style.display = 'flex';
-        navHome.classList.remove('active');
-        navAbout.classList.add('active');
+        if (viewAbout) viewAbout.style.display = 'flex';
+        document.getElementById('navAbout')?.classList.add('active', 'nav-pill');
+      } else if (viewName === 'article') {
+        if (viewArticle) viewArticle.style.display = 'block';
       } else {
-        viewHome.style.display = 'grid';
-        viewAbout.style.display = 'none';
-        navHome.classList.add('active');
-        navAbout.classList.remove('active');
+        if (viewHome) viewHome.style.display = 'grid';
+        let targetCat = '';
+        if (viewName === 'ceping') {
+          targetCat = '机场推荐';
+          document.getElementById('navCeping')?.classList.add('active', 'nav-pill');
+        } else if (viewName === 'jiaocheng') {
+          targetCat = '客户端教程';
+          document.getElementById('navJiaocheng')?.classList.add('active', 'nav-pill');
+        } else if (viewName === 'peizhi') {
+          targetCat = '节点配置';
+          document.getElementById('navPeizhi')?.classList.add('active', 'nav-pill');
+        } else if (viewName === 'baike') {
+          targetCat = '网络优化';
+          document.getElementById('navBaike')?.classList.add('active', 'nav-pill');
+        } else {
+          document.getElementById('navHome')?.classList.add('active', 'nav-pill');
+        }
+
+        cards.forEach(card => {
+          if (!targetCat || card.dataset.category === targetCat) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        });
       }
       window.scrollTo({ top: 380, behavior: 'smooth' });
+    }
+
+    function openArticleDetail(title, cat, date) {
+      document.getElementById('artDetailTitle').textContent = title;
+      document.getElementById('artDetailCat').textContent = cat;
+      document.getElementById('artDetailDate').textContent = date;
+      switchView('article');
     }
 
     const texts = ["Clash-Shadowrocket 节点推荐", "火箭猫的机场分享"];
