@@ -7,7 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./public/assets/font/index.css">
   <style>
+    @import url('./public/assets/font/index.css');
+
     :root {
       --vh-main-color: #01C4B6;
       --vh-font-color: #34495e;
@@ -23,10 +26,13 @@
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
     }
 
     body {
-      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      font-family: 'HarmonyOS Sans SC', -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Source Han Sans SC", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
       background-color: var(--vh-bg-color);
       color: var(--vh-font-color);
       min-height: 100vh;
@@ -35,6 +41,8 @@
       background-image: radial-gradient(#e2e8f0 1.2px, transparent 1.2px);
       background-size: 24px 24px;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     /* 博客 Header 导航与 Banner */
@@ -548,6 +556,7 @@
     .cat-badge {
       font-size: 0.85rem;
       font-weight: 700;
+      letter-spacing: 0.3px;
       background: linear-gradient(118deg, #01C4B6, #3b82f6);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -572,18 +581,36 @@
     }
 
     .grid-card-date {
-      font-size: 0.8rem;
+      font-size: 0.82rem;
       color: #94a3b8;
+      font-weight: 500;
+    }
+
+    .grid-card-title {
+      font-size: 1.08rem;
+      font-weight: 700;
+      line-height: 1.5;
+      margin-bottom: 0.6rem;
+      letter-spacing: 0.2px;
+      color: #1e293b;
     }
 
     .grid-card-title a {
-      color: inherit;
+      color: #1e293b;
       text-decoration: none;
       transition: color 0.2s ease;
     }
 
     .grid-card-title a:hover {
       color: var(--vh-main-color);
+    }
+
+    .grid-card-excerpt {
+      font-size: 0.88rem;
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 0.88rem;
+      letter-spacing: 0.2px;
     }
 
     .grid-card-tags {
@@ -980,21 +1007,21 @@
       <section class="view-home" id="viewHome">
 
         <!-- 卡片 1 (置顶机场测评) -->
-        <article class="grid-article-card sticky-card" data-category="机场推荐" onclick="openArticleDetail('2026 全球优质 BGP / IEPL 专线机场对比评测与选购指南', '机场推荐', '2026-09-28')">
+        <article class="grid-article-card sticky-card" data-category="机场推荐" onclick="openArticleDetail('2026 高性价比机场推荐 稳定 | 全球优质 BGP / IEPL 专线选购指南', '机场推荐', '2026-09-28')">
           <div class="grid-card-banner">
             <span class="sticky-badge">📌 置顶评测</span>
-            <img src="./public/assets/images/home-banner.webp" alt="IEPL 专线评测">
+            <img src="./assets/images/recommend-banner.png" alt="高性价比机场推荐 稳定">
           </div>
           <div class="grid-card-body">
             <div class="grid-card-meta">
               <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('ceping');" class="cat-badge">机场推荐</a>
               <span class="grid-card-date">九月 28, 2026</span>
             </div>
-            <h2 class="grid-card-title"><a href="javascript:void(0)">2026 全球优质 BGP / IEPL 专线机场对比评测与选购指南</a></h2>
-            <p class="grid-card-excerpt">针对 4K 视频超清流畅播放、低延迟联机游戏与日常稳定上网，IEPL 专线机场是高品质用户的首选对比评测。</p>
+            <h2 class="grid-card-title"><a href="javascript:void(0)">2026 高性价比机场推荐 稳定 | 全球优质 BGP / IEPL 专线选购指南</a></h2>
+            <p class="grid-card-excerpt">针对 4K 视频超清流畅播放、低延迟联机游戏与日常稳定上网，精选高性价比稳定 IEPL 专线机场对比评测。</p>
             <div class="grid-card-tags">
-              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('ceping');"><span>IEPL专线</span></a>
-              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('ceping');"><span>机场推荐</span></a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('ceping');"><span>高性价比机场推荐</span></a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('ceping');"><span>稳定</span></a>
             </div>
           </div>
         </article>
@@ -1002,7 +1029,7 @@
         <!-- 卡片 2 -->
         <article class="grid-article-card" data-category="机场推荐" onclick="openArticleDetail('2026 高速稳定机场推荐与 Clash / Shadowrocket 节点配置教程', '机场推荐', '2026-09-23')">
           <div class="grid-card-banner">
-            <img src="./public/assets/images/home-banner.webp" alt="机场推荐">
+            <img src="./assets/images/home-banner.webp" alt="机场推荐">
           </div>
           <div class="grid-card-body">
             <div class="grid-card-meta">
@@ -1018,18 +1045,18 @@
           </div>
         </article>
 
-        <!-- 卡片 3 -->
-        <article class="grid-article-card" data-category="客户端教程" onclick="openArticleDetail('Shadowrocket (小火箭) 节点订阅导入与规则分流配置指南', '客户端教程', '2026-09-15')">
+        <!-- 卡片 3 (Shadowrocket 深度教程) -->
+        <article class="grid-article-card" data-category="客户端教程" onclick="openArticleDetail('2026 Shadowrocket (小火箭) iOS 客户端深度使用教程：从外区 Apple ID 获取、节点订阅导入到高级规则分流与测速优选', '客户端教程', '2026-09-26')">
           <div class="grid-card-banner">
-            <img src="./public/assets/images/home-banner.webp" alt="Shadowrocket 教程">
+            <img src="./assets/images/shadowrocket-banner.png" alt="Shadowrocket 小火箭深度教程">
           </div>
           <div class="grid-card-body">
             <div class="grid-card-meta">
               <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('jiaocheng');" class="cat-badge cat-Tutorial">客户端教程</a>
-              <span class="grid-card-date">九月 15, 2026</span>
+              <span class="grid-card-date">九月 26, 2026</span>
             </div>
-            <h2 class="grid-card-title"><a href="javascript:void(0)">Shadowrocket (小火箭) 节点订阅导入与规则分流配置指南</a></h2>
-            <p class="grid-card-excerpt">小火箭 (Shadowrocket) 是 iOS 平台上最为强大的网络代理客户端之一。本文提供完整的订阅导入、分流规则配置及节点选优教程。</p>
+            <h2 class="grid-card-title"><a href="javascript:void(0)">2026 Shadowrocket (小火箭) iOS 客户端深度使用教程：从外区 Apple ID 获取、节点订阅导入到高级规则分流与测速优选</a></h2>
+            <p class="grid-card-excerpt">小火箭 (Shadowrocket) 是 iOS 平台上最强大的智能代理工具，具备 5000 万全球用户验证。本文提供外区 ID 获取、订阅导入、规则分流及下载扩展完整指南。</p>
             <div class="grid-card-tags">
               <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('jiaocheng');"><span>Shadowrocket</span></a>
               <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('jiaocheng');"><span>iOS配置</span></a>
@@ -1037,21 +1064,21 @@
           </div>
         </article>
 
-        <!-- 卡片 4 -->
-        <article class="grid-article-card" data-category="节点配置" onclick="openArticleDetail('Clash Verge / Clash for Windows 节点选优与分流规则指南', '节点配置', '2026-09-10')">
+        <!-- 卡片 4 (Clash 深度教程) -->
+        <article class="grid-article-card" data-category="节点配置" onclick="openArticleDetail('2026 Clash 全平台全流程深度使用教程：从零入门到节点选优、规则分流与 Web Dashboard 面板高级配置', '节点配置', '2026-09-26')">
           <div class="grid-card-banner">
-            <img src="./public/assets/images/home-banner.webp" alt="Clash Verge 配置">
+            <img src="./assets/images/clash-banner.png" alt="Clash 全平台深度教程">
           </div>
           <div class="grid-card-body">
             <div class="grid-card-meta">
               <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('peizhi');" class="cat-badge cat-Config">节点配置</a>
-              <span class="grid-card-date">九月 10, 2026</span>
+              <span class="grid-card-date">九月 26, 2026</span>
             </div>
-            <h2 class="grid-card-title"><a href="javascript:void(0)">Clash Verge / Clash for Windows 节点选优与分流规则指南</a></h2>
-            <p class="grid-card-excerpt">Clash 系列客户端以强大的规则分流与多协议支持著称。本文详细讲解节点导入、Tun 模式开启与代理规则配置。</p>
+            <h2 class="grid-card-title"><a href="javascript:void(0)">2026 Clash 全平台全流程深度使用教程：从零入门到节点选优、规则分流与 Web Dashboard 面板高级配置</a></h2>
+            <p class="grid-card-excerpt">参考 ClashFAQ 官方标准，手把手带您掌握 Clash 全平台安装、订阅导入、TUN 模式开启、DoH 加密 DNS 及 Web Dashboard 控制面板深度玩法。</p>
             <div class="grid-card-tags">
               <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('peizhi');"><span>Clash</span></a>
-              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('baike');"><span>网络优化</span></a>
+              <a href="javascript:void(0)" onclick="event.stopPropagation(); switchView('peizhi');"><span>Mihomo</span></a>
             </div>
           </div>
         </article>
