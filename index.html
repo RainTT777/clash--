@@ -500,27 +500,68 @@
     }
 
     .sticky-card {
+      grid-column: 1 / -1; /* 置顶板块单独占满整行 */
+      display: grid;
+      grid-template-columns: 1.18fr 1fr; /* 左右放大排版 */
       position: relative;
       border: 1.5px solid rgba(1, 196, 182, 0.45) !important;
-      box-shadow: 0 8px 24px rgba(1, 196, 182, 0.12) !important;
+      box-shadow: 0 10px 30px rgba(1, 196, 182, 0.15) !important;
+      min-height: 18.5rem;
+      border-radius: var(--vh-main-radius);
+      overflow: hidden;
+      background: #ffffff;
     }
 
     .sticky-card:hover {
       border-color: var(--vh-main-color) !important;
-      box-shadow: 0 14px 32px rgba(1, 196, 182, 0.22) !important;
+      box-shadow: 0 16px 36px rgba(1, 196, 182, 0.25) !important;
+    }
+
+    .sticky-card .grid-card-banner {
+      width: 100%;
+      height: 100%;
+      min-height: 18.5rem;
+    }
+
+    .sticky-card .grid-card-body {
+      padding: 2rem 2.2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .sticky-card .grid-card-title {
+      font-size: 1.38rem;
+      font-weight: 700;
+      line-height: 1.48;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.3px;
+      color: #0f172a;
+    }
+
+    .sticky-card .grid-card-excerpt {
+      font-size: 0.96rem;
+      color: #475569;
+      line-height: 1.65;
+      margin-bottom: 1.2rem;
+      letter-spacing: 0.2px;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .sticky-badge {
       position: absolute;
-      top: 10px;
-      left: 10px;
+      top: 12px;
+      left: 12px;
       background: linear-gradient(135deg, #01C4B6, #00b4d8);
       color: #ffffff;
-      font-size: 0.76rem;
+      font-size: 0.82rem;
       font-weight: 700;
-      padding: 4px 10px;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(1, 196, 182, 0.4);
+      padding: 5px 14px;
+      border-radius: 20px;
+      box-shadow: 0 4px 14px rgba(1, 196, 182, 0.45);
       z-index: 5;
       letter-spacing: 0.5px;
       display: inline-flex;
