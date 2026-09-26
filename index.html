@@ -501,12 +501,11 @@
 
     .sticky-card {
       grid-column: 1 / -1; /* 置顶板块单独占满整行 */
-      display: grid;
-      grid-template-columns: 1.18fr 1fr; /* 左右放大排版 */
+      display: flex;
+      flex-direction: column; /* 上下结构排版 */
       position: relative;
       border: 1.5px solid rgba(1, 196, 182, 0.45) !important;
       box-shadow: 0 10px 30px rgba(1, 196, 182, 0.15) !important;
-      min-height: 18.5rem;
       border-radius: var(--vh-main-radius);
       overflow: hidden;
       background: #ffffff;
@@ -519,54 +518,37 @@
 
     .sticky-card .grid-card-banner {
       width: 100%;
-      height: 100%;
-      min-height: 18.5rem;
+      height: 16.5rem;
+      min-height: 16.5rem;
+      position: relative;
+      overflow: hidden;
     }
 
     .sticky-card .grid-card-body {
-      padding: 2rem 2.2rem;
+      padding: 1.5rem 1.8rem;
       display: flex;
       flex-direction: column;
-      justify-content: center;
     }
 
     .sticky-card .grid-card-title {
-      font-size: 1.38rem;
+      font-size: 1.32rem;
       font-weight: 700;
       line-height: 1.48;
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.68rem;
       letter-spacing: 0.3px;
       color: #0f172a;
     }
 
     .sticky-card .grid-card-excerpt {
-      font-size: 0.96rem;
+      font-size: 0.92rem;
       color: #475569;
-      line-height: 1.65;
-      margin-bottom: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
       letter-spacing: 0.2px;
       display: -webkit-box;
-      -webkit-line-clamp: 3;
+      -webkit-line-clamp: 2;
       -webkit-box-orient: vertical;
       overflow: hidden;
-    }
-
-    .sticky-badge {
-      position: absolute;
-      top: 12px;
-      left: 12px;
-      background: linear-gradient(135deg, #01C4B6, #00b4d8);
-      color: #ffffff;
-      font-size: 0.82rem;
-      font-weight: 700;
-      padding: 5px 14px;
-      border-radius: 20px;
-      box-shadow: 0 4px 14px rgba(1, 196, 182, 0.45);
-      z-index: 5;
-      letter-spacing: 0.5px;
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
     }
 
     .grid-card-banner img {
@@ -1050,7 +1032,6 @@
         <!-- 卡片 1 (置顶机场测评) -->
         <article class="grid-article-card sticky-card" data-category="机场推荐" onclick="openArticleDetail('2026 高性价比机场推荐 稳定 | 全球优质 BGP / IEPL 专线选购指南', '机场推荐', '2026-09-28')">
           <div class="grid-card-banner">
-            <span class="sticky-badge">📌 置顶评测</span>
             <img src="./public/assets/images/recommend-banner.png" alt="高性价比机场推荐 稳定">
           </div>
           <div class="grid-card-body">
