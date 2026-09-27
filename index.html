@@ -1207,10 +1207,10 @@
       <section class="view-article" id="viewArticle" style="display: none;">
         <div class="about-card">
           <div class="article-header" style="margin-bottom: 1.5rem;">
-            <span class="cat-badge" id="artDetailCat" style="margin-bottom: 0.5rem; display: inline-block;">机场推荐</span>
-            <h1 class="article-title" id="artDetailTitle" style="font-size: 1.6rem; font-weight: 700; color: #1e293b; margin: 0.5rem 0 0.8rem 0;">2026 全球优质 BGP / IEPL 专线机场对比评测与选购指南</h1>
+            <span class="cat-badge" id="artDetailCat" style="margin-bottom: 0.5rem; display: inline-block;">节点配置</span>
+            <h1 class="article-title" id="artDetailTitle" style="font-size: 1.6rem; font-weight: 700; color: #1e293b; margin: 0.5rem 0 0.8rem 0;">2026 Clash 全平台全流程深度使用教程：从零入门到节点选优、规则分流与 Web Dashboard 面板高级配置</h1>
             <div class="article-meta-info" style="font-size: 0.85rem; color: #64748b; display: flex; gap: 1.2rem;">
-              <span>📅 日期：<time id="artDetailDate">2026-09-28</time></span>
+              <span>📅 日期：<time id="artDetailDate">2026-09-26</time></span>
               <span>👤 作者：火箭猫</span>
               <span>🏷️ 主题：BGP / IEPL 专线</span>
             </div>
@@ -1219,7 +1219,7 @@
           <div class="article-content" id="artDetailContent" style="line-height: 1.8; color: #334155;">
             <!-- 置顶大图 -->
             <div style="width: 100%; overflow: hidden; border-radius: 12px; margin-bottom: 1.8rem; box-shadow: 0 6px 20px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;">
-              <img src="./public/assets/images/recommend-banner.png" alt="翻墙机场推荐 火箭猫" style="width: 100%; display: block; object-fit: cover;">
+              <img src="./public/assets/images/clash-banner.png" alt="Clash 使用教程 火箭猫" style="width: 100%; display: block; object-fit: cover;">
             </div>
 
             <div class="vh-note note-success" style="background: #e6fffa; border-left: 4px solid #01C4B6; padding: 1rem 1.2rem; border-radius: 8px; margin-bottom: 1.8rem;">
@@ -1301,11 +1301,224 @@
               </table>
             </div>
 
-            <h3 style="font-size: 1.2rem; color: #1e293b; margin: 1.5rem 0 0.6rem 0; font-weight: 700;">🚀 1. 核心专线质量与晚高峰速率测速</h3>
-            <p>本站精选的机场服务商均配备入口 BGP 多线中转与出口专线隧道。针对 4K 视频超清流畅播放、低延迟联机游戏与日常稳定上网，IEPL 专线机场是高品质用户的首选，绝不拥堵。</p>
+            <!-- 3000字+ Clash 全平台深度使用教程与 FAQ -->
+            <div class="clash-article-full-body" style="margin-top: 2rem;">
+              
+              <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.2rem; margin-bottom: 2rem;">
+                <h3 style="font-size: 1.1rem; color: #0f172a; margin-top: 0; margin-bottom: 0.8rem; font-weight: 700;">⚡ 目录索引 (Quick Navigation)</h3>
+                <ul style="margin: 0; padding-left: 1.2rem; line-height: 1.8; color: #01C4B6;">
+                  <li><a href="#section-quickstart" style="color: #01C4B6; text-decoration: none;">⚡ 三步极速上手 Clash</a></li>
+                  <li><a href="#section-ch1" style="color: #01C4B6; text-decoration: none;">💡 第一章：Clash 架构全景解析与核心优势</a></li>
+                  <li><a href="#section-ch2" style="color: #01C4B6; text-decoration: none;">💻 第二章：全平台客户端安装与全流程上手指南</a></li>
+                  <li><a href="#section-ch3" style="color: #01C4B6; text-decoration: none;">📦 第三章：订阅链接机制与 YAML 格式深度剖析</a></li>
+                  <li><a href="#section-ch4" style="color: #01C4B6; text-decoration: none;">🔀 第四章：三大代理模式与分流路由引擎详解</a></li>
+                  <li><a href="#section-ch5" style="color: #01C4B6; text-decoration: none;">🛡️ 第五章：DNS 防污染与 DoH/DoT 加密配置</a></li>
+                  <li><a href="#section-ch6" style="color: #01C4B6; text-decoration: none;">🌐 第六章：Web Dashboard API 控制器极客部署</a></li>
+                  <li><a href="#section-ch7" style="color: #01C4B6; text-decoration: none;">🎮 第七章：TUN 模式接管全量流量与游戏低延迟优化</a></li>
+                  <li><a href="#section-ch8" style="color: #01C4B6; text-decoration: none;">❓ 第八章：常见故障排查手册与 FAQ 问答集</a></li>
+                </ul>
+              </div>
 
-            <h3 style="font-size: 1.2rem; color: #1e293b; margin: 1.5rem 0 0.6rem 0; font-weight: 700;">📱 2. 客户端一键配置引导</h3>
-            <p>1. 复制机场提供的订阅链接。<br>2. 打开 Shadowrocket / Clash Verge 客户端，进入订阅设置添加链接。<br>3. 一键更新节点并选择最佳延迟节点即可完成开启！</p>
+              <!-- 三步上手 -->
+              <h2 id="section-quickstart" style="font-size: 1.35rem; color: #0f172a; margin: 2rem 0 1rem 0; font-weight: 700; border-bottom: 2px solid #01C4B6; padding-bottom: 0.5rem;">⚡ 三步极速上手 Clash</h2>
+              <p>无需繁琐配置，跟随以下三个核心步骤，即可从零开始快速上手 Clash，享受极速流畅的网络代理体验：</p>
+              <ol style="line-height: 2; padding-left: 1.2rem; color: #334155;">
+                <li><strong>下载并安装对应平台的 Clash 客户端</strong>：根据您使用的操作系统（Windows、macOS、Android、iOS 或 Linux），前往获取对应的 Clash 图形化客户端。推荐 Windows / macOS 用户选择 <strong>Clash Verge Rev</strong>，Android 用户选择 <strong>Clash Meta for Android</strong>，iOS 用户选择 <strong>Shadowrocket (小火箭)</strong>。</li>
+                <li><strong>在「配置」页面粘贴您的代理订阅链接</strong>：打开已安装的 Clash 客户端，找到「配置」（Profiles）或「订阅」菜单，将您向代理服务商购买后获得的订阅链接粘贴进去，点击下载/更新，客户端将自动拉取并解析所有节点信息。</li>
+                <li><strong>切换至「规则」模式并开启代理</strong>：进入「代理」（Proxies）页面，在顶部模式选择处选择 <strong>「规则」（Rule）模式</strong>——此模式会根据预设规则自动判断哪些流量走代理、哪些直连。最后开启系统代理或 TUN 开关即可。</li>
+              </ol>
+
+              <!-- 第一章 -->
+              <h2 id="section-ch1" style="font-size: 1.35rem; color: #0f172a; margin: 2rem 0 1rem 0; font-weight: 700; border-bottom: 2px solid #01C4B6; padding-bottom: 0.5rem;">💡 第一章：Clash 架构全景解析与核心优势</h2>
+              <p>Clash 底层完全由 Go 语言编写，充分利用了 Go 的 goroutine 轻量级并发模型，在大流量与高并发连接场景下依然能够保持极低的 CPU 与内存开销。</p>
+              
+              <h3 style="font-size: 1.15rem; color: #1e293b; margin: 1.2rem 0 0.6rem 0; font-weight: 700;">1.1 Clash 的核心设计理念</h3>
+              <p>传统 VPN 工具通常采用全盘重定向（Full-Tunneling）模式，无论访问国内百度还是国外 GitHub，所有网络流量均强制通过单一代理网关转收。这种模式存在明显的弊端：访问国内网站延迟陡增、视频加载卡顿、带宽资源浪费严重。</p>
+              <p>Clash 则是典型的 <strong>规则驱动型代理引擎（Rule-Based Proxy Engine）</strong>。它在操作系统与网络出口之间建立了一个精细化的分流路由层。当客户端发起网络请求时，Clash 能够在毫秒级时间内检测目标域名、目标 IP 地址、连接端口乃至请求发起进程，严格对照用户设定的规则库，做出如下决策：</p>
+              <ul>
+                <li><strong>DIRECT (直连)</strong>：流量不经过代理，直接由本地网络接口连接目标服务器（适用于微信、淘宝、百度、Bilibili 等国内服务）。</li>
+                <li><strong>PROXY (代理)</strong>：流量通过指定的加密代理节点转发（适用于 Google、YouTube、GitHub、OpenAI 等境外服务）。</li>
+                <li><strong>REJECT (拦截)</strong>：直接丢弃请求，起到广告拦截与恶意追踪屏蔽的作用。</li>
+              </ul>
+
+              <h3 style="font-size: 1.15rem; color: #1e293b; margin: 1.2rem 0 0.6rem 0; font-weight: 700;">1.2 Mihomo (Clash Meta) 内核演进</h3>
+              <p>原版 Clash 核心在社区停止维护后，<strong>Mihomo (原名 Clash Meta)</strong> 作为功能最强劲的社区分流继承者脱颖而出。Mihomo 不仅继承了 Clash 原生的全部能力，还扩充了以下前沿特性：</p>
+              <ul>
+                <li>支持 <strong>Hysteria2 (Hy2)</strong> 与 <strong>TUIC v5</strong> 等基于 QUIC 协议的下一代抗丢包代理。</li>
+                <li>支持 <strong>VLESS + Reality</strong> 极隐蔽传输协议。</li>
+                <li>引入 <strong>Rule-Set (规则集)</strong> 远程异步加载机制，极大简化了配置文件的体积。</li>
+                <li>增强了 <strong>Geodata (geoip.dat / geosite.dat)</strong> 解析性能，使地理位置识别更加精准。</li>
+              </ul>
+
+              <h3 style="font-size: 1.15rem; color: #1e293b; margin: 1.2rem 0 0.6rem 0; font-weight: 700;">1.3 全协议兼容支持清单</h3>
+              <p>现代 Clash 客户端（配搭 Mihomo 内核）可轻松支持市场上所有主流与前沿协议：<strong>Shadowsocks (SS / SS-2022)</strong>、<strong>VMess / VLESS</strong>、<strong>Trojan</strong>、<strong>Hysteria2 (Hy2)</strong> 及 <strong>TUIC v5</strong>。</p>
+
+              <!-- 第二章 -->
+              <h2 id="section-ch2" style="font-size: 1.35rem; color: #0f172a; margin: 2rem 0 1rem 0; font-weight: 700; border-bottom: 2px solid #01C4B6; padding-bottom: 0.5rem;">💻 第二章：全平台客户端安装与全流程上手指南</h2>
+              
+              <h3 style="font-size: 1.15rem; color: #1e293b; margin: 1.2rem 0 0.6rem 0; font-weight: 700;">2.1 Windows 平台安装指南 (以 Clash Verge Rev 为例)</h3>
+              <p>Clash Verge Rev 是目前 Windows 平台最受推荐的开源 GUI 客户端，内置 Mihomo 内核，界面现代且易于维护。</p>
+              <ol style="line-height: 1.8;">
+                <li><strong>获取安装包</strong>：下载最新的 <code>Clash.Verge_x64-setup.exe</code> 文件。</li>
+                <li><strong>处理 SmartScreen 安全警报</strong>：若 Windows 弹出“Windows 已保护你的电脑”提示，点击 <strong>“更多信息” → “仍要运行”</strong> 即可。</li>
+                <li><strong>完成安装向导</strong>：按提示完成安装，勾选“创建桌面快捷方式”。</li>
+                <li><strong>开启系统代理与开机启动</strong>：打开 Clash Verge Rev，在左侧菜单进入「设置」，开启 <strong>“开机自启 (Auto Launch)”</strong> 与 <strong>“系统代理 (System Proxy)”</strong> 开关。</li>
+              </ol>
+
+              <h3 style="font-size: 1.15rem; color: #1e293b; margin: 1.2rem 0 0.6rem 0; font-weight: 700;">2.2 macOS 平台安装指南</h3>
+              <ol style="line-height: 1.8;">
+                <li><strong>确认架构类型</strong>：点击屏幕左上角苹果图标 <code></code> → “关于本机”。Apple M 系列芯片选择 <strong>arm64.dmg</strong>，Intel 芯片选择 <strong>x64.dmg</strong>。</li>
+                <li><strong>拖拽安装</strong>：双击 `.dmg` 文件，将 Clash 拖入 <code>Applications</code> 文件夹。</li>
+                <li><strong>解除开发者隔离提示</strong>：若提示无法打开，在终端执行：
+                  <pre style="background: #1e293b; color: #f8fafc; padding: 0.8rem 1rem; border-radius: 6px; overflow-x: auto;"><code>sudo xattr -rd com.apple.quarantine /Applications/Clash\ Verge.app</code></pre>
+                </li>
+              </ol>
+
+              <h3 style="font-size: 1.15rem; color: #1e293b; margin: 1.2rem 0 0.6rem 0; font-weight: 700;">2.3 Android 平台安装指南</h3>
+              <p>下载 <strong>Clash Meta for Android (CMFA)</strong> 的 <code>arm64-v8a.apk</code>，允许未知来源安装。首次连接时在 Android 系统弹出的“建立 VPN 连接”窗口中点击 <strong>“确定”</strong> 授权。</p>
+
+              <h3 style="font-size: 1.15rem; color: #1e293b; margin: 1.2rem 0 0.6rem 0; font-weight: 700;">2.4 iOS 平台安装指南</h3>
+              <p>推荐使用支持 Clash 格式的 <strong>Shadowrocket (小火箭)</strong>。使用美区 Apple ID 登录 App Store 下载，并在应用内粘贴 Clash `.yaml` 订阅 URL 完成一键导入。</p>
+
+              <h3 style="font-size: 1.15rem; color: #1e293b; margin: 1.2rem 0 0.6rem 0; font-weight: 700;">2.5 Linux 桌面与服务器部署</h3>
+              <pre style="background: #1e293b; color: #f8fafc; padding: 0.8rem 1rem; border-radius: 6px; overflow-x: auto;"><code># 无界面服务器部署 (Mihomo 二进制模式)
+wget https://github.com/MetaCubeX/mihomo/releases/download/v1.18.0/mihomo-linux-amd64-v1.18.0.gz
+gunzip mihomo-linux-amd64-v1.18.0.gz && mv mihomo-linux-amd64-v1.18.0 mihomo
+chmod +x mihomo
+./mihomo -d . -f config.yaml</code></pre>
+
+              <!-- 第三章 -->
+              <h2 id="section-ch3" style="font-size: 1.35rem; color: #0f172a; margin: 2rem 0 1rem 0; font-weight: 700; border-bottom: 2px solid #01C4B6; padding-bottom: 0.5rem;">📦 第三章：订阅链接机制与 YAML 格式深度剖析</h2>
+              <p>订阅链接（Subscription URL）是代理服务商提供的专属 HTTP 链接。客户端访问该链接时，服务器会返回包含所有节点服务器地址、端口、密钥及路由规则的 YAML 配置文件。</p>
+              <p>建议将订阅更新间隔设定为 <strong>1440 分钟（24小时）</strong>，开启 <code>url-test</code> 自动测速策略组，向测试点发送检测请求，自动将流量切换到延迟最低的节点。</p>
+
+              <!-- 第四章 -->
+              <h2 id="section-ch4" style="font-size: 1.35rem; color: #0f172a; margin: 2rem 0 1rem 0; font-weight: 700; border-bottom: 2px solid #01C4B6; padding-bottom: 0.5rem;">🔀 第四章：三大代理模式与分流路由引擎详解</h2>
+              <div style="overflow-x: auto; margin-bottom: 1.5rem;">
+                <table style="width: 100%; border-collapse: collapse; font-size: 0.88rem; background: #fff; border: 1px solid #e2e8f0;">
+                  <thead>
+                    <tr style="background: #f8fafc; border-bottom: 2px solid #e2e8f0;">
+                      <th style="padding: 10px;">代理模式</th>
+                      <th style="padding: 10px;">英文标识</th>
+                      <th style="padding: 10px;">核心逻辑</th>
+                      <th style="padding: 10px;">最佳适用场景</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr style="border-bottom: 1px solid #f1f5f9;">
+                      <td style="padding: 10px; font-weight: bold; color: #01C4B6;">规则模式 (推荐)</td>
+                      <td style="padding: 10px;"><code>Rule</code></td>
+                      <td style="padding: 10px;">智能分流。按规则库自动识别流量，国内直连、境外走代理</td>
+                      <td style="padding: 10px;">99% 日常使用场景，兼顾速度与流量消耗</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #f1f5f9; background: #fafafa;">
+                      <td style="padding: 10px; font-weight: bold;">全局模式</td>
+                      <td style="padding: 10px;"><code>Global</code></td>
+                      <td style="padding: 10px;">全量代理。所有流量一律通过用户选定的单一代理节点转发</td>
+                      <td style="padding: 10px;">访问特定偏门网站或调试网络</td>
+                    </tr>
+                    <tr>
+                      <td style="padding: 10px; font-weight: bold;">直连模式</td>
+                      <td style="padding: 10px;"><code>Direct</code></td>
+                      <td style="padding: 10px;">完全直连。绕过所有代理节点，所有流量直接连出</td>
+                      <td style="padding: 10px;">临时关闭代理功能</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h3 style="font-size: 1.15rem; color: #1e293b; margin: 1.2rem 0 0.6rem 0; font-weight: 700;">4.1 核心规则匹配类型示例</h3>
+              <pre style="background: #1e293b; color: #cbd5e1; padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.85rem;"><code>rules:
+  - DOMAIN,google.com,代理节点          # 精确域名匹配
+  - DOMAIN-SUFFIX,youtube.com,代理节点   # 域名后缀匹配
+  - DOMAIN-KEYWORD,telegram,代理节点    # 域名关键词匹配
+  - IP-CIDR,192.168.0.0/16,DIRECT       # IP-CIDR 段匹配
+  - GEOIP,CN,DIRECT                     # GEOIP 中国地理库匹配
+  - MATCH,代理节点                       # 默认兜底规则</code></pre>
+
+              <!-- 第五章 -->
+              <h2 id="section-ch5" style="font-size: 1.35rem; color: #0f172a; margin: 2rem 0 1rem 0; font-weight: 700; border-bottom: 2px solid #01C4B6; padding-bottom: 0.5rem;">🛡️ 第五章：DNS 防污染与 DoH/DoT 加密配置</h2>
+              <p>传统 DNS 明文 UDP 查询易遭污染劫持。Clash 强烈推荐使用 <strong>Fake-IP 模式</strong>：在收到 DNS 查询时立即返回虚拟 IP 网段（如 <code>198.18.0.1/16</code>），无需等待本地 DNS 解析即可建立连接，完全免疫本地 DNS 污染。</p>
+              <pre style="background: #1e293b; color: #cbd5e1; padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.85rem;"><code>dns:
+  enable: true
+  listen: 0.0.0.0:53
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  nameserver:
+    - https://doh.pub/dns-query     # 腾讯 DNSPod DoH
+    - https://dns.alidns.com/dns-query # 阿里 AliDNS DoH
+    - https://1.1.1.1/dns-query        # Cloudflare Secure DoH</code></pre>
+
+              <!-- 第六章 -->
+              <h2 id="section-ch6" style="font-size: 1.35rem; color: #0f172a; margin: 2rem 0 1rem 0; font-weight: 700; border-bottom: 2px solid #01C4B6; padding-bottom: 0.5rem;">🌐 第六章：Web Dashboard API 控制器极客部署</h2>
+              <p>在配置文件中声明 API 控制器监听与密钥：</p>
+              <pre style="background: #1e293b; color: #cbd5e1; padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.85rem;"><code>external-controller: 127.0.0.1:9090
+secret: "MySecretToken2026"</code></pre>
+              <p>打开控制面板（如 <code>https://metacubexd.pages.dev</code> 或 <code>https://yacd.haishan.me</code>），填入 API 地址与密钥，即可在浏览器中可视化进行延迟测速与流量监控。</p>
+
+              <!-- 第七章 -->
+              <h2 id="section-ch7" style="font-size: 1.35rem; color: #0f172a; margin: 2rem 0 1rem 0; font-weight: 700; border-bottom: 2px solid #01C4B6; padding-bottom: 0.5rem;">🎮 第七章：TUN 模式接管全量流量与游戏低延迟优化</h2>
+              <p>针对不遵循系统代理的命令行工具、UDP 联机游戏（Steam、Epic、Valorant、Apex），TUN 模式会在内核中创建虚拟网卡接管系统全量数据包：</p>
+              <pre style="background: #1e293b; color: #cbd5e1; padding: 1rem; border-radius: 6px; overflow-x: auto; font-size: 0.85rem;"><code>tun:
+  enable: true
+  stack: system
+  dns-hijack:
+    - "any:53"
+  auto-route: true
+  auto-detect-interface: true</code></pre>
+              <p>结合 <strong>Hysteria2 (Hy2)</strong> 协议与 <code>url-test</code> 自动测速，可以在丢包高峰期大幅提升网络稳定度。</p>
+
+              <!-- 第八章 FAQ -->
+              <h2 id="section-ch8" style="font-size: 1.35rem; color: #0f172a; margin: 2rem 0 1rem 0; font-weight: 700; border-bottom: 2px solid #01C4B6; padding-bottom: 0.5rem;">❓ 第八章：常见故障排查手册与 FAQ 问答集</h2>
+
+              <div style="margin-bottom: 1.5rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.2rem;">
+                <h3 style="font-size: 1.1rem; color: #01C4B6; margin-top: 0; margin-bottom: 0.5rem; font-weight: 700;">Q1: 开启 Clash 代理后电脑全网断网，无法打开任何网页？</h3>
+                <p style="margin: 0; color: #475569; line-height: 1.7;"><strong>答：</strong>
+                1. 检查选中的节点是否失效（在代理面板点击闪电图标测速，确认选中的节点延迟正常而非 Timeout）。<br>
+                2. 检查系统时间是否与标准北京时间精准同步（误差超过 30 秒会导致 TLS 证书校验失败）。<br>
+                3. 检查是否有端口冲突，可以在客户端设置中将混合端口更改为 7897 或 7890。</p>
+              </div>
+
+              <div style="margin-bottom: 1.5rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.2rem;">
+                <h3 style="font-size: 1.1rem; color: #01C4B6; margin-top: 0; margin-bottom: 0.5rem; font-weight: 700;">Q2: 订阅更新失败，提示 Download Failed 或 YAML Parse Error？</h3>
+                <p style="margin: 0; color: #475569; line-height: 1.7;"><strong>答：</strong> 出现此提示通常因为服务商返回的是 Base64 字符串而非标准 YAML 配置文件。请联系服务商复制专用的 Clash 订阅 URL，或使用订阅转换工具转换为 Clash 兼容格式。</p>
+              </div>
+
+              <div style="margin-bottom: 1.5rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.2rem;">
+                <h3 style="font-size: 1.1rem; color: #01C4B6; margin-top: 0; margin-bottom: 0.5rem; font-weight: 700;">Q3: 访问微信、百度或 Bilibili 等国内网站极其缓慢或加载失败？</h3>
+                <p style="margin: 0; color: #475569; line-height: 1.7;"><strong>答：</strong> 请确认代理模式是否处于 <strong>「规则 (Rule)」模式</strong>，而非「全局 (Global)」模式。若在规则模式下仍有部分国内网站走了代理，可在配置文件的 <code>rules</code> 中追加自定义直连规则（如 <code>DOMAIN-SUFFIX,baidu.com,DIRECT</code>）。</p>
+              </div>
+
+              <div style="margin-bottom: 1.5rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.2rem;">
+                <h3 style="font-size: 1.1rem; color: #01C4B6; margin-top: 0; margin-bottom: 0.5rem; font-weight: 700;">Q4: 游戏联机提示 NAT 类型受限或 UDP 节点连接超时？</h3>
+                <p style="margin: 0; color: #475569; line-height: 1.7;"><strong>答：</strong> 大部分游戏联机（如 Epic/Steam/Valorant）依赖 UDP 协议。请务必开启 <strong>TUN 模式</strong> 并确保选择的节点开启了 UDP 转发支持，优先选用 Hysteria2 (Hy2) 协议节点。</p>
+              </div>
+
+              <div style="margin-bottom: 1.5rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.2rem;">
+                <h3 style="font-size: 1.1rem; color: #01C4B6; margin-top: 0; margin-bottom: 0.5rem; font-weight: 700;">Q5: 浏览器可以翻墙，但 PowerShell / CMD / Terminal 命令行无法拉取 GitHub？</h3>
+                <p style="margin: 0; color: #475569; line-height: 1.7;"><strong>答：</strong> 系统代理（System Proxy）默认不接管终端命令行。可通过启用 <strong>TUN 模式</strong> 强制接管全局系统流量，或在命令行中临时手动配置环境变量：<code>$env:HTTP_PROXY="http://127.0.0.1:7897"</code>。</p>
+              </div>
+
+              <div style="margin-bottom: 1.5rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.2rem;">
+                <h3 style="font-size: 1.1rem; color: #01C4B6; margin-top: 0; margin-bottom: 0.5rem; font-weight: 700;">Q6: Windows 微软商店 (Microsoft Store) 及 UWP 应用开启代理后无法联网？</h3>
+                <p style="margin: 0; color: #475569; line-height: 1.7;"><strong>答：</strong> Windows 对 UWP 规范应用默认开启了回环隔离保护。请在 Clash Verge 客户端的「工具」菜单中打开 <strong>“UWP Loopback 豁免工具”</strong>，勾选需要代理的微软应用并保存设置即可。</p>
+              </div>
+
+              <div style="margin-bottom: 1.5rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.2rem;">
+                <h3 style="font-size: 1.1rem; color: #01C4B6; margin-top: 0; margin-bottom: 0.5rem; font-weight: 700;">Q7: 如何保障个人机场订阅链接与节点信息的安全性？</h3>
+                <p style="margin: 0; color: #475569; line-height: 1.7;"><strong>答：</strong> 订阅链接相当于您的个人账号访问凭证，切勿将链接公开发布在论坛、GitHub 或代码仓库中。若不慎泄漏，请立即登录机场官网后台点击“重置订阅链接”生成全新 URL。</p>
+              </div>
+
+              <div class="vh-note note-success" style="background: #e6fffa; border-left: 4px solid #01C4B6; padding: 1rem 1.2rem; border-radius: 8px; margin: 2rem 0;">
+                <strong>💡 总结：</strong> 熟练掌握 Clash 的规则分流、Mihomo 内核与 TUN 模式，能让您的网络连接兼顾极致速度与安全隐私。立即体验高速专线节点，解锁顺畅无阻的网络世界！
+              </div>
+
+              <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="https://vip.edgenovaaff.com/#/?code=2OqZX1IP" target="_blank" style="background: #01C4B6; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block;">🚀 推荐第一名：edgenova 边缘节点官网 ↗</a>
+                <a href="https://clashfaq.com/zh-CN/download.html" target="_blank" style="background: #3b82f6; color: #fff; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block;">📥 Clash 客户端官方下载中心 ↗</a>
+              </div>
+
+            </div>
           </div>
 
           <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid #f1f5f9;">
