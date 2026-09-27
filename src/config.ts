@@ -51,12 +51,8 @@ export default {
   // 导航栏 (新窗口打开 newWindow: true)
   Navs: [
     { text: '首页', link: '/', icon: 'Nav_about' },
-    { text: '机场测评', link: '/categories/机场推荐', icon: 'WebSite_hot' },
-    { text: '客户端教程', link: '/categories/客户端教程', icon: 'Nav_link' },
-    { text: '配置教程', link: '/categories/节点配置', icon: 'Nav_about' },
-    { text: '机场百科', link: '/categories/网络优化', icon: 'Nav_talking' },
-    { text: '动态', link: '/talking', icon: 'Nav_talking' },
-    { text: '友链', link: '/links', icon: 'Nav_friends' },
+    { text: '科学上网工具', link: '/categories/客户端教程', icon: 'Nav_link' },
+    { text: '更多', link: '/talking', icon: 'Nav_talking' },
     { text: '关于我们', link: '/about', icon: 'Nav_about' },
   ],
   // 侧边栏个人网站
