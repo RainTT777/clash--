@@ -20,7 +20,7 @@ Shadowrocket（中文俗称“小火箭”）是 iOS 生态中最具代表性且
 :::
 
 :::btn btn-info
-[⚡ 适配小火箭的高速 IEPL 专线机场 | 一键导入订阅](https://lanluck.edgenovaaff.com/#/?code=KEczauv4)
+[⚡ 适配小火箭的高速 IEPL 专线机场 | 一键导入订阅](https://vip.edgenovaaff.com/#/?code=2OqZX1IP)
 :::
 
 ---
@@ -231,5 +231,5 @@ Shadowrocket 所有配置数据仅存储于您的本地 iPhone 设备上，不�
 :::
 
 :::btn btn-info
-[⚡ 获取适配小火箭的高速 IEPL 专线节点](https://lanluck.edgenovaaff.com/#/?code=KEczauv4)
+[⚡ 获取适配小火箭的高速 IEPL 专线节点](https://vip.edgenovaaff.com/#/?code=2OqZX1IP)
 :::

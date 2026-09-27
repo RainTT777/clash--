@@ -20,7 +20,7 @@ Clash 是一款基于 Go 语言开发的免费开源网络代理工具，凭借�
 :::
 
 :::btn btn-info
-[⚡ 高速 BGP / IEPL 专线机场 | 一键导入 Clash 订阅](https://lanluck.edgenovaaff.com/#/?code=KEczauv4)
+[⚡ 高速 BGP / IEPL 专线机场 | 一键导入 Clash 订阅](https://vip.edgenovaaff.com/#/?code=2OqZX1IP)
 :::
 
 ---
@@ -298,5 +298,5 @@ tun:
 :::
 
 :::btn btn-info
-[⚡ 获取高质量 BGP/IEPL 专线 Clash 节点](https://lanluck.edgenovaaff.com/#/?code=KEczauv4)
+[⚡ 获取高质量 BGP/IEPL 专线 Clash 节点](https://vip.edgenovaaff.com/#/?code=2OqZX1IP)
 :::
