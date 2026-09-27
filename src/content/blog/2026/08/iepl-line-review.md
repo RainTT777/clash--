@@ -10,28 +10,29 @@ cover: "/assets/images/recommend-banner.png"
 ![翻墙机场推荐](/assets/images/recommend-banner.png)
 
 :::note
-**🎉 2026 全球优质翻墙 VPN 机场对比指南**：针对 4K 视频超清流畅播放、低延迟联机游戏与日常稳定上网，本站精选 7 家高性价比稳定 IEPL 专线机场对比评测，全站节点完美适配 Clash Verge、Shadowrocket (小火箭)、Sing-Box 及 Surge 等主流客户端！
+**🎉 2026 全球优质翻墙 VPN 机场对比指南**：针对 4K 视频超清流畅播放、低延迟联机游戏与日常稳定上网，本站精选 8 家高性价比稳定 IEPL 专线机场对比评测，全站节点完美适配 Clash Verge、Shadowrocket (小火箭)、Sing-Box 及 Surge 等主流客户端！
 :::
 
 ---
 
 ## 📊 2026 翻墙 VPN 机场推荐与选购对比表
 
-下表汇总了本站精选的 7 家优质机场服务商，包含最低套餐价格、专线类型、不限时套餐支持、通用订阅兼容性及对应专属官方注册通道：
+下表汇总了本站精选的 8 家优质机场服务商，包含最低套餐价格、专线类型、不限时套餐支持及对应专属官方注册通道：
 
-| 机场 | 官网 | 最低年付订阅 | 不限时套餐 | 通用订阅 | 详情 |
-| :--- | :---: | :--- | :---: | :---: | :---: |
-| **edgenova 边缘节点** | [前往官网 ↗](https://vip.edgenovaaff.com/#/?code=2OqZX1IP) | ¥96/年 (约 ¥8/月)<br>Edge年付小包 · 60G | ✅ | ✅ | [前往详情](https://vip.edgenovaaff.com/#/?code=2OqZX1IP) |
-| **极连云 (JiLianYun)** | [前往官网 ↗](https://a1917.jlyvipaff.com/#/?code=vT32Xl9X) | ¥84/年 (约 ¥7/月)<br>极连专线 · 64G | ✅ | ✅ | [前往详情](https://a1917.jlyvipaff.com/#/?code=vT32Xl9X) |
-| **光年梯 (GuangNianTi)** | [前往官网 ↗](https://gnt001.gntvipaff.cc/#/?code=yAzo4IqK) | ¥72/年 (约 ¥6/月)<br>光年专线 · 50G | ✅ | ✅ | [前往详情](https://gnt001.gntvipaff.cc/#/?code=yAzo4IqK) |
-| **速界 (SuJie)** | [前往官网 ↗](https://wudaogang.speedworldaff.com/#/register?code=HOJbbjuY) | ¥90/年 (约 ¥7.5/月)<br>年付体验包 · 50G | ❌ | ✅ | [前往详情](https://wudaogang.speedworldaff.com/#/register?code=HOJbbjuY) |
-| **快狸 (KuaiLi)** | [前往官网 ↗](https://yj2081.kuailiaff.com/#/register?code=531W9eSU) | ¥88/年 (约 ¥7.33/月)<br>快狸特惠 · 60G | ✅ | ✅ | [前往详情](https://yj2081.kuailiaff.com/#/register?code=531W9eSU) |
-| **可信云 (KeXinYun)** | [前往官网 ↗](https://shadow_vps.kosingaff.com/#/register?code=UvY3PsfK) | ¥96/年 (约 ¥8/月)<br>可信专线 · 60G | ✅ | ✅ | [前往详情](https://shadow_vps.kosingaff.com/#/register?code=UvY3PsfK) |
-| **瞬云 (ShunYun)** | [前往官网 ↗](https://aaa.jichang.best/#/register?code=M4UujXjz) | ¥99/年 (约 ¥8.25/月)<br>极速体验包 · 80G | ✅ | ✅ | [前往详情](https://aaa.jichang.best/#/register?code=M4UujXjz) |
+| 机场 | 官网 | 最低年付订阅 | 不限时套餐 | 详情 |
+| :--- | :---: | :--- | :---: | :---: |
+| **edgenova 边缘节点** | [前往官网 ↗](https://vip.edgenovaaff.com/#/?code=2OqZX1IP) | ¥96/年 (约 ¥8/月)<br>Edge年付小包 · 60G | ✅ | [前往详情](https://vip.edgenovaaff.com/#/?code=2OqZX1IP) |
+| **极连云 (JiLianYun)** | [前往官网 ↗](https://a1917.jlyvipaff.com/#/?code=vT32Xl9X) | ¥84/年 (约 ¥7/月)<br>极连专线 · 64G | ✅ | [前往详情](https://a1917.jlyvipaff.com/#/?code=vT32Xl9X) |
+| **光年梯 (GuangNianTi)** | [前往官网 ↗](https://gnt001.gntvipaff.cc/#/?code=yAzo4IqK) | ¥72/年 (约 ¥6/月)<br>光年专线 · 50G | ✅ | [前往详情](https://gnt001.gntvipaff.cc/#/?code=yAzo4IqK) |
+| **云图 (YunTu)** | [前往官网 ↗](https://vip.ytjcok.org/#/register?code=75w0GoY2) | ¥96/年 (约 ¥8/月)<br>云图特惠包 · 60G | ✅ | [前往详情](https://vip.ytjcok.org/#/register?code=75w0GoY2) |
+| **速界 (SuJie)** | [前往官网 ↗](https://wudaogang.speedworldaff.com/#/register?code=HOJbbjuY) | ¥90/年 (约 ¥7.5/月)<br>年付体验包 · 50G | ❌ | [前往详情](https://wudaogang.speedworldaff.com/#/register?code=HOJbbjuY) |
+| **快狸 (KuaiLi)** | [前往官网 ↗](https://yj2081.kuailiaff.com/#/register?code=531W9eSU) | ¥88/年 (约 ¥7.33/月)<br>快狸特惠 · 60G | ✅ | [前往详情](https://yj2081.kuailiaff.com/#/register?code=531W9eSU) |
+| **可信云 (KeXinYun)** | [前往官网 ↗](https://shadow_vps.kosingaff.com/#/register?code=UvY3PsfK) | ¥96/年 (约 ¥8/月)<br>可信专线 · 60G | ✅ | [前往详情](https://shadow_vps.kosingaff.com/#/register?code=UvY3PsfK) |
+| **瞬云 (ShunYun)** | [前往官网 ↗](https://aaa.jichang.best/#/register?code=M4UujXjz) | ¥99/年 (约 ¥8.25/月)<br>极速体验包 · 80G | ✅ | [前往详情](https://aaa.jichang.best/#/register?code=M4UujXjz) |
 
 ---
 
-## 🚀 7 大热门高性价比 IEPL 专线机场深度评测
+## 🚀 8 大热门高性价比 IEPL 专线机场深度评测
 
 ### 1. edgenova 边缘节点
 - **特点**：行业顶尖 BGP 入口与全专线内网传输架构，超强解锁 Netflix / Disney+ / YouTube 4K / ChatGPT，全天候晚高峰零拥堵跑满带宽。
@@ -51,25 +52,31 @@ cover: "/assets/images/recommend-banner.png"
 - **适用场景**：学生党、轻度上网办公用户。
 - **跳转入口**：[前往光年梯官网注册 ↗](https://gnt001.gntvipaff.cc/#/?code=yAzo4IqK)
 
-### 4. 速界 (SuJie)
+### 4. 云图 (YunTu)
+- **特点**：全专线高速隧道架构，节点稳定性强，原生 IP 解锁 Netflix、YouTube 4K 及 ChatGPT，无感知故障切线。
+- **价格**：¥96/年（折合 ¥8/月），提供 60GB/月 特惠流量，支持不限时套餐。
+- **适用场景**：适合日常高速打卡上网、高清流媒体播放及跨国工作。
+- **跳转入口**：[前往云图官网注册 ↗](https://vip.ytjcok.org/#/register?code=75w0GoY2)
+
+### 5. 速界 (SuJie)
 - **特点**：快速响应客服团队，全平台一键导入订阅，支持 Trojan 与 Shadowsocks 协议，全时段 SLA 稳定性优异。
 - **价格**：¥90/年（折合 ¥7.5/月），体验包 50GB/月。
 - **适用场景**：适合新手小白上手、跨平台多设备连用、日常流畅播放 4K 视频。
 - **跳转入口**：[前往速界官网注册 ↗](https://wudaogang.speedworldaff.com/#/register?code=HOJbbjuY)
 
-### 5. 快狸 (KuaiLi)
+### 6. 快狸 (KuaiLi)
 - **特点**：高速 IEPL 内网专线隧道，解锁 Netflix、Disney+、YouTube 4K 及 ChatGPT，无拥堵无延迟。
 - **价格**：¥88/年（折合 ¥7.33/月），快狸特惠 60GB/月，提供不限时套餐支持。
 - **适用场景**：适合高品质追剧党、外贸跨境电商及日常极速上网。
 - **跳转入口**：[前往快狸官网注册 ↗](https://yj2081.kuailiaff.com/#/register?code=531W9eSU)
 
-### 6. 可信云 (KeXinYun)
+### 7. 可信云 (KeXinYun)
 - **特点**：顶级 BGP 多线中转 + IEPL 专线防护，高可用多入口自动故障切线，保障 99.9% 连通率。
 - **价格**：¥96/年（折合 ¥8/月），60GB/月 专线流量。
 - **适用场景**：适合注重稳定性与数据加密传输的企业办公与个人极客。
 - **跳转入口**：[前往可信云官网注册 ↗](https://shadow_vps.kosingaff.com/#/register?code=UvY3PsfK)
 
-### 7. 瞬云 (ShunYun)
+### 8. 瞬云 (ShunYun)
 - **特点**：电竞级超低延迟专线，覆盖香港、日本、新加坡及美国原生 IP 节点，晚高峰跑满带宽。
 - **价格**：¥99/年（折合 ¥8.25/月），80GB/月 极速体验包。
 - **适用场景**：适合 Steam / PS5 / Xbox 外服联机游戏玩家以及大文件高速下载。
