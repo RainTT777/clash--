@@ -1753,7 +1753,23 @@ secret: "MySecretToken2026"</code></pre>
         }
       }
       switchView('article');
+      window.scrollTo({ top: 380, behavior: 'smooth' });
     }
+
+    document.addEventListener("click", (e) => {
+      const link = e.target.closest('a[href^="#"]');
+      if (link) {
+        const hash = link.getAttribute('href');
+        if (hash && hash !== '#') {
+          const target = document.querySelector(hash);
+          if (target) {
+            e.preventDefault();
+            const top = target.getBoundingClientRect().top + window.pageYOffset - 90;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
+        }
+      }
+    });
 
     const texts = ["Clash-Shadowrocket 节点推荐", "火箭猫的机场分享"];
     let count = 0, index = 0, currentText = "", letter = "", isDeleting = false;

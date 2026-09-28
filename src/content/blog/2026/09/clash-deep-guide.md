@@ -20,7 +20,7 @@ Clash 是一款基于 Go 语言开发的免费开源网络代理工具，凭借�
 :::
 
 :::btn btn-info
-[⚡ 2026 翻墙 VPN 机场推荐与选购对比指南 (查看更多优质专线机场)](/article/iepl-line-review/)
+[⚡ 2026 翻墙 VPN 机场推荐与选购对比指南 (查看更多优质专线机场)](/article/clash-shadowrocket-demo/)
 :::
 
 ---
@@ -298,5 +298,5 @@ tun:
 :::
 
 :::btn btn-info
-[⚡ 2026 翻墙 VPN 机场推荐与选购对比指南 (查看更多优质专线机场)](/article/iepl-line-review/)
+[⚡ 2026 翻墙 VPN 机场推荐与选购对比指南 (查看更多优质专线机场)](/article/clash-shadowrocket-demo/)
 :::
