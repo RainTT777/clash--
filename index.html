@@ -1622,6 +1622,113 @@ secret: "MySecretToken2026"</code></pre>
       </div>
     `;
 
+    let shadowrocketArticleHTML = `
+      <div style="width: 100%; overflow: hidden; border-radius: 12px; margin-bottom: 1.8rem; box-shadow: 0 6px 20px rgba(0,0,0,0.06); border: 1px solid #e2e8f0;">
+        <img src="./public/assets/images/shadowrocket-banner.png" alt="ShadowRocket 小火箭快速教程" style="width: 100%; display: block; object-fit: cover;">
+      </div>
+
+      <div class="vh-note note-success" style="background: #e6fffa; border-left: 4px solid #01C4B6; padding: 1rem 1.2rem; border-radius: 8px; margin-bottom: 1.8rem;">
+        <strong>🚀 Shadowrocket (小火箭) 2026 最新深度全景使用教程：</strong><br>
+        小火箭是 iOS 平台上最强大、最省电的智能代理工具。本文为您提供外区 Apple ID 获取、正版下载、订阅导入、规则分流、加密 DNS 及高级 FAQ 故障排查完整指南！
+      </div>
+
+      <!-- 目录索引 -->
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 10px; padding: 1.2rem; margin-bottom: 2rem;">
+        <h3 style="font-size: 1.1rem; color: #0f172a; margin-top: 0; margin-bottom: 0.8rem; font-weight: 700;">⚡ 目录索引 (Quick Navigation)</h3>
+        <ul style="margin: 0; padding-left: 1.2rem; line-height: 1.8; color: #01C4B6;">
+          <li><a href="#sr-quickstart" style="color: #01C4B6; text-decoration: none;">⚡ 三步极速上手 Shadowrocket (小火箭)</a></li>
+          <li><a href="#sr-ch1" style="color: #01C4B6; text-decoration: none;">💡 第一章：Shadowrocket 架构解析与 iOS 代理机制</a></li>
+          <li><a href="#sr-ch2" style="color: #01C4B6; text-decoration: none;">📲 第二章：美区/外区 Apple ID 获取与小火箭正版下载全流程</a></li>
+          <li><a href="#sr-ch3" style="color: #01C4B6; text-decoration: none;">📦 第三章：节点订阅导入与自动化管理</a></li>
+          <li><a href="#sr-ch4" style="color: #01C4B6; text-decoration: none;">🔀 第四章：高级路由模式与 Rule 规则分流深度特训</a></li>
+          <li><a href="#sr-ch5" style="color: #01C4B6; text-decoration: none;">🛡️ 第五章：DNS 防污染、HTTPS 证书解密与广告 Rewrite 重写</a></li>
+          <li><a href="#sr-ch6" style="color: #01C4B6; text-decoration: none;">⚡ 第六章：节点延迟测速、自动选优组与按需连接 (On-Demand)</a></li>
+          <li><a href="#sr-ch7" style="color: #01C4B6; text-decoration: none;">❓ 第七章：常见故障排查手册与 FAQ 问答集</a></li>
+        </ul>
+      </div>
+
+      <!-- 三步上手 -->
+      <h2 id="sr-quickstart" style="font-size: 1.35rem; color: #0f172a; margin: 2rem 0 1rem 0; font-weight: 700; border-bottom: 2px solid #01C4B6; padding-bottom: 0.5rem;">⚡ 三步极速上手 Shadowrocket (小火箭)</h2>
+      <ol style="line-height: 2; padding-left: 1.2rem; color: #334155;">
+        <li><strong>获取外区 Apple ID 并在 App Store 下载正版小火箭</strong>：使用美区或港区 Apple ID 登录 App Store（切记仅在 App Store 登录，不要在 iPhone 设置的 iCloud 登录），搜索并购买下载正版小火箭应用。</li>
+        <li><strong>在小火箭中一键导入您的机场订阅链接</strong>：复制机场后台的订阅 URL，打开小火箭，点击右上角 <code>+</code> 号，类型选择 <code>Subscribe</code>，粘贴链接并保存，客户端将自动拉取所有节点。</li>
+        <li><strong>选择「配置」模式并开启代理开关</strong>：在首页底部将路由模式设为 <strong>「配置 (Config)」模式</strong>，点击顶部开关开启连接，首次提示“添加 VPN 配置”时输入手机解锁密码授权即可。</li>
+      </ol>
+
+      <!-- 第一章 -->
+      <h2 id="sr-ch1" style="font-size: 1.35rem; color: #0f172a; margin: 2rem 0 1rem 0; font-weight: 700; border-bottom: 2px solid #01C4B6; padding-bottom: 0.5rem;">💡 第一章：Shadowrocket 架构解析与 iOS 代理机制</h2>
+      <p>Shadowrocket 利用了 Apple 官方的 <strong>NetworkExtension 框架 (NEPacketTunnelProvider)</strong>。当在小火箭中开启连接时，系统会在 iOS 内核层创建一个虚拟网卡接口。所有由应用程序发起的 TCP/UDP IP 数据包，都会被重定向至小火箭的本地代理引擎。引擎在毫秒级时间内比对分流规则后，决定直连或走代理转发。</p>
+      <p><strong>协议支持全覆盖</strong>：支持 Shadowsocks (SS/SS-2022)、VMess/VLESS、Trojan、Hysteria2 (Hy2)、TUIC v5 及 Snell，具备极致省电与自动无感切换能力。</p>
+
+      <!-- 第二章 -->
+      <h2 id="sr-ch2" style="font-size: 1.35rem; color: #0f172a; margin: 2rem 0 1rem 0; font-weight: 700; border-bottom: 2px solid #01C4B6; padding-bottom: 0.5rem;">📲 第二章：美区/外区 Apple ID 获取与小火箭正版下载全流程</h2>
+      <p>因中国大陆区 App Store 下架了网络代理类应用，您必须使用外区（美区、港区、日区等）Apple ID 进行下载。</p>
+      <div style="background: #fff5f5; border-left: 4px solid #ef4444; padding: 1rem; border-radius: 6px; margin: 1rem 0;">
+        <strong>⚠️ 安全警示：</strong> 绝对不要在 iPhone 的「设置 → iCloud」中登录他人共享账号！仅在 <strong>App Store 应用内</strong> 登录，防止设备被锁定锁死。
+      </div>
+      <p><strong>App Store 登录步骤</strong>：打开 App Store → 点击右上角头像 → 滑到最底部点击“退出登录” → 输入外区 ID 登录 → 搜索 <code>Shadowrocket</code> 认准官方图标下载。</p>
+      <p>前往 <a href="https://shadowrrocket.com.cn/download.html" target="_blank" rel="noopener noreferrer" style="color: #01C4B6; font-weight: bold;">🚀 小火箭官方最新版下载与账号获取入口 ↗</a> 获取正版账号。</p>
+
+      <!-- 第三章 -->
+      <h2 id="sr-ch3" style="font-size: 1.35rem; color: #0f172a; margin: 2rem 0 1rem 0; font-weight: 700; border-bottom: 2px solid #01C4B6; padding-bottom: 0.5rem;">📦 第三章：节点订阅导入与自动化管理</h2>
+      <ol style="line-height: 1.8;">
+        <li><strong>复制订阅 URL</strong>：在机场后台复制小火箭专属订阅链接。</li>
+        <li><strong>添加订阅</strong>：点击小火箭右上角 <code>+</code> → 类型选择 <code>Subscribe</code> → 粘贴 URL 并保存。</li>
+        <li><strong>扫码与自动识别</strong>：可直接扫描机场二维码，或复制 URL 后打开小火箭利用剪贴板自动唤醒导入。</li>
+        <li><strong>后台自动刷新</strong>：进入「设置 → 订阅」，开启“打开时更新”与“自动更新 (24小时)”，保持节点最新。</li>
+      </ol>
+
+      <!-- 第四章 -->
+      <h2 id="sr-ch4" style="font-size: 1.35rem; color: #0f172a; margin: 2rem 0 1rem 0; font-weight: 700; border-bottom: 2px solid #01C4B6; padding-bottom: 0.5rem;">🔀 第四章：高级路由模式与 Rule 规则分流深度特训</h2>
+      <p>在首页底部可选择以下四种路由模式：</p>
+      <ul>
+        <li><strong>配置 (Config) 模式 (最推荐)</strong>：智能分流，国内直连、国外走代理，省流量速度快。</li>
+        <li><strong>代理 (Proxy) 模式</strong>：全量流量强制走代理。</li>
+        <li><strong>直连 (Direct) 模式</strong>：全量流量直连出网。</li>
+        <li><strong>场景 (Scene) 模式</strong>：根据 Wi-Fi SSID 或蜂窝网络自动切换规则。</li>
+      </ul>
+
+      <!-- 第五章 -->
+      <h2 id="sr-ch5" style="font-size: 1.35rem; color: #0f172a; margin: 2rem 0 1rem 0; font-weight: 700; border-bottom: 2px solid #01C4B6; padding-bottom: 0.5rem;">🛡️ 第五章：DNS 防污染、HTTPS 证书解密与广告 Rewrite 重写</h2>
+      <p>在「设置 → DNS」中设置 DoH 加密 DNS（如腾讯 <code>https://doh.pub/dns-query</code> 或阿里 <code>https://dns.alidns.com/dns-query</code>），免疫本地 DNS 劫持污染。支持生成本地 CA 根证书并在 iOS 系统证书信任中开启全信任，实现 HTTPS 网页广告过滤重写。</p>
+
+      <!-- 第六章 -->
+      <h2 id="sr-ch6" style="font-size: 1.35rem; color: #0f172a; margin: 2rem 0 1rem 0; font-weight: 700; border-bottom: 2px solid #01C4B6; padding-bottom: 0.5rem;">⚡ 第六章：节点延迟测速、自动选优组与按需连接 (On-Demand)</h2>
+      <p>点击“连通性测试”可进行 TCP 握手与 HTTP 端到端测速。配合 <code>Auto-Select</code> 自动测速策略组，小火箭将实时自动把流量分配至最低延迟的节点。</p>
+
+      <!-- 第七章 FAQ -->
+      <h2 id="sr-ch7" style="font-size: 1.35rem; color: #0f172a; margin: 2rem 0 1rem 0; font-weight: 700; border-bottom: 2px solid #01C4B6; padding-bottom: 0.5rem;">❓ 第七章：常见故障排查手册与 FAQ 问答集</h2>
+
+      <div style="margin-bottom: 1.5rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.2rem;">
+        <h3 style="font-size: 1.1rem; color: #01C4B6; margin-top: 0; margin-bottom: 0.5rem; font-weight: 700;">Q1: 首次开启开关提示“Shadowrocket 想要添加 VPN 配置”，输入密码后无法连接？</h3>
+        <p style="margin: 0; color: #475569; line-height: 1.7;"><strong>答：</strong> 请确认在 iOS 弹窗中点击了“允许”，并输入了正确的手机数字锁屏密码或通过 Face ID 验证。若卡住，重启 iPhone 即可恢复。</p>
+      </div>
+
+      <div style="margin-bottom: 1.5rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.2rem;">
+        <h3 style="font-size: 1.1rem; color: #01C4B6; margin-top: 0; margin-bottom: 0.5rem; font-weight: 700;">Q2: 开启小火箭后出现全网断网，节点测速全部显示 Timeout？</h3>
+        <p style="margin: 0; color: #475569; line-height: 1.7;"><strong>答：</strong> 1. 前往「设置 → 通用 → 日期与时间」，确保开启“自动设置”，偏差超 30 秒会导致 TLS 握手失败。<br>2. 首页下拉更新订阅获取最新节点。3. 切换 Wi-Fi 与 4G/5G 网络测试。</p>
+      </div>
+
+      <div style="margin-bottom: 1.5rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.2rem;">
+        <h3 style="font-size: 1.1rem; color: #01C4B6; margin-top: 0; margin-bottom: 0.5rem; font-weight: 700;">Q3: 微信、抖音、淘宝等国内应用图片视频加载缓慢？</h3>
+        <p style="margin: 0; color: #475569; line-height: 1.7;"><strong>答：</strong> 检查首页底部全局路由是否误设为了 `Proxy`（全局代理），将其改回 **`Config` (配置)** 模式即可直连加速。</p>
+      </div>
+
+      <div style="margin-bottom: 1.5rem; background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 1.2rem;">
+        <h3 style="font-size: 1.1rem; color: #01C4B6; margin-top: 0; margin-bottom: 0.5rem; font-weight: 700;">Q4: 游戏联机延迟高、丢包卡顿怎么优化？</h3>
+        <p style="margin: 0; color: #475569; line-height: 1.7;"><strong>答：</strong> 优先选用支持 **Hysteria2 (Hy2)** 协议的高速 IEPL 专线节点，并在小火箭中开启 UDP 转发支持。</p>
+      </div>
+
+      <div class="vh-note note-success" style="background: #e6fffa; border-left: 4px solid #01C4B6; padding: 1rem 1.2rem; border-radius: 8px; margin: 2rem 0;">
+        <strong>💡 总结：</strong> Shadowrocket 是 iOS 平台上兼具极致性能与优雅体验的网络利器。配合优质专线节点，能让您的 iPhone 随时随地享受高速顺畅的网络！
+      </div>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+        <a href="https://shadowrrocket.com.cn/tutorial" target="_blank" rel="noopener noreferrer" style="background: #01C4B6; color: #fff; padding: 12px 22px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block;">🚀 访问小火箭官方下载与教程中心 ↗</a>
+        <a href="javascript:void(0)" onclick="openArticleDetail('2026 高性价比机场推荐 稳定 | 全球优质 BGP / IEPL 专线选购指南', '机场推荐', '2026-09-28')" style="background: #3b82f6; color: #fff; padding: 12px 22px; border-radius: 8px; text-decoration: none; font-weight: bold; display: inline-block;">⚡ 2026 翻墙 VPN 机场推荐与选购对比指南 ↗</a>
+      </div>
+    `;
+
     document.addEventListener("DOMContentLoaded", () => {
       const artContentEl = document.getElementById('artDetailContent');
       if (artContentEl) {
@@ -1639,6 +1746,8 @@ secret: "MySecretToken2026"</code></pre>
         if (!clashArticleHTML) clashArticleHTML = artContentEl.innerHTML;
         if (cat === '机场推荐' || title.includes('机场推荐')) {
           artContentEl.innerHTML = airportArticleHTML;
+        } else if (cat === '客户端教程' || title.includes('Shadowrocket') || title.includes('小火箭')) {
+          artContentEl.innerHTML = shadowrocketArticleHTML;
         } else {
           artContentEl.innerHTML = clashArticleHTML;
         }
