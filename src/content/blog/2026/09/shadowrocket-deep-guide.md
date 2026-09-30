@@ -20,7 +20,7 @@ Shadowrocket（中文俗称“小火箭”）是 iOS 平台上最强大、最受
 :::
 
 :::btn btn-info
-[⚡ 2026 翻墙 VPN 机场推荐与选购对比指南 (查看更多优质专线机场)](/article/clash-shadowrocket-demo/)
+[⚡ 2026 翻墙 VPN 机场推荐与选购对比指南 (查看更多优质专线机场)](/article/clash-shadowrocket-demo)
 :::
 
 ---
@@ -220,5 +220,5 @@ Shadowrocket 规则库支持高度精准的匹配语法：
 :::
 
 :::btn btn-info
-[⚡ 2026 翻墙 VPN 机场推荐与选购对比指南 (查看更多优质专线机场)](/article/clash-shadowrocket-demo/)
+[⚡ 2026 翻墙 VPN 机场推荐与选购对比指南 (查看更多优质专线机场)](/article/clash-shadowrocket-demo)
 :::
