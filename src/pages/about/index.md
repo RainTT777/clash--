@@ -1,42 +1,33 @@
 ---
-title: "关于"
-h1: "关于火箭猫"
-desc: "Hi there, 我是火箭猫"
+title: "关于我们"
+h1: "关于 Clash-Shadowrocket.blog"
+desc: "了解 Clash-Shadowrocket.blog 的内容方向、编辑原则与使用说明。"
 layout: "@/layouts/PageLayout/PageLayout.astro"
 type: "about"
 ---
 
 :::note{type="success"}
-欢迎光临火箭猫的个人博客！我期待在这里与你分享我的见解、经验以及 Clash / Shadowrocket 等网络加速技术的最新动态。
+Clash-Shadowrocket.blog 是一个面向普通用户的网络工具与数字效率内容站，重点整理 Clash、Shadowrocket（小火箭）、机场选购、优惠信息、故障排查和 AI 工具等实用指南。
 :::
 
-<div class="enfj-dom">
-  <div class="text">
-    <em>主人公</em> <span>ENFJ-A</span>
-    <a href="https://www.16personalities.com/ch/enfj-%E4%BA%BA%E6%A0%BC" target="_blank" class="more-enfj">在 16personalities 了解更多关于 主人公</a>
-  </div>
-</div>
+## 我们提供什么内容
 
-### Languages and Tools
+- **客户端教程**：整理 Clash、Shadowrocket、Sing-Box 等工具的安装、订阅导入、规则分流和常见问题。
+- **机场选购指南**：从月付价格、线路类型、适用设备和使用场景等角度提供对比信息。
+- **机场福利信息**：汇总机场优惠码及使用注意事项，并提醒读者在付款前核对实时活动规则。
+- **AI 工具分享**：按聊天写作、搜索研究、编程、绘画、视频音频和办公场景整理常用 AI 产品。
+- **网络故障排查**：提供 DNS、连接超时、订阅更新和客户端配置等问题的检查思路。
 
-<div class="language-tool">
-  <a href="https://www.w3.org/html/" target="_blank" rel="noopener nofollow"><img alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"></a>
-  <a href="https://nodejs.org" target="_blank" rel="noopener nofollow"><img alt="Node.js" src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"></a>
-  <a href="https://www.python.org" target="_blank" rel="noopener nofollow"><img alt="Python" src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"></a>
-  <a href="https://git-scm.com/" target="_blank" rel="noopener nofollow"><img alt="Git" src="https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white"></a>
-  <a href="https://www.linux.org/" target="_blank" rel="noopener nofollow"><img alt="Linux" src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"></a>
-  <a href="https://vuejs.org/" target="_blank" rel="noopener nofollow"><img alt="Vue.js" src="https://img.shields.io/badge/Vue.js-4FC08D?style=for-the-badge&logo=vue.js&logoColor=white"></a>
-  <a href="https://vitejs.dev/" target="_blank" rel="noopener nofollow"><img alt="Vite" src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"></a>
-  <a href="https://astro.build/" target="_blank" rel="noopener nofollow"><img alt="Astro" src="https://img.shields.io/badge/Astro-BC52EE?style=for-the-badge&logo=astro&logoColor=white"></a>
-  <a href="https://tailwindcss.com/" target="_blank" rel="noopener nofollow"><img alt="Tailwind CSS" src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"></a>
-</div>
+## 内容原则
 
----
+本站尽量使用清晰、可执行的步骤组织文章，并区分官方信息、使用建议和编辑判断。涉及软件版本、套餐价格、优惠活动与服务规则的内容可能随时间变化，读者应以产品官网和订单结算页面的实时信息为准。
 
-### 博客专注方向与导航
+我们不会把单一测速结果描述为所有地区都适用，也不建议仅因低价或折扣购买过长周期套餐。首次使用某项服务时，优先选择短周期方案，并根据所在地区、运营商、设备和晚高峰表现进行测试。
 
-| 项目 | 说明 / 链接 |
-| :---: | :---: |
-| **博客主页** | [https://clash-shadowrocket.blog](https://clash-shadowrocket.blog) |
-| **GitHub 仓库** | [RainTT777/clash--](https://github.com/RainTT777/clash--) |
-| **机场配置指南** | 精选 BGP / IEPL 专线机场，支持 Clash & Shadowrocket |
+## 使用与安全说明
+
+本站内容用于软件学习、网络配置和效率工具介绍。请遵守所在地法律法规及相关服务条款，不要上传账号密码、订阅密钥、访问令牌或其他隐私数据。AI 生成结果和网络服务宣传信息均需要人工核对，重要决定应参考官方资料。
+
+## 联系与反馈
+
+如果文章中的链接失效、价格变化、优惠码无法使用或操作步骤已经更新，可以通过站内页面反馈。我们会根据可验证的信息持续修订内容，让教程更清楚、更容易使用。

@@ -58,19 +58,17 @@ export default {
       icon: 'Nav_talking',
       children: [
         { text: '机场优惠码', link: '/article/airport-coupon-codes' },
-        { text: 'AI 工具分享', link: '/ai-tools' },
+        { text: 'AI 工具分享', link: '/article/ai-tools-guide' },
       ]
     },
     { text: '关于我们', link: '/about', icon: 'Nav_about' },
   ],
   // 侧边栏个人网站
-  WebSites: [
-    { text: 'Github', link: 'https://github.com/RainTT777/clash--', icon: 'WebSite_github' },
-  ],
+  WebSites: [],
   // 侧边栏展示
   AsideShow: {
     // 是否展示个人网站
-    WebSitesShow: true,
+    WebSitesShow: false,
     // 是否展示分类
     CategoriesShow: true,
     // 是否展示标签
