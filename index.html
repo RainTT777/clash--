@@ -365,13 +365,13 @@
 
     /* 主体容器 */
     .main-container {
-      max-width: var(--vh-main-max-width);
+      max-width: 1580px;
       width: 100%;
       margin: 2rem auto;
-      padding: 0 1.5rem;
+      padding: 0 1rem;
       display: grid;
-      grid-template-columns: var(--vh-aside-width) 1fr;
-      gap: 1.8rem;
+      grid-template-columns: 220px minmax(0, 1fr) 210px;
+      gap: 1.25rem;
       position: relative;
       min-width: 0;
     }
@@ -659,6 +659,28 @@
       min-width: 0;
       max-width: 100%;
     }
+
+    .airport-sidebar {
+      position: sticky;
+      top: 1.5rem;
+      align-self: start;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      min-width: 0;
+    }
+    .airport-sidebar-card {
+      padding: 1rem;
+      border: 1px solid #dbe7e6;
+      border-radius: 14px;
+      background: #fff;
+      box-shadow: 0 6px 18px rgba(15, 118, 110, 0.06);
+    }
+    .airport-sidebar-card h3 { margin: 0 0 0.35rem; font-size: 1rem; color: #0f172a; }
+    .airport-sidebar-card p { margin: 0 0 0.65rem; font-size: 0.78rem; color: #64748b; line-height: 1.5; }
+    .airport-sidebar-card a { display: flex; justify-content: space-between; align-items: center; gap: 0.5rem; padding: 0.45rem 0; border-top: 1px dashed #e2e8f0; color: #0f766e; text-decoration: none; font-size: 0.82rem; font-weight: 700; }
+    .airport-sidebar-card a span:last-child { color: #475569; white-space: nowrap; font-weight: 600; }
+    .airport-help-link { display: block !important; margin-top: 0.65rem; padding: 0.7rem !important; border: 0 !important; border-radius: 9px; background: #01c4b6; color: #fff !important; text-align: center; }
 
     /* 视图 1: 首页文章列表 - 三栏网格卡片排版 */
     .view-home {
@@ -1096,6 +1118,8 @@
     }
 
     @media (max-width: 1150px) {
+      .main-container { grid-template-columns: 210px minmax(0, 1fr); }
+      .airport-sidebar { display: none; }
       .view-home {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -1109,6 +1133,7 @@
         overflow: hidden;
       }
       .sidebar-column,
+      .airport-sidebar,
       .content-area,
       .view-article {
         width: 100%;
@@ -1473,6 +1498,7 @@
             </a>
           </div>
         </li>
+        <li><a href="./help/" id="navHelp">帮助</a></li>
         <li><a href="javascript:void(0)" onclick="switchView('about')" id="navAbout">关于我们</a></li>
       </ul>
     </nav>
@@ -2009,6 +2035,22 @@ secret: "MySecretToken2026"</code></pre>
       </section>
 
     </div>
+
+    <aside class="airport-sidebar" aria-label="精选机场推荐">
+      <section class="airport-sidebar-card">
+        <h3>精选机场</h3>
+        <p>月付价格与优惠码快速入口，付款前请以结算页为准。</p>
+        <a href="https://vip.edgenovaaff.com/#/?code=2OqZX1IP" target="_blank" rel="noopener noreferrer"><span>EdgeNova · xk808</span><span>¥15/月</span></a>
+        <a href="https://a1917.jlyvipaff.com/#/?code=vT32Xl9X" target="_blank" rel="noopener noreferrer"><span>极连云 · JLY888</span><span>¥15.5/月</span></a>
+        <a href="https://gnt001.gntvipaff.cc/#/?code=yAzo4IqK" target="_blank" rel="noopener noreferrer"><span>光年梯 · GNT80</span><span>¥13/月</span></a>
+        <a href="https://vip.ytjcok.org/#/register?code=75w0GoY2" target="_blank" rel="noopener noreferrer"><span>云图 · yt88</span><span>¥18/月</span></a>
+        <a href="https://wudaogang.speedworldaff.com/#/register?code=HOJbbjuY" target="_blank" rel="noopener noreferrer"><span>速界 · sujie888</span><span>¥15/月</span></a>
+        <a href="https://yj2081.kuailiaff.com/#/register?code=531W9eSU" target="_blank" rel="noopener noreferrer"><span>快狸 · kl888</span><span>¥15/月</span></a>
+        <a href="javascript:void(0)" onclick="openArticleDetail('2026 机场优惠码大全：EdgeNova、极连云、快狸、速界、可信云、云图、光年梯折扣码汇总', '机场推荐', '2026-10-02', 'airport-coupon-codes')"><span>可信云 · kxy80</span><span>¥15/月</span></a>
+        <a href="javascript:void(0)" onclick="openArticleDetail('2026 高性价比机场推荐 稳定 | 全球优质 BGP / IEPL 专线选购指南', '机场推荐', '2026-09-28', 'iepl-line-review')"><span>瞬云</span><span>¥18/月</span></a>
+        <a class="airport-help-link" href="./help/">机场帮助中心</a>
+      </section>
+    </aside>
 
   </main>
 

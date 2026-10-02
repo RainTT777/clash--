@@ -61,6 +61,7 @@ export default {
         { text: 'AI 工具分享', link: '/article/ai-tools-guide' },
       ]
     },
+    { text: '帮助', link: '/help', icon: 'Nav_link' },
     { text: '关于我们', link: '/about', icon: 'Nav_about' },
   ],
   // 侧边栏个人网站
