@@ -16,7 +16,7 @@ export default {
   // Cover 网站缩略图
   Cover: '/assets/images/banner/072c12ec85d2d3b5.webp',
   // 网站侧边栏公告 (不填写即不开启)
-  Tips: '<p>欢迎光临火箭猫的机场推荐博客 🎉</p><p>为您提供优质、稳定的机场节点推荐与 Clash / Shadowrocket 使用指南 💖</p>',
+  Tips: '<p>欢迎光临火箭猫的机场推荐博客 </p><p>为您提供优质、稳定的机场节点推荐与 Clash / Shadowrocket 使用指南 </p>',
   // 首页打字机文案列表
   TypeWriteList: [
     'Clash-Shadowrocket 节点推荐',
@@ -52,7 +52,15 @@ export default {
   Navs: [
     { text: '首页', link: '/', icon: 'Nav_about' },
     { text: '科学上网工具', link: '/categories/客户端教程', icon: 'Nav_link' },
-    { text: '更多', link: '/talking', icon: 'Nav_talking' },
+    {
+      text: '机场福利分享',
+      link: '/airport-benefits',
+      icon: 'Nav_talking',
+      children: [
+        { text: '机场优惠码', link: '/airport-benefits/#airport-coupons' },
+        { text: '免费 ID', link: '/airport-benefits/#free-id' },
+      ]
+    },
     { text: '关于我们', link: '/about', icon: 'Nav_about' },
   ],
   // 侧边栏个人网站

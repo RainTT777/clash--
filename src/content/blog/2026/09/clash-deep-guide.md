@@ -16,30 +16,30 @@ Clash 是一款基于 Go 语言开发的免费开源网络代理工具，凭借�
 ![Clash 使用教程](/assets/images/clash-banner.png)
 
 :::btn btn-success
-[🚀 官方客户端下载入口 (Windows / Mac / Android / Linux)](https://clashfaq.com/zh-CN/download.html)
+[官方客户端下载入口 (Windows / Mac / Android / Linux)](https://clashfaq.com/zh-CN/download.html)
 :::
 
 :::btn btn-info
-[⚡ 2026 翻墙 VPN 机场推荐与选购对比指南 (查看更多优质专线机场)](/article/clash-shadowrocket-demo)
+[2026 翻墙 VPN 机场推荐与选购对比指南 (查看更多优质专线机场)](/article/clash-shadowrocket-demo)
 :::
 
 ---
 
-## ⚡ 目录索引 (Quick Navigation)
+## 目录索引 (Quick Navigation)
 
-- [⚡ 三步极速上手 Clash](#-三步极速上手-clash)
-- [💡 第一章：Clash 架构全景解析与核心优势](#-第一章clash-架构全景解析与核心优势)
-- [💻 第二章：全平台客户端安装与全流程上手指南](#-第二章全平台客户端安装与全流程上手指南)
-- [📦 第三章：订阅链接机制与 YAML 格式深度剖析](#-第三章订阅链接机制与-yaml-格式深度剖析)
-- [🔀 第四章：三大代理模式与分流路由引擎详解](#-第四章三大代理模式与分流路由引擎详解)
-- [🛡️ 第五章：DNS 防污染与 DoH/DoT 加密配置](#-第五章dns-防污染与-dohdot-加密配置)
-- [🌐 第六章：Web Dashboard API 控制器极客部署](#-第六章web-dashboard-api-控制器极客部署)
-- [🎮 第七章：TUN 模式接管全量流量与游戏低延迟优化](#-第七章tun-模式接管全量流量与游戏低延迟优化)
-- [❓ 第八章：常见故障排查手册与 FAQ](#-第八章常见故障排查手册与-faq)
+- [三步极速上手 Clash](#三步极速上手-clash)
+- [第一章：Clash 架构全景解析与核心优势](#第一章clash-架构全景解析与核心优势)
+- [第二章：全平台客户端安装与全流程上手指南](#第二章全平台客户端安装与全流程上手指南)
+- [第三章：订阅链接机制与 YAML 格式深度剖析](#第三章订阅链接机制与-yaml-格式深度剖析)
+- [第四章：三大代理模式与分流路由引擎详解](#第四章三大代理模式与分流路由引擎详解)
+- [第五章：DNS 防污染与 DoH/DoT 加密配置](#第五章dns-防污染与-dohdot-加密配置)
+- [第六章：Web Dashboard API 控制器极客部署](#第六章web-dashboard-api-控制器极客部署)
+- [第七章：TUN 模式接管全量流量与游戏低延迟优化](#第七章tun-模式接管全量流量与游戏低延迟优化)
+- [第八章：常见故障排查手册与 FAQ](#第八章常见故障排查手册与-faq)
 
 ---
 
-## ⚡ 三步极速上手 Clash
+## 三步极速上手 Clash
 
 无需繁琐配置，跟随以下三个核心步骤，即可从零开始快速上手 Clash，享受极速流畅的网络代理体验：
 
@@ -52,7 +52,7 @@ Clash 是一款基于 Go 语言开发的免费开源网络代理工具，凭借�
 
 ---
 
-## 💡 第一章：Clash 架构全景解析与核心优势
+## 第一章：Clash 架构全景解析与核心优势
 
 Clash 底层完全由 Go 语言编写，充分利用了 Go 的 goroutine 轻量级并发模型，在大流量与高并发连接场景下依然能够保持极低的 CPU 与内存开销。
 
@@ -81,7 +81,7 @@ Clash 则是典型的 **规则驱动型代理引擎（Rule-Based Proxy Engine）
 
 ---
 
-## 💻 第二章：全平台客户端安装与全流程上手指南
+## 第二章：全平台客户端安装与全流程上手指南
 
 ```
                     ┌─────────────────────────┐
@@ -145,7 +145,7 @@ iOS 平台因 App Store 政策影响，推荐使用支持 Clash 格式的 **Clas
 
 ---
 
-## 📦 第三章：订阅链接机制与 YAML 格式深度剖析
+## 第三章：订阅链接机制与 YAML 格式深度剖析
 
 ### 3.1 什么是订阅链接？
 订阅链接（Subscription URL）是代理服务商提供的一个专属 HTTP URL。当客户端访问该链接时，服务器会返回一份包含了所有节点服务器地址、端口、加密密钥、传输协议以及路由规则的文本配置（通常为 Base64 编码或原生 YAML 格式）。
@@ -156,7 +156,7 @@ iOS 平台因 App Store 政策影响，推荐使用支持 Clash 格式的 **Clas
 
 ---
 
-## 🔀 第四章：三大代理模式与分流路由引擎详解
+## 第四章：三大代理模式与分流路由引擎详解
 
 Clash 的路由控制中心提供三种基本代理模式：
 
@@ -193,7 +193,7 @@ rules:
 
 ---
 
-## 🛡️ 第五章：DNS 防污染与 DoH/DoT 加密配置
+## 第五章：DNS 防污染与 DoH/DoT 加密配置
 
 传统的系统 DNS 查询采用明文 UDP 协议（端口 53），极易遭受 DNS 污染、DNS 劫持以及域名查询记录泄漏。Clash 内置了高性能的加密 DNS 解析服务器，能够彻底解决域名解析污染问题。
 
@@ -221,7 +221,7 @@ dns:
 
 ---
 
-## 🌐 第六章：Web Dashboard API 控制器极客部署
+## 第六章：Web Dashboard API 控制器极客部署
 
 Clash 提供了一套极其优雅的 RESTful API 控制接口。通过配合图形化 Web 控制面板（Dashboard），您可以在浏览器中直观地监控全网实时流量、测试节点延迟以及一键切换策略。
 
@@ -248,7 +248,7 @@ secret: "MySecretToken2026"
 
 ---
 
-## 🎮 第七章：TUN 模式接管全量流量与游戏低延迟优化
+## 第七章：TUN 模式接管全量流量与游戏低延迟优化
 
 虽然系统代理（System Proxy）可以覆盖浏览器与大部分标准应用，但许多命令行工具、Udp 联机游戏（如 Steam、Epic、Valorant、Apex Legends）或某些不遵循 Windows / macOS 系统代理设置的应用无法自动走代理。
 
@@ -274,7 +274,7 @@ tun:
 
 ---
 
-## ❓ 第八章：常见故障排查手册与 FAQ
+## 第八章：常见故障排查手册与 FAQ
 
 ### 8.1 开启代理后网络完全无法连接（全网断网）？
 - **原因分析**：配置文件下载损坏、选中的节点失效、或端口冲突。
@@ -294,9 +294,9 @@ tun:
 :::
 
 :::btn btn-success
-[🚀 官方 Clash 客户端下载中心](https://clashfaq.com/zh-CN/download.html)
+[官方 Clash 客户端下载中心](https://clashfaq.com/zh-CN/download.html)
 :::
 
 :::btn btn-info
-[⚡ 2026 翻墙 VPN 机场推荐与选购对比指南 (查看更多优质专线机场)](/article/clash-shadowrocket-demo)
+[2026 翻墙 VPN 机场推荐与选购对比指南 (查看更多优质专线机场)](/article/clash-shadowrocket-demo)
 :::

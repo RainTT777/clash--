@@ -16,10 +16,13 @@ import "./MobileSidebar.less";
 		<div class="vh-mobilesidebar-list vh-link-list">
 			{
 				Navs.map(i => (
-					<a class={i.link.replace("/", "")} href={i.link} target={i.target ? "_blank" : "_self"}>
-						<Svg src={i.icon} />
-						{i.text}
-					</a>
+					<>
+						<a class={i.link.replace("/", "")} href={i.link} target={i.target ? "_blank" : "_self"}>
+							<Svg src={i.icon} />
+							{i.text}
+						</a>
+						{i.children?.map(child => <a class="mobile-sub-link" href={child.link}>{child.text}</a>)}
+					</>
 				))
 			}
 		</div>

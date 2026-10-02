@@ -1,20 +1,15 @@
----
-title: "Shadowrocket (小火箭) 节点订阅导入与规则分流配置指南"
-categories: "客户端教程"
-tags: ['Shadowrocket', '小火箭', 'iOS配置', '节点配置']
-id: "shadowrocket-guide"
-date: 2026-09-15 15:30:00
-cover: "/assets/images/home-banner.webp"
----
+import fs from 'node:fs';
+import path from 'node:path';
 
-:::note
-本文围绕“Shadowrocket 订阅与分流”提供完整操作路线。按照安装准备、订阅导入、配置模式、连接验证和故障排查完成设置。内容兼顾新手步骤、稳定性优化、安全注意事项与常见故障定位。
-:::
+const posts=[
+['2026/08/dns-troubleshooting.md','常见机场节点连接超时与 DNS 污染问题排查解决指南','网络优化',"['网络优化', '节点配置', 'Clash', '小火箭']",'dns-troubleshooting','2026-08-01 16:45:00','/assets/images/dns-troubleshooting-banner.svg','DNS 与连接故障','先判断是订阅、节点、本地网络、DNS 还是系统代理层的问题。'],
+['2026/08/singbox-guide.md','Sing-Box 跨平台通用客户端一键订阅与高级分流设置','客户端教程',"['Sing-Box', '节点配置', 'Clash', 'IEPL专线']",'singbox-guide','2026-08-28 11:00:00','/assets/images/singbox-banner.svg','Sing-Box 跨平台配置','从专用订阅、规则模式、DNS 到 TUN 逐步配置，避免一次修改过多项目。'],
+['2026/09/clash-shadowrocket-recommendation.md','2026 高速稳定机场推荐与 Clash / Shadowrocket 节点配置教程','机场推荐',"['Clash', 'Shadowrocket', '机场推荐', 'IEPL专线']",'clash-shadowrocket-demo','2026-09-23 12:00:00','/assets/images/home-banner.webp','Clash 与 Shadowrocket 配置','先选择适合自己的服务，再分别完成桌面端与 iOS 端的订阅和规则配置。'],
+['2026/09/clash-verge-guide.md','Clash Verge / Clash for Windows 节点选优与分流规则指南','节点配置',"['Clash', '节点配置', '网络优化', 'V2Ray']",'clash-verge-guide','2026-09-10 18:20:00','/assets/images/home-banner.webp','Clash Verge 节点与规则','重点掌握订阅、策略组、系统代理、TUN、规则命中和日志排查。'],
+['2026/09/shadowrocket-guide.md','Shadowrocket (小火箭) 节点订阅导入与规则分流配置指南','客户端教程',"['Shadowrocket', '小火箭', 'iOS配置', '节点配置']",'shadowrocket-guide','2026-09-15 15:30:00','/assets/images/home-banner.webp','Shadowrocket 订阅与分流','按照安装准备、订阅导入、配置模式、连接验证和故障排查完成设置。']
+];
 
-## 使用思路
-
-按照安装准备、订阅导入、配置模式、连接验证和故障排查完成设置。建议先阅读全文，再按顺序操作；每完成一步就测试一次，以便准确判断设置效果。
-
+const sections=`
 ## 一、开始前的准备
 
 确认设备系统已更新到稳定版本，并从可信来源安装客户端。准备与客户端匹配的订阅格式，记录当前可用配置，修改前先导出备份。订阅链接通常包含账户令牌，应像密码一样保存，不要发布到论坛、截图或在线转换网站。发现泄露后应立即在服务后台重置链接。
@@ -86,13 +81,13 @@ DNS 异常会表现为网页打不开、打开错误站点、应用与浏览器�
 确认订阅可以手动更新；规则模式已启用；常用网站命中预期策略；局域网设备仍可访问；断开后系统网络能恢复；重启设备后配置仍然有效。随后分别测试网页、视频、下载和常用应用，不要只看客户端的绿色延迟数字。
 
 若结果稳定，再开启自动更新、自动测速或 TUN 等增强功能。任何新增功能都应有明确目的，并保留回退方式。清晰、可维护的配置通常比堆叠大量规则和插件更可靠。
+`;
 
-## 十三、常见问答
-
-**延迟最低的节点一定最好吗？** 不一定。持续丢包、抖动、带宽和晚高峰表现通常比一次延迟更重要。
-
-**需要每天更换配置吗？** 不需要。只要规则和节点稳定，保持适度更新即可，频繁修改反而增加故障概率。
-
-**为什么同一配置在不同网络表现不同？** 不同运营商、地区、路由器和 DNS 路径都会影响结果，应分别测试 Wi-Fi 与移动网络。
-
-**出现问题是否应该立即重装？** 先按日志和层级排查。重装会丢失现场信息，通常不是第一选择。
+for(const [rel,title,categories,tags,id,date,cover,topic,lead] of posts){
+  let body=`:::note\n本文围绕“${topic}”提供完整操作路线。${lead}内容兼顾新手步骤、稳定性优化、安全注意事项与常见故障定位。\n:::\n\n## 使用思路\n\n${lead}建议先阅读全文，再按顺序操作；每完成一步就测试一次，以便准确判断设置效果。\n${sections}`;
+  const faq=`\n## 十三、常见问答\n\n**延迟最低的节点一定最好吗？** 不一定。持续丢包、抖动、带宽和晚高峰表现通常比一次延迟更重要。\n\n**需要每天更换配置吗？** 不需要。只要规则和节点稳定，保持适度更新即可，频繁修改反而增加故障概率。\n\n**为什么同一配置在不同网络表现不同？** 不同运营商、地区、路由器和 DNS 路径都会影响结果，应分别测试 Wi-Fi 与移动网络。\n\n**出现问题是否应该立即重装？** 先按日志和层级排查。重装会丢失现场信息，通常不是第一选择。\n`;
+  body+=faq;
+  const fm=`---\ntitle: "${title}"\ncategories: "${categories}"\ntags: ${tags}\nid: "${id}"\ndate: ${date}\ncover: "${cover}"\n---\n\n`;
+  fs.writeFileSync(path.join('src/content/blog',rel),fm+body,'utf8');
+}
+console.log(`Filled ${posts.length} articles`);

@@ -20,7 +20,17 @@ import "./Header.less";
 		</a>
 		<nav>
 			{
-				Navs.map(i => (
+				Navs.map(i => i.children?.length ? (
+					<div class="nav-dropdown-wrap">
+						<a class={`nav-link vh-hover${i.link.includes(activeNav) ? " active" : ""}`} href={i.link}>
+							{i.text}
+							<Svg src={i.icon} />
+						</a>
+						<div class="nav-dropdown-menu" aria-label={`${i.text}菜单`}>
+							{i.children.map(child => <a href={child.link}>{child.text}</a>)}
+						</div>
+					</div>
+				) : (
 					<a class={`nav-link vh-hover${i.link.includes(activeNav) ? " active" : ""}`} href={i.link} target={i.target ? "_blank" : "_self"}>
 						{i.text}
 						<Svg src={i.icon} />

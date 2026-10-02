@@ -1,7 +1,7 @@
 ---
 title: "关于"
 h1: "关于火箭猫"
-desc: "Hi there, 我是火箭猫 👋"
+desc: "Hi there, 我是火箭猫"
 layout: "@/layouts/PageLayout/PageLayout.astro"
 type: "about"
 ---
@@ -17,7 +17,7 @@ type: "about"
   </div>
 </div>
 
-### 🛠️ Languages and Tools
+### Languages and Tools
 
 <div class="language-tool">
   <a href="https://www.w3.org/html/" target="_blank" rel="noopener nofollow"><img alt="HTML5" src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"></a>
@@ -33,11 +33,10 @@ type: "about"
 
 ---
 
-### 🚀 博客专注方向与导航
+### 博客专注方向与导航
 
 | 项目 | 说明 / 链接 |
 | :---: | :---: |
 | **博客主页** | [https://clash-shadowrocket.blog](https://clash-shadowrocket.blog) |
 | **GitHub 仓库** | [RainTT777/clash--](https://github.com/RainTT777/clash--) |
 | **机场配置指南** | 精选 BGP / IEPL 专线机场，支持 Clash & Shadowrocket |
-

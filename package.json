@@ -4,7 +4,8 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "astro build && node ./script/sync-static-articles.mjs",
+    "check:articles": "node ./script/check-static-articles.mjs",
     "preview": "astro preview",
     "astro": "astro",
     "newpost": "node ./script/newpost.js",

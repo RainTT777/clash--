@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Sing-Box 跨平台客户端教程</title>
+  <desc id="desc">深蓝与青绿色构成的跨平台网络节点横幅</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07162f"/>
+      <stop offset="0.55" stop-color="#10345a"/>
+      <stop offset="1" stop-color="#0a7c80"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#55e6d3"/>
+      <stop offset="1" stop-color="#87b7ff"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#020617" flood-opacity="0.35"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <circle cx="1045" cy="96" r="230" fill="#5eead4" opacity="0.08"/>
+  <circle cx="100" cy="625" r="300" fill="#60a5fa" opacity="0.08"/>
+  <g fill="none" stroke="#a7f3d0" stroke-width="3" opacity="0.35">
+    <path d="M95 115C260 45 345 180 485 125S735 35 860 150s205 70 270 5"/>
+    <path d="M65 555c155-90 295-10 400-75s245-105 360-25 215 55 315-30"/>
+  </g>
+  <g transform="translate(92 130)" filter="url(#shadow)">
+    <rect width="390" height="390" rx="82" fill="#f8fafc" opacity="0.96"/>
+    <rect x="78" y="80" width="234" height="230" rx="48" fill="#0f2848"/>
+    <path d="M124 194h142M195 123v142" stroke="url(#accent)" stroke-width="22" stroke-linecap="round"/>
+    <circle cx="195" cy="195" r="82" fill="none" stroke="#5eead4" stroke-width="12" opacity="0.5"/>
+    <circle cx="105" cy="105" r="16" fill="#60a5fa"/>
+    <circle cx="285" cy="285" r="16" fill="#5eead4"/>
+  </g>
+  <g fill="#f8fafc" font-family="Arial, 'Microsoft YaHei', sans-serif">
+    <text x="555" y="255" font-size="82" font-weight="700">Sing-Box</text>
+    <text x="558" y="348" font-size="54" font-weight="700">跨平台客户端教程</text>
+    <text x="560" y="420" font-size="30" fill="#b8d9e8">订阅导入 · 规则分流 · 多协议配置</text>
+  </g>
+  <rect x="558" y="468" width="390" height="10" rx="5" fill="url(#accent)"/>
+</svg>

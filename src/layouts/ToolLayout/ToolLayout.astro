@@ -14,7 +14,12 @@ import "./ToolLayout.less";
 import "@/styles/ArticleBase.less";
 ---
 
-<Layout title={frontmatter.title || Title} description={Description} activeNav={frontmatter.type || "-"}>
+<Layout
+	title={frontmatter.title || Title}
+	keywords={frontmatter.keywords}
+	description={frontmatter.desc || Description}
+	activeNav={frontmatter.type || "-"}
+>
 	<section class="vh-tools-main vh-animation vh-animation-init">
 		<header class="vh-page-header">
 			<h1>{frontmatter.h1}</h1>

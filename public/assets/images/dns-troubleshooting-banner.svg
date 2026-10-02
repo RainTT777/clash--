@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">DNS 污染与连接超时排查</title>
+  <desc id="desc">蓝紫色网络诊断面板与盾牌图形横幅</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#eef6ff"/>
+      <stop offset="0.55" stop-color="#dbeafe"/>
+      <stop offset="1" stop-color="#ddd6fe"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#2563eb"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="20" stdDeviation="28" flood-color="#1e3a8a" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg)"/>
+  <g opacity="0.45" stroke="#60a5fa" stroke-width="3" fill="none">
+    <path d="M40 160h245l65 70h190M30 530h250l85-85h180M915 90v120l90 65h160M900 575v-115l105-75h165"/>
+  </g>
+  <g fill="#fff" stroke="#93c5fd" stroke-width="4">
+    <circle cx="40" cy="160" r="14"/><circle cx="285" cy="160" r="14"/><circle cx="350" cy="230" r="14"/>
+    <circle cx="30" cy="530" r="14"/><circle cx="280" cy="530" r="14"/><circle cx="365" cy="445" r="14"/>
+    <circle cx="915" cy="90" r="14"/><circle cx="1005" cy="275" r="14"/><circle cx="1165" cy="275" r="14"/>
+    <circle cx="900" cy="575" r="14"/><circle cx="1005" cy="385" r="14"/><circle cx="1170" cy="385" r="14"/>
+  </g>
+  <g transform="translate(105 125)" filter="url(#shadow)">
+    <rect width="390" height="425" rx="50" fill="#ffffff"/>
+    <path d="M195 65l105 42v91c0 85-42 137-105 172-63-35-105-87-105-172v-91z" fill="url(#shield)"/>
+    <path d="M145 205l34 34 70-78" fill="none" stroke="#fff" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="75" y="360" width="240" height="14" rx="7" fill="#dbeafe"/>
+    <rect x="75" y="360" width="165" height="14" rx="7" fill="#3b82f6"/>
+  </g>
+  <g font-family="Arial, 'Microsoft YaHei', sans-serif">
+    <text x="555" y="250" font-size="76" font-weight="700" fill="#172554">DNS 排障指南</text>
+    <text x="558" y="345" font-size="48" font-weight="700" fill="#334155">连接超时与污染检查</text>
+    <text x="560" y="418" font-size="30" fill="#64748b">逐步定位订阅、节点、规则与解析问题</text>
+  </g>
+  <g transform="translate(560 470)">
+    <rect width="150" height="54" rx="27" fill="#2563eb"/><text x="75" y="36" text-anchor="middle" font-size="24" font-weight="700" fill="#fff" font-family="Arial, 'Microsoft YaHei', sans-serif">检测</text>
+    <rect x="170" width="150" height="54" rx="27" fill="#7c3aed"/><text x="245" y="36" text-anchor="middle" font-size="24" font-weight="700" fill="#fff" font-family="Arial, 'Microsoft YaHei', sans-serif">修复</text>
+  </g>
+</svg>

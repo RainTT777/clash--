@@ -163,7 +163,7 @@
                   <a class="link intent-neutral variant-animated" target="_blank" title="X/Twitter" href="https://404.li/kai">X/Twitter</a>
                 </div>
                 <div class="text-title flex gap-1 overflow-hidden font-medium">
-                  Made with ❤️‍🔥 By
+                  Made with By
                   <div class="flex items-start justify-center gap-2 text-center font-semibold sm:gap-1">
                     <div class="block">
                       <a href="https://html.zone" target="_blank" title="HTML.ZONE" class="block pb-2">HTML.ZONE</a>
