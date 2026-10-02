@@ -4,7 +4,7 @@ categories: "AI 工具"
 tags: ['AI工具分享', 'AI工具大全', 'ChatGPT', 'AI编程工具', 'AI绘画工具', 'AI视频工具']
 id: "ai-tools-guide"
 date: 2026-10-02 20:00:00
-cover: "/assets/images/home-banner.webp"
+cover: "/assets/images/ai-tools-banner.svg"
 ---
 
 AI 工具数量增长很快，但真正影响效率的并不是安装多少产品，而是能否根据任务选择合适的工具。本页将常用 AI 产品按照对话与研究、写作与翻译、编程开发、图像设计、视频音频、办公知识管理六个方向整理，并补充适用人群、选择方法、数据安全和常见问题。

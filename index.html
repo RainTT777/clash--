@@ -1741,7 +1741,7 @@
             <div class="article-meta-info" style="font-size: 0.85rem; color: #64748b; display: flex; gap: 1.2rem;">
               <span>日期：<time id="artDetailDate">2026-09-26</time></span>
               <span>作者：火箭猫</span>
-              <span>主题：BGP / IEPL 专线</span>
+              <span>主题：<span id="artDetailTopic">节点配置</span></span>
             </div>
           </div>
 
@@ -2426,6 +2426,17 @@ secret: "MySecretToken2026"</code></pre>
       document.getElementById('artDetailTitle').textContent = title;
       document.getElementById('artDetailCat').textContent = cat;
       document.getElementById('artDetailDate').textContent = date;
+      const topicEl = document.getElementById('artDetailTopic');
+      if (topicEl) {
+        const topicMap = {
+          'AI 工具': 'AI 工具 / 效率提升',
+          '机场推荐': '机场选择 / 线路评测',
+          '客户端教程': '客户端安装 / 使用教程',
+          '节点配置': '代理配置 / 规则分流',
+          '网络优化': '网络排障 / DNS 优化'
+        };
+        topicEl.textContent = topicMap[cat] || cat;
+      }
 
       const artContentEl = document.getElementById('artDetailContent');
       if (artContentEl) {
@@ -2448,8 +2459,10 @@ secret: "MySecretToken2026"</code></pre>
           artContentEl.innerHTML = dnsArticleHTML;
         } else if (articleId === 'clash-verge-guide' || title.includes('Clash Verge')) {
           artContentEl.innerHTML = clashVergeGuideHTML;
-        } else {
+        } else if (!articleId) {
           artContentEl.innerHTML = clashArticleHTML;
+        } else {
+          artContentEl.innerHTML = '<div class="vh-note note-warning"><strong>文章内容正在更新</strong><br>当前文章数据未正确加载，请刷新页面后重试。</div>';
         }
       }
       switchView('article');

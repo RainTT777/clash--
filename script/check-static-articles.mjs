@@ -22,6 +22,7 @@ for (const [id, html] of Object.entries(articles)) {
     'singbox-guide': { links: ['javascript:void(0)'], targets: ['clash-shadowrocket-demo'] },
     'dns-troubleshooting': { links: ['javascript:void(0)'], targets: ['clash-shadowrocket-demo'] },
     'clash-shadowrocket-demo': { links: ['javascript:void(0)'], targets: ['iepl-line-review'] },
+    'ai-tools-guide': { links: ['https://chatgpt.com/', 'https://claude.ai/'], targets: [] },
   };
   const defaultFooter = {
     links: ['https://shadowrrocket.com.cn/tutorial', 'https://shadowrrocket.com.cn/download.html'],

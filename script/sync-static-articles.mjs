@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { load } from 'cheerio';
-const ids=['clash-shadowrocket-demo','dns-troubleshooting','iepl-line-review','singbox-guide','clash-verge-guide','shadowrocket-guide','shadowrocket-deep-guide','clash-deep-guide','airport-coupon-codes'];
+const ids=['clash-shadowrocket-demo','dns-troubleshooting','iepl-line-review','singbox-guide','clash-verge-guide','shadowrocket-guide','shadowrocket-deep-guide','clash-deep-guide','airport-coupon-codes','ai-tools-guide'];
 const covers={
   'clash-shadowrocket-demo':'./public/assets/images/home-banner.webp',
   'dns-troubleshooting':'./public/assets/images/dns-troubleshooting-banner.svg',
@@ -11,7 +11,8 @@ const covers={
   'shadowrocket-guide':'./public/assets/images/shadowrocket-banner.png',
   'shadowrocket-deep-guide':'./public/assets/images/shadowrocket-banner.png',
   'clash-deep-guide':'./public/assets/images/clash-banner.png',
-  'airport-coupon-codes':'./public/assets/images/airport-coupon-banner.svg'
+  'airport-coupon-codes':'./public/assets/images/airport-coupon-banner.svg',
+  'ai-tools-guide':'./public/assets/images/ai-tools-banner.svg'
 };
 const airportRecommendationLink='<a href="javascript:void(0)" data-internal-article="clash-shadowrocket-demo" onclick="openArticleDetail(\'2026 高速稳定机场推荐与 Clash / Shadowrocket 节点配置教程\', \'机场推荐\', \'2026-09-23\', \'clash-shadowrocket-demo\'); return false;">查看站内机场推荐文章</a>';
 const ieplRecommendationLink='<a href="javascript:void(0)" data-internal-article="iepl-line-review" onclick="openArticleDetail(\'2026 高性价比机场推荐 稳定 | 全球优质 BGP / IEPL 专线选购指南\', \'机场推荐\', \'2026-09-28\', \'iepl-line-review\'); return false;">查看更多站内机场评测</a>';
@@ -20,7 +21,8 @@ const actionsById={
   'clash-deep-guide':`<div class="article-footer-actions"><a href="https://github.com/clashbk/clash" target="_blank" rel="noopener noreferrer">前往 Clash 官方项目</a>${airportRecommendationLink}</div>`,
   'singbox-guide':`<div class="article-footer-actions">${airportRecommendationLink}</div>`,
   'dns-troubleshooting':`<div class="article-footer-actions">${airportRecommendationLink}</div>`,
-  'clash-shadowrocket-demo':`<div class="article-footer-actions">${ieplRecommendationLink}</div>`
+  'clash-shadowrocket-demo':`<div class="article-footer-actions">${ieplRecommendationLink}</div>`,
+  'ai-tools-guide':'<div class="article-footer-actions"><a href="https://chatgpt.com/" target="_blank" rel="noopener noreferrer">访问 ChatGPT 官网</a><a href="https://claude.ai/" target="_blank" rel="noopener noreferrer">访问 Claude 官网</a></div>'
 };
 const out={};
 for(const id of ids){
