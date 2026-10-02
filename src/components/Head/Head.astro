@@ -53,7 +53,7 @@ import "@/styles/Base.less";
 	<!-- 输出结构化数据 -->
 	<script type="application/ld+json" set:html={JSON.stringify(PageCover ? ArticleData : WebSiteData)} is:inline />
 	<!-- Sitemap -->
-	<link rel="sitemap" href="/sitemap-index.xml" />
+	<link rel="sitemap" type="application/xml" href="/sitemap.xml" />
 	<!-- DNS预解析 -->
 	{DNSOptimization.map((url: string) => <link rel="dns-prefetch" href={url} />)}
 	{DNSOptimization.map((url: string) => <link rel="preconnect" href={url} />)}
