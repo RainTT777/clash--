@@ -57,7 +57,7 @@ export default {
       link: '/airport-benefits',
       icon: 'Nav_talking',
       children: [
-        { text: '机场优惠码', link: '/airport-benefits/#airport-coupons' },
+        { text: '机场优惠码', link: '/article/airport-coupon-codes' },
         { text: '免费 ID', link: '/airport-benefits/#free-id' },
       ]
     },
