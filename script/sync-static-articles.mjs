@@ -1,7 +1,9 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { load } from 'cheerio';
-const ids=['clash-shadowrocket-demo','dns-troubleshooting','iepl-line-review','singbox-guide','clash-verge-guide','shadowrocket-guide','shadowrocket-deep-guide','clash-deep-guide','airport-coupon-codes','ai-tools-guide'];
+const clientGuideIds=['clash-verge-rev-guide','v2rayn-guide','hiddify-guide','sing-box-desktop-guide','clash-meta-android-guide','v2rayng-guide','hiddify-android-guide','sing-box-android-guide','clash-mi-guide','shadowrocket-complete-guide','stash-guide','quantumult-x-guide','surge-guide','openclash-guide','passwall-guide','sing-box-core-guide'];
+const clientGuideIdSet=new Set(clientGuideIds);
+const ids=['clash-shadowrocket-demo','dns-troubleshooting','iepl-line-review','singbox-guide','clash-verge-guide','shadowrocket-guide','shadowrocket-deep-guide','clash-deep-guide','airport-coupon-codes','ai-tools-guide',...clientGuideIds];
 const covers={
   'clash-shadowrocket-demo':'./public/assets/images/home-banner.webp',
   'dns-troubleshooting':'./public/assets/images/dns-troubleshooting-banner.svg',
@@ -62,13 +64,14 @@ for(const id of ids){
     const table=$(element);
     if(!table.parent().hasClass('article-table-scroll')) table.wrap('<div class="article-table-scroll"></div>');
   });
-  const coverAsset=covers[id].replace('./public','');
+  const cover=covers[id] || `./public/assets/images/client-guides/${id}.svg`;
+  const coverAsset=cover.replace('./public','');
   const hasCover=content.find('img').toArray().some((element)=>{
     const source=$(element).attr('src') || '';
     return source.endsWith(coverAsset);
   });
-  const hero=id==='iepl-line-review' || hasCover ? '' : `<div class="article-hero"><img src="${covers[id]}" alt="${id} 文章封面" loading="eager"></div>`;
-  const actions=id==='iepl-line-review' ? '' : (actionsById[id] || defaultActions);
+  const hero=id==='iepl-line-review' || hasCover ? '' : `<div class="article-hero"><img src="${cover}" alt="${id} 文章封面" loading="eager"></div>`;
+  const actions=id==='iepl-line-review' || clientGuideIdSet.has(id) ? '' : (actionsById[id] || defaultActions);
   out[id]=hero+(content.html()||'').replaceAll('src="/assets/','src="./public/assets/')+actions;
 }
 const generated=`window.__ARTICLE_CONTENT__=${JSON.stringify(out)};\n`;

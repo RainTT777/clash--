@@ -745,6 +745,35 @@
       overflow: hidden;
     }
 
+    .home-pagination {
+      grid-column: 1 / -1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin: 1.4rem 0 0.4rem;
+    }
+
+    .home-pagination button {
+      min-width: 42px;
+      height: 42px;
+      padding: 0 0.85rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      background: #fff;
+      color: #334155;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .home-pagination button:hover,
+    .home-pagination button.active {
+      border-color: #01c4b6;
+      background: #01c4b6;
+      color: #fff;
+    }
+
     .grid-card-banner img {
       width: 100%;
       height: 100%;
@@ -1690,6 +1719,8 @@
 
       </section>
 
+      <nav class="home-pagination" id="homePagination" aria-label="首页文章分页"></nav>
+
       <!-- 视图 2: 关于我 -->
       <section class="view-about" id="viewAbout">
         <div class="about-card">
@@ -1998,8 +2029,68 @@ secret: "MySecretToken2026"</code></pre>
     <p>© 2026 火箭猫的机场推荐博客 (Clash-Shadowrocket) | 基于 vhAstro-Theme & Astro 5</p>
   </footer>
 
+  <script src="./public/client-guide-index.js"></script>
   <script src="./public/article-content.js"></script>
   <script>
+    let currentHomePage = 1;
+    const regularArticlesPerPage = 6;
+
+    function formatGuideDate(date) {
+      return new Intl.DateTimeFormat('zh-CN', { year: 'numeric', month: 'short', day: '2-digit' }).format(new Date(`${date}T00:00:00`));
+    }
+
+    function createClientGuideCard(guide) {
+      const card = document.createElement('article');
+      card.className = 'grid-article-card generated-client-guide';
+      card.dataset.category = guide.category;
+      card.innerHTML = `
+        <div class="grid-card-banner"><img src="${guide.cover}" alt="${guide.name} 深度使用教程封面" loading="lazy"></div>
+        <div class="grid-card-body">
+          <div class="grid-card-meta"><span class="cat-badge cat-Tutorial">客户端教程</span><span class="grid-card-date">${formatGuideDate(guide.date)}</span></div>
+          <h2 class="grid-card-title"><a href="javascript:void(0)">${guide.title}</a></h2>
+          <p class="grid-card-excerpt">${guide.excerpt}</p>
+          <div class="grid-card-tags">${guide.tags.map(tag => `<span>${tag}</span>`).join('')}</div>
+        </div>`;
+      card.addEventListener('click', () => openArticleDetail(guide.title, guide.category, guide.date, guide.id));
+      card.querySelector('a')?.addEventListener('click', event => event.preventDefault());
+      return card;
+    }
+
+    function renderHomePage(pageNumber = 1) {
+      const viewHome = document.getElementById('viewHome');
+      const pagination = document.getElementById('homePagination');
+      if (!viewHome || !pagination) return;
+      const pinned = viewHome.querySelector('.sticky-card');
+      const regularCards = [...viewHome.querySelectorAll('.grid-article-card:not(.sticky-card)')];
+      const totalPages = Math.max(1, Math.ceil(regularCards.length / regularArticlesPerPage));
+      currentHomePage = Math.min(Math.max(1, pageNumber), totalPages);
+      pinned && (pinned.style.display = 'flex');
+      regularCards.forEach((card, index) => {
+        const start = (currentHomePage - 1) * regularArticlesPerPage;
+        card.style.display = index >= start && index < start + regularArticlesPerPage ? 'flex' : 'none';
+      });
+      pagination.innerHTML = '';
+      const addButton = (label, target, active = false, disabled = false) => {
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.textContent = label;
+        button.classList.toggle('active', active);
+        button.disabled = disabled;
+        button.addEventListener('click', () => { renderHomePage(target); window.scrollTo({ top: 380, behavior: 'smooth' }); });
+        pagination.appendChild(button);
+      };
+      addButton('上一页', currentHomePage - 1, false, currentHomePage === 1);
+      for (let page = 1; page <= totalPages; page += 1) addButton(String(page), page, page === currentHomePage);
+      addButton('下一页', currentHomePage + 1, false, currentHomePage === totalPages);
+      pagination.style.display = 'flex';
+    }
+
+    function initializeClientGuides() {
+      const viewHome = document.getElementById('viewHome');
+      if (!viewHome) return;
+      (window.__CLIENT_GUIDES__ || []).forEach(guide => viewHome.appendChild(createClientGuideCard(guide)));
+      renderHomePage(1);
+    }
     function toggleToolsMenu(event) {
       event?.stopPropagation();
       const item = document.getElementById('toolsNavItem');
@@ -2026,6 +2117,7 @@ secret: "MySecretToken2026"</code></pre>
       const viewHome = document.getElementById('viewHome');
       const viewAbout = document.getElementById('viewAbout');
       const viewArticle = document.getElementById('viewArticle');
+      const pagination = document.getElementById('homePagination');
       
       const navIds = ['navHome', 'navCeping', 'navJiaocheng', 'navPeizhi', 'navBaike', 'navAbout'];
       navIds.forEach(id => {
@@ -2036,6 +2128,7 @@ secret: "MySecretToken2026"</code></pre>
       if (viewHome) viewHome.style.display = 'none';
       if (viewAbout) viewAbout.style.display = 'none';
       if (viewArticle) viewArticle.style.display = 'none';
+      if (pagination) pagination.style.display = 'none';
 
       const cards = document.querySelectorAll('.grid-article-card');
 
@@ -2070,9 +2163,12 @@ secret: "MySecretToken2026"</code></pre>
             card.style.display = 'none';
           }
         });
+        if (!targetCat) renderHomePage(currentHomePage);
       }
       window.scrollTo({ top: 380, behavior: 'smooth' });
     }
+
+    document.addEventListener('DOMContentLoaded', initializeClientGuides);
 
     let clashArticleHTML = "";
     let airportArticleHTML = `

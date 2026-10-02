@@ -2,22 +2,22 @@
 import { getCollection } from "astro:content";
 import type { GetStaticPathsOptions } from "astro";
 import setSearchJson from "@/utils/vhSearch";
-import moveTopToFirst from "@/utils/moveTopToFirst";
 export async function getStaticPaths(options: GetStaticPathsOptions) {
 	const { paginate } = options;
 	const posts = (await getCollection("blog")).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
-	// 置顶文章功能
-	moveTopToFirst(posts);
 	// 生成 Search JSON 文件
 	await setSearchJson(posts);
-	// 隐藏的文章不显示
+	// 每页固定展示一篇机场推荐置顶文章，再展示六篇普通文章。
+	const visiblePosts = posts.filter(i => !i.data.hide);
+	const pinnedPost = visiblePosts.find(post => post.id === "iepl-line-review");
+	const regularPosts = visiblePosts.filter(post => post.id !== "iepl-line-review");
 	return paginate(
-		posts.filter(i => !i.data.hide),
-		{ pageSize: 15 }
+		regularPosts,
+		{ pageSize: 6, props: { pinnedPost } }
 	);
 }
 
-const { page } = Astro.props;
+const { page, pinnedPost } = Astro.props;
 const { data, ...page_data } = page;
 // 页面 Info
 import SITE_CONFIG from "@/config";
@@ -34,8 +34,9 @@ const currentPage = page_data.url.current.replace("/", "");
 <Layout title={currentPage ? `第${currentPage}页文章` : ""} description={Description} Home={true}>
 	<section class="article-list-main">
 		<section class="article-list">
+			{pinnedPost && <ArticleCard post={pinnedPost} index={0} />}
 			<!-- 文章列表 -->
-			{data.map((post, index) => <ArticleCard post={post} index={index} />)}
+			{data.map((post, index) => <ArticleCard post={post} index={index + 1} />)}
 			<!-- 分页 -->
 		</section>
 		<Pagination data={page_data.url} />

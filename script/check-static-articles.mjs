@@ -5,6 +5,7 @@ import { load } from 'cheerio';
 const sandbox = { window: {} };
 vm.runInNewContext(fs.readFileSync('public/article-content.js', 'utf8'), sandbox);
 const articles = sandbox.window.__ARTICLE_CONTENT__;
+const clientGuideIds = new Set(['clash-verge-rev-guide','v2rayn-guide','hiddify-guide','sing-box-desktop-guide','clash-meta-android-guide','v2rayng-guide','hiddify-android-guide','sing-box-android-guide','clash-mi-guide','shadowrocket-complete-guide','stash-guide','quantumult-x-guide','surge-guide','openclash-guide','passwall-guide','sing-box-core-guide']);
 let failures = 0;
 
 for (const [id, html] of Object.entries(articles)) {
@@ -28,7 +29,7 @@ for (const [id, html] of Object.entries(articles)) {
     links: ['https://shadowrrocket.com.cn/tutorial', 'https://shadowrrocket.com.cn/download.html'],
     targets: [],
   };
-  const expectedFooter = expectedFooters[id] || defaultFooter;
+  const expectedFooter = clientGuideIds.has(id) ? { links: [], targets: [] } : (expectedFooters[id] || defaultFooter);
   const result = {
     id,
     svgCount: $('svg').length,
