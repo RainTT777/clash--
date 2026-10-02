@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /404
+
+Sitemap: https://clash-shadowrocket.blog/sitemap-index.xml
+Host: clash-shadowrocket.blog
