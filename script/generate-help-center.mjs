@@ -88,4 +88,44 @@ body += `## 仍未解决问题怎么办\n\n记录设备系统、客户端名称�
 const output = path.join('src','pages','help','index.md');
 fs.mkdirSync(path.dirname(output), { recursive: true });
 fs.writeFileSync(output, body, 'utf8');
-console.log('Generated airport help center with 60 FAQs.');
+
+const escapeHtml = (value) => value
+  .replaceAll('&', '&amp;')
+  .replaceAll('<', '&lt;')
+  .replaceAll('>', '&gt;')
+  .replaceAll('"', '&quot;');
+const renderInline = (value) => escapeHtml(value).replace(
+  /\[([^\]]+)\]\(([^)]+)\)/g,
+  (_, label, href) => `<a href="${href}"${href.startsWith('http') ? ' target="_blank" rel="noopener noreferrer"' : ''}>${label}</a>`
+);
+const faqSections = groups.map(([group, items], sectionIndex) => `
+  <section class="faq-section" id="faq-${sectionIndex + 1}">
+    <h2>${escapeHtml(group)}</h2>
+    <div class="faq-list">
+      ${items.map(([question, answer], itemIndex) => `
+        <details class="faq-item"${sectionIndex === 0 && itemIndex === 0 ? ' open' : ''}>
+          <summary><span>${sectionIndex * 10 + itemIndex + 1}</span>${escapeHtml(question)}</summary>
+          <div class="faq-answer"><p>${renderInline(answer)}</p></div>
+        </details>`).join('')}
+    </div>
+  </section>`).join('');
+
+const standalone = `<!doctype html>
+<html lang="zh-CN"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>机场帮助中心：VPN、Clash 与小火箭配置 FAQ</title>
+<meta name="description" content="60 个机场 VPN、Clash 配置、Shadowrocket 小火箭配置、订阅、DNS 与账户安全常见问题。">
+<link rel="canonical" href="https://clash-shadowrocket.blog/help/">
+<style>
+*{box-sizing:border-box}body{margin:0;background:#f5f8fa;color:#172033;font-family:Arial,"Microsoft YaHei",sans-serif;line-height:1.75}a{color:#008f86;text-decoration:none}a:hover{text-decoration:underline}.topbar{position:sticky;top:0;z-index:10;background:#363641;color:#fff}.nav{max-width:1180px;margin:auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between}.brand{color:#fff;font-weight:800}.nav-links{display:flex;gap:22px}.nav-links a{color:#fff;font-weight:700}.hero{background:#0f766e;color:#fff;padding:56px 22px}.hero-inner{max-width:1180px;margin:auto}.eyebrow{font-size:14px;font-weight:800;letter-spacing:0}.hero h1{font-size:42px;line-height:1.2;margin:8px 0 14px}.hero p{max-width:760px;margin:0;color:#d8fffa;font-size:18px}.layout{max-width:1180px;margin:28px auto 60px;padding:0 22px;display:grid;grid-template-columns:220px minmax(0,1fr);gap:28px}.toc{position:sticky;top:76px;align-self:start;background:#fff;border:1px solid #dce7e7;padding:18px;border-radius:8px}.toc h2{font-size:17px;margin:0 0 10px}.toc a{display:block;padding:7px 0;border-bottom:1px solid #edf2f2;font-size:14px}.quick{background:#eafaf7;border-left:4px solid #06b6a8;padding:17px 19px;margin-bottom:24px}.quick strong{display:block;margin-bottom:7px}.quick a{margin-right:16px;font-weight:700}.faq-section{margin-bottom:30px}.faq-section h2{font-size:26px;margin:0 0 14px;padding-bottom:8px;border-bottom:2px solid #12b8aa}.faq-list{display:grid;gap:10px}.faq-item{background:#fff;border:1px solid #dce5e8;border-radius:8px;overflow:hidden}.faq-item summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:750;display:flex;align-items:center;gap:12px}.faq-item summary::-webkit-details-marker{display:none}.faq-item summary span{display:inline-flex;width:28px;height:28px;align-items:center;justify-content:center;background:#e3f8f5;color:#087a72;border-radius:6px;font-size:13px;flex:0 0 auto}.faq-item[open] summary{background:#f1fbfa;color:#075f59}.faq-answer{padding:0 58px 18px}.faq-answer p{margin:0}.footer{text-align:center;padding:28px;color:#718096;background:#fff;border-top:1px solid #e5eaed}@media(max-width:760px){.nav-links{gap:12px;font-size:14px}.hero{padding:38px 18px}.hero h1{font-size:31px}.layout{grid-template-columns:1fr;padding:0 14px}.toc{position:static}.faq-answer{padding:0 18px 16px}.faq-item summary{padding:14px}.quick a{display:block;margin:5px 0}}
+</style></head><body>
+<header class="topbar"><nav class="nav"><a class="brand" href="/">火箭猫</a><div class="nav-links"><a href="/">首页</a><a href="/article/iepl-line-review">机场推荐</a><a href="/help/">帮助</a><a href="/about/">关于我们</a></div></nav></header>
+<section class="hero"><div class="hero-inner"><div class="eyebrow">机场 VPN · CLASH · SHADOWROCKET</div><h1>机场帮助中心</h1><p>按问题分类整理 60 个常见 FAQ，覆盖机场选择、订阅节点、Clash、小火箭、DNS、速度、付款与账户安全。</p></div></section>
+<div class="layout"><aside class="toc"><h2>问题分类</h2>${groups.map(([group], index) => `<a href="#faq-${index + 1}">${escapeHtml(group)}（10）</a>`).join('')}</aside><main>
+<div class="quick"><strong>常用站内教程</strong><a href="/article/iepl-line-review">机场线路对比</a><a href="/article/airport-coupon-codes">机场优惠码</a><a href="/article/clash-verge-rev-guide">Clash 配置</a><a href="/article/shadowrocket-complete-guide">小火箭配置</a></div>
+${faqSections}
+<div class="quick"><strong>官方外部资料</strong><a href="https://wiki.metacubex.one/" target="_blank" rel="noopener noreferrer">Mihomo 官方文档</a><a href="https://sing-box.sagernet.org/" target="_blank" rel="noopener noreferrer">sing-box 官方文档</a><a href="https://apps.apple.com/us/app/shadowrocket/id932747118" target="_blank" rel="noopener noreferrer">Shadowrocket App Store</a></div>
+</main></div><footer class="footer">© 2026 Clash-Shadowrocket.blog · 机场帮助中心</footer></body></html>`;
+const standaloneOutput = path.join('help', 'index.html');
+fs.mkdirSync(path.dirname(standaloneOutput), { recursive: true });
+fs.writeFileSync(standaloneOutput, standalone, 'utf8');
+console.log('Generated airport help center with 60 FAQs and standalone page.');
